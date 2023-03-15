@@ -8,17 +8,13 @@ public class AlienFighters : EnemyBase
     {
         health = 100f;
     }
-
-    public void OnClicked()
+    
+    public void OnClicked(float dmg)
     {
-        Debug.Log("Bang! Bang! Bang!");
+        health -= dmg;
         if (health <= 0f)
         {
             Destroy(gameObject);
-        }
-        else
-        {
-            health -= 10f;
         }
     }
 }

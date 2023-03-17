@@ -12,6 +12,7 @@ namespace Kevin
         public Transform primaryHand;
         public float range;
         public int currentTurretDamage;
+        public List<GameObject> TurretObjects;
         public void Update()
         {
             transform.rotation = primaryHand.rotation;
@@ -28,7 +29,7 @@ namespace Kevin
                 Debug.DrawRay(transform.position, transform.forward * range, Color.red);
             }
         
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0))
             {
                 Shoot();
             }
@@ -41,6 +42,8 @@ namespace Kevin
     
         void Shoot()
         {
+            TurretObjects[0].transform.Rotate(new Vector3(0,0,5f),Space.Self);
+            TurretObjects[1].transform.Rotate(new Vector3(0,0,5f),Space.Self);
             RaycastHit hitInfo;
             if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo, range))
             {

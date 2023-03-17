@@ -1013,7 +1013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571271358}
   m_LocalRotation: {x: 0.7619859, y: -0, z: -0, w: 0.6475936}
-  m_LocalPosition: {x: 0, y: 3.346, z: 3.779}
+  m_LocalPosition: {x: 0, y: 3.63, z: 2.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1676988090}
@@ -1933,7 +1933,7 @@ PrefabInstance:
     - target: {fileID: 1917269869046161929, guid: 5d2aa0cb15373fd4f89e28c25cb342e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.57
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 1917269869046161929, guid: 5d2aa0cb15373fd4f89e28c25cb342e1,
         type: 3}
@@ -1982,9 +1982,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1917269869659830057, guid: 5d2aa0cb15373fd4f89e28c25cb342e1,
         type: 3}
+      propertyPath: TurretObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917269869659830057, guid: 5d2aa0cb15373fd4f89e28c25cb342e1,
+        type: 3}
       propertyPath: primaryHand
       value: 
       objectReference: {fileID: 1596031382}
+    - target: {fileID: 1917269869659830057, guid: 5d2aa0cb15373fd4f89e28c25cb342e1,
+        type: 3}
+      propertyPath: TurretObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 3430891686004896327}
+    - target: {fileID: 1917269869659830057, guid: 5d2aa0cb15373fd4f89e28c25cb342e1,
+        type: 3}
+      propertyPath: TurretObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 3080246768096558701}
     - target: {fileID: 1917269869046161930, guid: 5d2aa0cb15373fd4f89e28c25cb342e1,
         type: 3}
       propertyPath: m_Mesh

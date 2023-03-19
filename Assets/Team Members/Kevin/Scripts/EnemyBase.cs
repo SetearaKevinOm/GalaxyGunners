@@ -5,5 +5,14 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
    public float health;
-   public float bulletSpeed;
+   public float projectileSpeed;
+   
+   public void OnClicked(float dmg)
+   {
+      health -= dmg;
+      if (health <= 0f)
+      {
+         Destroy(gameObject);
+      }
+   }
 }

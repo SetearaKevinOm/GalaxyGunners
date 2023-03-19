@@ -48,11 +48,11 @@ namespace Kevin
             if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo, range))
             {
                 Debug.Log("HIT: " + hitInfo.transform.name);
-                AlienFighters alienFighters = hitInfo.collider.gameObject.GetComponent<AlienFighters>();
-                if (alienFighters != null)
+                EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
+                if (enemyBase != null)
                 {
                     currentTurretDamage = GameManager.Instance.currentPlayerDamage;
-                    alienFighters.OnClicked(currentTurretDamage);
+                    enemyBase.OnClicked(currentTurretDamage);
                 }
             }
         

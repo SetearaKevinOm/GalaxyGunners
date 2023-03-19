@@ -12,6 +12,8 @@ namespace Kevin
         public int currentPlayerDamage;
         public GameObject vrAvatar;
 
+        public GameObject shipCollisionBox;
+
         public static GameManager Instance
         {
             get

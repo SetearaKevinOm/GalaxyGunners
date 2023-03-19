@@ -7,7 +7,7 @@ namespace Kevin
     /// <summary>
     /// Just by implementing IPointerClickHandler like any UI, you can click on objects
     /// </summary>
-    public class Interactables : MonoBehaviour, IPointerClickHandler
+    public class InteractableObjects : MonoBehaviour, IPointerClickHandler
     {
         public UnityEvent OnClick;
 

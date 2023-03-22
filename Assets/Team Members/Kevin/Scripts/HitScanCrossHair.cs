@@ -13,6 +13,17 @@ namespace Kevin
         public float range;
         public int currentTurretDamage;
         public List<GameObject> TurretObjects;
+        public GameObject leftFlash;
+        public GameObject rightFlash;
+        private ParticleSystem flashLeftParticle;
+        private ParticleSystem flashRightParticle;
+
+        public void Awake()
+        {
+            flashLeftParticle = leftFlash.GetComponent<ParticleSystem>();
+            flashRightParticle = rightFlash.GetComponent<ParticleSystem>();
+        }
+
         public void Update()
         {
             transform.rotation = primaryHand.rotation;
@@ -44,6 +55,9 @@ namespace Kevin
         {
             TurretObjects[0].transform.Rotate(new Vector3(0,0,5f),Space.Self);
             TurretObjects[1].transform.Rotate(new Vector3(0,0,5f),Space.Self);
+            flashRightParticle.Play();
+            flashLeftParticle.Play();
+
             RaycastHit hitInfo;
             if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo, range))
             {

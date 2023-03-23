@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Liminal.SDK.VR;
 using Liminal.SDK.VR.Input;
 using Liminal.SDK.VR.Pointers;
+using UnityEditor;
 using UnityEngine;
 
 namespace Kevin
@@ -17,23 +18,23 @@ namespace Kevin
         public GameObject rightFlash;
         private ParticleSystem flashLeftParticle;
         private ParticleSystem flashRightParticle;
+        [SerializeField] private Crosshair crosshair;
 
         public void Awake()
         {
             flashLeftParticle = leftFlash.GetComponent<ParticleSystem>();
             flashRightParticle = rightFlash.GetComponent<ParticleSystem>();
+            crosshair = gameObject.GetComponentInChildren<Crosshair>();
         }
 
         public void Update()
         {
             transform.rotation = primaryHand.rotation;
             transform.LookAt(GetComponentInChildren<HitScanCrossHair>().gameObject.transform);
-            
             RaycastHit hitInfo;
             if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
             {
                 Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.green);
-                
             }
             else
             {

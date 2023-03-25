@@ -8,15 +8,10 @@ public class Holigram_Glitch : MonoBehaviour
 
     Material hologramMaterial;
     WaitForSeconds glitchLoopWait = new WaitForSeconds(0.1f);
-
-    void Awake()
-    {
-        hologramMaterial = GetComponent<Renderer>().material;
-    }
-
-    // Start is called before the first frame update
+    
     IEnumerator Start()
     {
+        hologramMaterial = GetComponent<Renderer>().material;
         while (true)
         {
             float glitchTest = Random.Range(0f, 1f);

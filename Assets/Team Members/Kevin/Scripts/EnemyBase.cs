@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-   public float health;
+   public int health;
+   public int enemyDamage;
    public float projectileSpeed;
    
-   public void OnClicked(float dmg)
+   public void OnClicked(int dmg)
    {
+      Debug.Log("Hit!");
       health -= dmg;
       if (health <= 0f)
       {

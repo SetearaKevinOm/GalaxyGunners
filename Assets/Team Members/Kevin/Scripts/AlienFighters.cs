@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class AlienFighters : EnemyBase
 {
-    public void Start()
-    {
-        health = 100f;
-        projectileSpeed = 25f;
-    }
-
     public void Update()
     {
         gameObject.transform.rotation = Quaternion.Euler(Vector3.forward * 100f);

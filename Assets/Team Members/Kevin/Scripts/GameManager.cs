@@ -7,12 +7,18 @@ namespace Kevin
 {
     public class GameManager : MonoBehaviour
     {
-        private static GameManager _instance;
-
-        public int currentPlayerDamage;
+        [Header("Component References")]
+        public UIManager uiManager;
+        
+        [Header("GameObject References")]
         public GameObject vrAvatar;
-
         public GameObject shipCollisionBox;
+        
+        [Header("Game State Variables")] 
+        public int shipHealth;
+        public int currentPlayerDamage;
+
+        private static GameManager _instance;
 
         public static GameManager Instance
         {
@@ -23,6 +29,8 @@ namespace Kevin
                 return _instance;
             }
         }
+        
+        
 
         private void Awake()
         {

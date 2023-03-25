@@ -20,7 +20,7 @@ namespace Kevin
         private ParticleSystem flashRightParticle;
         [SerializeField] private Crosshair crosshair;
 
-        public void Awake()
+        public void Start()
         {
             flashLeftParticle = leftFlash.GetComponent<ParticleSystem>();
             flashRightParticle = rightFlash.GetComponent<ParticleSystem>();
@@ -29,26 +29,31 @@ namespace Kevin
 
         public void Update()
         {
-            transform.rotation = primaryHand.rotation;
-            transform.LookAt(GetComponentInChildren<HitScanCrossHair>().gameObject.transform);
-            RaycastHit hitInfo;
-            if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
+            if (primaryHand.gameObject.GetComponentInChildren<ReticleVisual>() != null)
             {
-                Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.green);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, transform.forward * range, Color.red);
-            }
-        
-            if (Input.GetKey(KeyCode.Mouse0))
-            {
-                Shoot();
-            }
+                transform.rotation = primaryHand.rotation;
+                transform.LookAt(GetComponentInChildren<HitScanCrossHair>().gameObject.transform);
+                crosshair.gameObject.transform.position = primaryHand.gameObject.GetComponentInChildren<ReticleVisual>()
+                    .transform.position;
+                RaycastHit hitInfo;
+                if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
+                {
+                    Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.green);
+                }
+                else
+                {
+                    Debug.DrawRay(transform.position, transform.forward * range, Color.red);
+                }
 
-            if (VRDevice.Device.PrimaryInputDevice.GetButtonDown(VRButton.Primary))
-            {
-                Shoot();
+                if (Input.GetKey(KeyCode.Mouse0))
+                {
+                    Shoot();
+                }
+
+                if (VRDevice.Device.PrimaryInputDevice.GetButtonDown(VRButton.Primary))
+                {
+                    Shoot();
+                }
             }
         }
     
@@ -58,9 +63,8 @@ namespace Kevin
             TurretObjects[1].transform.Rotate(new Vector3(0,0,5f),Space.Self);
             flashRightParticle.Play();
             flashLeftParticle.Play();
-
             RaycastHit hitInfo;
-            if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo, range))
+            if (Physics.Raycast(primaryHand.gameObject.transform.position, transform.forward * range, out hitInfo, range))
             {
                 Debug.Log("HIT: " + hitInfo.transform.name);
                 EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
@@ -70,8 +74,20 @@ namespace Kevin
                     enemyBase.OnClicked(currentTurretDamage);
                 }
             }
-        
+
+            /*if (Physics.Raycast(primaryHand.gameObject.transform.position, CrosshairDirection() ,
+                    out hitInfo))
+            {
+                Debug.Log("HIT: " + hitInfo.transform.name);
+                EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
+                if (enemyBase != null)
+                {
+                    currentTurretDamage = GameManager.Instance.currentPlayerDamage;
+                    enemyBase.OnClicked(currentTurretDamage);
+                }
+            }*/
         }
+        
     }
 }
 

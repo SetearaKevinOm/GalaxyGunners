@@ -18,8 +18,10 @@ namespace Kevin
         public GameObject rightFlash;
         private ParticleSystem flashLeftParticle;
         private ParticleSystem flashRightParticle;
-        [SerializeField] private Crosshair crosshair;
+        public Crosshair crosshair;
 
+        public float fireRate;
+        public bool canShoot;
         public void Start()
         {
             flashLeftParticle = leftFlash.GetComponent<ParticleSystem>();
@@ -29,12 +31,9 @@ namespace Kevin
 
         public void Update()
         {
-            if (primaryHand.gameObject.GetComponentInChildren<ReticleVisual>() != null)
-            {
                 transform.rotation = primaryHand.rotation;
                 transform.LookAt(GetComponentInChildren<HitScanCrossHair>().gameObject.transform);
-                crosshair.gameObject.transform.position = primaryHand.gameObject.GetComponentInChildren<ReticleVisual>()
-                    .transform.position;
+                //crosshair.gameObject.transform.position = primaryHand.gameObject.GetComponentInChildren<ReticleVisual>().transform.position;
                 RaycastHit hitInfo;
                 if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
                 {
@@ -49,12 +48,10 @@ namespace Kevin
                 {
                     Shoot();
                 }
-
-                if (VRDevice.Device.PrimaryInputDevice.GetButtonDown(VRButton.Primary))
+                /*if (VRDevice.Device.PrimaryInputDevice.GetButtonDown(VRButton.Primary))
                 {
                     Shoot();
-                }
-            }
+                }*/
         }
     
         void Shoot()
@@ -64,14 +61,16 @@ namespace Kevin
             flashRightParticle.Play();
             flashLeftParticle.Play();
             RaycastHit hitInfo;
-            if (Physics.Raycast(primaryHand.gameObject.transform.position, transform.forward * range, out hitInfo, range))
+            if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo, range))
             {
-                Debug.Log("HIT: " + hitInfo.transform.name);
+                //Debug.Log("HIT: " + hitInfo.transform.name);
                 EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
-                if (enemyBase != null)
+                if (enemyBase != null && canShoot)
                 {
+                    StartCoroutine(FireRateDelay());
                     currentTurretDamage = GameManager.Instance.currentPlayerDamage;
                     enemyBase.OnClicked(currentTurretDamage);
+                    canShoot = false;
                 }
             }
 
@@ -86,6 +85,12 @@ namespace Kevin
                     enemyBase.OnClicked(currentTurretDamage);
                 }
             }*/
+        }
+
+        private IEnumerator FireRateDelay()
+        {
+            yield return new WaitForSeconds(fireRate);
+            canShoot = true;
         }
         
     }

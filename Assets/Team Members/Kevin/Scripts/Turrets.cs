@@ -18,10 +18,7 @@ namespace Kevin
 
         public void Update()
         {
-            if (primaryHand.gameObject.GetComponentInChildren<ReticleVisual>() != null)
-            {
-                turretPivotPoints.LookAt(primaryHand.gameObject.GetComponentInChildren<ReticleVisual>().transform.position);
-            }
+            turretPivotPoints.LookAt(primaryHand.gameObject.GetComponentInChildren<ReticleVisual>().transform.position);
         }
     }
 }

@@ -1258,7 +1258,7 @@ PrefabInstance:
     - target: {fileID: 1778416062442305838, guid: c9cd149447967d54ea287e747030249d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.62
+      value: 10.12
       objectReference: {fileID: 0}
     - target: {fileID: 1778416062442305838, guid: c9cd149447967d54ea287e747030249d,
         type: 3}
@@ -1268,7 +1268,7 @@ PrefabInstance:
     - target: {fileID: 1778416062442305838, guid: c9cd149447967d54ea287e747030249d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.77
+      value: 54.07
       objectReference: {fileID: 0}
     - target: {fileID: 1778416062442305838, guid: c9cd149447967d54ea287e747030249d,
         type: 3}
@@ -1308,21 +1308,6 @@ PrefabInstance:
     - target: {fileID: 1778416062442305838, guid: c9cd149447967d54ea287e747030249d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5603287557173080548, guid: c9cd149447967d54ea287e747030249d,
-        type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5603287557173080548, guid: c9cd149447967d54ea287e747030249d,
-        type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1383671419545855930, guid: c9cd149447967d54ea287e747030249d,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4053,6 +4038,11 @@ PrefabInstance:
       propertyPath: rightFlash
       value: 
       objectReference: {fileID: 764300932}
+    - target: {fileID: 1917269869659830057, guid: 5d2aa0cb15373fd4f89e28c25cb342e1,
+        type: 3}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2aa0cb15373fd4f89e28c25cb342e1, type: 3}
 --- !u!23 &1971445330435318836

@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class AlienFighters : EnemyBase
 {
+    public bool canMove;
     public void Update()
     {
-        gameObject.transform.rotation = Quaternion.Euler(Vector3.forward * 100f);
-        transform.LookAt(GameManager.Instance.shipCollisionBox.transform.position);
-        transform.position += transform.forward * projectileSpeed * Time.deltaTime;
+        if (canMove)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(Vector3.forward * 100f);
+            transform.LookAt(GameManager.Instance.shipCollisionBox.transform.position);
+            transform.position += transform.forward * projectileSpeed * Time.deltaTime;
+        }
     }
     
 }

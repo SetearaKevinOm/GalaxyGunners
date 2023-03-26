@@ -33,7 +33,6 @@ namespace Kevin
         {
                 transform.rotation = primaryHand.rotation;
                 transform.LookAt(GetComponentInChildren<HitScanCrossHair>().gameObject.transform);
-                //crosshair.gameObject.transform.position = primaryHand.gameObject.GetComponentInChildren<ReticleVisual>().transform.position;
                 RaycastHit hitInfo;
                 if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
                 {
@@ -56,6 +55,7 @@ namespace Kevin
     
         void Shoot()
         {
+            if (canShoot == false) return;
             TurretObjects[0].transform.Rotate(new Vector3(0,0,5f),Space.Self);
             TurretObjects[1].transform.Rotate(new Vector3(0,0,5f),Space.Self);
             flashRightParticle.Play();
@@ -65,7 +65,7 @@ namespace Kevin
             {
                 //Debug.Log("HIT: " + hitInfo.transform.name);
                 EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
-                if (enemyBase != null && canShoot)
+                if (enemyBase != null)
                 {
                     StartCoroutine(FireRateDelay());
                     currentTurretDamage = GameManager.Instance.currentPlayerDamage;

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1778416062442305838}
   - component: {fileID: 7346836931528344344}
   - component: {fileID: 3947893432021434337}
-  - component: {fileID: 5603287557173080548}
   - component: {fileID: 1383671419545855930}
   - component: {fileID: 1079042910393222851}
   - component: {fileID: 507673626499821149}
@@ -81,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &5603287557173080548
+--- !u!114 &1383671419545855930
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,40 +89,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3383727399755451197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3d813cc16b1e74884d9871adadfa1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 25
-          m_FloatArgument: 25
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1383671419545855930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3383727399755451197}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73cce9b286f501b4d86ed2462c49116f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   enemyDamage: 25
   projectileSpeed: 25
+  canMove: 1
 --- !u!135 &1079042910393222851
 SphereCollider:
   m_ObjectHideFlags: 0

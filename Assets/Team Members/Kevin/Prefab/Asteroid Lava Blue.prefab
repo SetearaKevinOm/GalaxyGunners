@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7044615040071187245}
   - component: {fileID: 7054750538655851043}
   - component: {fileID: 3173370112476191449}
-  - component: {fileID: -3814287802325897624}
   - component: {fileID: 1783942435673608644}
   - component: {fileID: 7963204675004694375}
   m_Layer: 0
@@ -97,34 +96,7 @@ MonoBehaviour:
   health: 100
   enemyDamage: 15
   projectileSpeed: 25
---- !u!114 &-3814287802325897624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7041327370257340693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3d813cc16b1e74884d9871adadfa1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3173370112476191449}
-        m_MethodName: OnClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  instance: {fileID: 0}
 --- !u!54 &1783942435673608644
 Rigidbody:
   m_ObjectHideFlags: 0

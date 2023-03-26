@@ -9,9 +9,9 @@ public class AlienFighterSpawner : MonoBehaviour
     public SpawnManager spawnManager;
     public int spawnAmount;
     
-    [SerializeField]private BoxCollider boxCollider;
-    [SerializeField]private Vector3 cubeSize;
-    [SerializeField]private Vector3 cubeCentre;
+    private BoxCollider boxCollider;
+    private Vector3 cubeSize;
+    private Vector3 cubeCentre;
 
     public void OnEnable()
     {
@@ -27,7 +27,7 @@ public class AlienFighterSpawner : MonoBehaviour
 
     private IEnumerator SpawnAlienFighters()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         
         for (int i = 0; i < spawnAmount; i++)
         {

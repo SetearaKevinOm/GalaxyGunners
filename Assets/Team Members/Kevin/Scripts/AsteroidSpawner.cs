@@ -8,9 +8,9 @@ public class AsteroidSpawner : MonoBehaviour
 {
     public SpawnManager spawnManager;
     
-    [SerializeField]private BoxCollider boxCollider;
-    [SerializeField]private Vector3 cubeSize;
-    [SerializeField]private Vector3 cubeCentre;
+    private BoxCollider boxCollider;
+    private Vector3 cubeSize;
+    private Vector3 cubeCentre;
 
     public void OnEnable()
     {

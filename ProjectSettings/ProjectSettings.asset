@@ -160,8 +160,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.2AM Studios.Galaxy Gunners
-    Standalone: com.2AM Studios.Galaxy Gunners
+    Android: com.twoAMStudios.GalaxyGunners
+    Standalone: com.TwoAMStudios.GalaxyGunners
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 24

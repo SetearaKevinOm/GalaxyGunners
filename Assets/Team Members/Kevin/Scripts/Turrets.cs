@@ -6,19 +6,32 @@ using Liminal.SDK.VR.Input;
 using Liminal.SDK.VR.Pointers;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.iOS;
 
 namespace Kevin
 {
     public class Turrets : MonoBehaviour
     {
+        public GameObject turretObject;
         public Transform turretPivotPoints;
-        public Transform crossHair;
-        public Transform primaryHand;
+        public Transform crosshairTransform;
+        public GameObject balistics;
+        public Transform handTransform;
+        public float range;
+        public int currentTurretDamage;
+        public GameObject barrelFlash;
+        public ParticleSystem flashParticle;
+        public Crosshair crosshair;
+        public float fireRate;
+        public bool canShoot;
+        public bool handTrigger;
+        public LineRenderer laserLine;
+        public AudioSource shootSFX;
 
-        public void Update()
+        public void Start()
         {
-            turretPivotPoints.LookAt(primaryHand.gameObject.GetComponentInChildren<ReticleVisual>().transform.position);
+            flashParticle = barrelFlash.GetComponent<ParticleSystem>();
+            crosshair = gameObject.GetComponentInChildren<Crosshair>();
+            laserLine = GetComponentInChildren<LineRenderer>();
         }
     }
 }

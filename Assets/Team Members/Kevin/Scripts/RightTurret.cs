@@ -17,30 +17,27 @@ public class RightTurret : Turrets
         if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
         {
             Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.green);
+            EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
+            if (enemyBase != null)
+            {
+                crosshairTransform.position = hitInfo.point;
+            }
         }
         else
         {
             Debug.DrawRay(transform.position, transform.forward * range, Color.red);
+            crosshairTransform.position = defaultCrosshairTransform.position;
         }
         
-        /*if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse1))
         {
             ShootRight();
-        }*/
+        }
         
         var device = VRDevice.Device;
         var rightHand = device.PrimaryInputDevice;
         
-        if (rightHand.GetButton(VRButton.Three))
-        {
-            handTrigger = true;
-        }
-        else
-        {
-            handTrigger = false;
-        }
-
-        if(rightHand.GetButton(VRButton.Trigger) && handTrigger)
+        if(rightHand.GetButton(VRButton.Trigger))
         {
             ShootRight();
         }
@@ -53,7 +50,10 @@ public class RightTurret : Turrets
         if (canShoot)
         {
             turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
-            //StartCoroutine(RFireRateDelay());
+            GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
+                Quaternion.LookRotation(balistics.transform.forward));
+            go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
+            StartCoroutine(RFireRateDelay());
             flashParticle.Play();
             //shootSFX.PlayOneShot(shootSFX.clip);
             RaycastHit hitInfo;
@@ -73,7 +73,7 @@ public class RightTurret : Turrets
                     //StartCoroutine(ShootLine());
                 }
             }
-            //canShoot = false;
+            canShoot = false;
         }
         
     }

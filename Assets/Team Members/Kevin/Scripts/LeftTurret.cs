@@ -30,17 +30,8 @@ public class LeftTurret : Turrets
         
         var device = VRDevice.Device;
         var leftHand = device.SecondaryInputDevice;
-        
-        if (leftHand.GetButton(VRButton.Three))
-        {
-            handTrigger = true;
-        }
-        else
-        {
-            handTrigger = false;
-        }
-        
-        if(leftHand.GetButton(VRButton.Trigger) && handTrigger)
+
+        if(leftHand.GetButton(VRButton.Trigger))
         {
             ShootLeft();
         }

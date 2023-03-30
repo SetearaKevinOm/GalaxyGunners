@@ -23,15 +23,17 @@ namespace Kevin
         public Crosshair crosshair;
         public float fireRate;
         public bool canShoot;
-        public bool handTrigger;
         public LineRenderer laserLine;
         public AudioSource shootSFX;
-
+        public GameObject projectilePrefab;
+        public Transform defaultCrosshairTransform;
         public void Start()
         {
             flashParticle = barrelFlash.GetComponent<ParticleSystem>();
             crosshair = gameObject.GetComponentInChildren<Crosshair>();
             laserLine = GetComponentInChildren<LineRenderer>();
+            defaultCrosshairTransform = crosshairTransform;
+
         }
     }
 }

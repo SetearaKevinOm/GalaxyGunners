@@ -52,6 +52,7 @@ public class RightTurret : Turrets
             turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
                 Quaternion.LookRotation(balistics.transform.forward));
+            //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(RFireRateDelay());
             flashParticle.Play();

@@ -12,6 +12,7 @@ namespace Kevin
         
         [Header("GameObject References")]
         public GameObject vrAvatar;
+        public CameraShake cameraShake;
         public GameObject shipCollisionBox;
         public GameObject enemyThreshold;
         
@@ -39,6 +40,20 @@ namespace Kevin
         {
             _instance = this;
         }
+
+        /*public void TriggerVibration(AudioClip vibrationAudio, OVRInput.Controller controller)
+        {
+            OVRHapticsClip clip = new OVRHapticsClip(vibrationAudio);
+
+            if (controller == OVRInput.Controller.LTouch)
+            {
+                OVRHaptics.LeftChannel.Preempt(clip);
+            }
+            else if (controller == OVRInput.Controller.RTouch)
+            {
+                OVRHaptics.RightChannel.Preempt(clip);
+            }
+        }*/
     }
 }
 

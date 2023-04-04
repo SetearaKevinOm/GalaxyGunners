@@ -7,6 +7,8 @@ using UnityEngine;
 public class ShipCollision : MonoBehaviour
 {
     public GameManager instance;
+    public float shakeDuration;
+    public float shakeMagnitude;
 
     public IEnumerator Start()
     {
@@ -19,7 +21,8 @@ public class ShipCollision : MonoBehaviour
         EnemyBase enemyBase = col.GetComponent<EnemyBase>();
         if (enemyBase != null)
         {
-            GameManager.Instance.shipHealth -= enemyBase.enemyDamage;
+            instance.shipHealth -= enemyBase.enemyDamage;
+            //StartCoroutine(instance.cameraShake.Shake(shakeDuration, shakeMagnitude));
             Destroy(col.gameObject);
             Debug.Log("Ship has been hit: " + enemyBase.enemyDamage);
         }

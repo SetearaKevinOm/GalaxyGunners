@@ -33,6 +33,13 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
         {
             enemy.OnClicked(projectileDmg);
+            StartCoroutine(ProjectileHitLife());
         }
+    }
+
+    private IEnumerator ProjectileHitLife()
+    {
+        yield return new WaitForSeconds(0.25f);
+        Destroy(gameObject);
     }
 }

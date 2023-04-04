@@ -49,6 +49,9 @@ MonoBehaviour:
   health: 100
   enemyDamage: 15
   projectileSpeed: 20
+  impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
+  impactParticle: {fileID: 2658960854855228939, guid: 07de3c72bff34884a99d21b6dba3a91a,
+    type: 3}
   instance: {fileID: 0}
 --- !u!54 &467316824936082513
 Rigidbody:

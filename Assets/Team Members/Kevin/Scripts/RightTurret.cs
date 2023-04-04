@@ -9,11 +9,13 @@ public class RightTurret : Turrets
 {
     public void Update()
     {
+        //if (handsConnected == false) return;
+        
         turretPivotPoints.LookAt(crosshairTransform.transform.position);
         transform.rotation = handTransform.rotation;
         transform.LookAt(crosshair.transform);
         
-        RaycastHit hitInfo;
+        /*RaycastHit hitInfo;
         if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
         {
             Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.green);
@@ -27,7 +29,7 @@ public class RightTurret : Turrets
         {
             Debug.DrawRay(transform.position, transform.forward * range, Color.red);
             crosshairTransform.position = defaultCrosshairTransform.position;
-        }
+        }*/
         
         if (Input.GetKey(KeyCode.Mouse1))
         {
@@ -43,6 +45,11 @@ public class RightTurret : Turrets
             turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             ShootRight();
         }
+    }
+
+    public void HoverEnd()
+    {
+        handsConnected = true;
     }
     
     #region ShootRight

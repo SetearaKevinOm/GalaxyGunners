@@ -10,10 +10,13 @@ public class LeftTurret : Turrets
     
     public void Update()
     {
+        //if (handsConnected == false) return;
+        
         turretPivotPoints.LookAt(crosshairTransform.transform.position);
         transform.rotation = handTransform.rotation;
         transform.LookAt(crosshair.transform);
-        RaycastHit hitInfo;
+        
+        /*RaycastHit hitInfo;
         if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
         {
             Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.green);
@@ -23,7 +26,7 @@ public class LeftTurret : Turrets
             Debug.DrawRay(transform.position, transform.forward * range, Color.red);
         }
         
-        /*if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             ShootLeft();
         }*/
@@ -38,6 +41,12 @@ public class LeftTurret : Turrets
         }
     }
     #region ShootLeft
+    
+    public void HoverEnd()
+    {
+        handsConnected = true;
+    }
+
 
     void ShootLeft()
     {

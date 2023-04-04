@@ -22,6 +22,11 @@ namespace Kevin
         public int maxRequiredAsteroids;
         public int currentAsteroidsDestroyed;
 
+        [Header("Power Ups")] 
+        public bool quickFire;
+        public bool buckShot;
+        public bool laserBeam;
+
         private static GameManager _instance;
 
         public static GameManager Instance

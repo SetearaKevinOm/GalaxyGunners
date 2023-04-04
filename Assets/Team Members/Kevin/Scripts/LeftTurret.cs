@@ -33,6 +33,7 @@ public class LeftTurret : Turrets
 
         if(leftHand.GetButton(VRButton.Trigger))
         {
+            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             ShootLeft();
         }
     }
@@ -42,12 +43,15 @@ public class LeftTurret : Turrets
     {
         if (canShoot)
         {
-            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
-            //StartCoroutine(FireRateDelay());
+            GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
+                Quaternion.LookRotation(balistics.transform.forward));
+            //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
+            go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
+            StartCoroutine(LFireRateDelay());
             flashParticle.Play();
-            //shootSFX.PlayOneShot(shootSFX.clip);
+            shootSFX.Play();
             RaycastHit hitInfo;
-            if (Physics.Raycast(balistics.transform.position, transform.forward * range, out hitInfo, range))
+            if (Physics.Raycast(crosshairTransform.position, transform.forward * range, out hitInfo, range))
             {
                 EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
                 if (enemyBase != null)
@@ -57,13 +61,13 @@ public class LeftTurret : Turrets
                     currentTurretDamage = GameManager.Instance.currentPlayerDamage;
                     enemyBase.OnClicked(currentTurretDamage);
                 }
+                else 
+                {
+                    //laserLine.SetPosition(1,balistics.transform.position + (balistics.transform.forward * range));
+                    //StartCoroutine(ShootLine());
+                }
             }
-            else 
-            {
-                //laserLine.SetPosition(1,balistics.transform.position + (balistics.transform.forward * range));
-                //StartCoroutine(ShootLine());
-            }
-            //canShoot = false;
+            canShoot = false;
         }
         
     }
@@ -75,7 +79,7 @@ public class LeftTurret : Turrets
         laserLine.enabled = false;
     }
 
-    private IEnumerator FireRateDelay()
+    private IEnumerator LFireRateDelay()
     {
         yield return new WaitForSeconds(fireRate);
         canShoot = true;

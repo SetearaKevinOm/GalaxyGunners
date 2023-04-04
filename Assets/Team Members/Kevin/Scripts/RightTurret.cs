@@ -31,6 +31,7 @@ public class RightTurret : Turrets
         
         if (Input.GetKey(KeyCode.Mouse1))
         {
+            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             ShootRight();
         }
         
@@ -39,6 +40,7 @@ public class RightTurret : Turrets
         
         if(rightHand.GetButton(VRButton.Trigger))
         {
+            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             ShootRight();
         }
     }
@@ -49,14 +51,13 @@ public class RightTurret : Turrets
     {
         if (canShoot)
         {
-            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
                 Quaternion.LookRotation(balistics.transform.forward));
             //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(RFireRateDelay());
             flashParticle.Play();
-            //shootSFX.PlayOneShot(shootSFX.clip);
+            shootSFX.Play();
             RaycastHit hitInfo;
             if (Physics.Raycast(crosshairTransform.position, transform.forward * range, out hitInfo, range))
             {

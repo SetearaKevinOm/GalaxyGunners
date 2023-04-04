@@ -375,6 +375,24 @@ Transform:
   m_Father: {fileID: 1676988090}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &240384472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1426456698730931810, guid: a9e5ffe10da4e1d49979a4475359a560,
+    type: 3}
+  m_PrefabInstance: {fileID: 195683675777016232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &240384476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240384472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b309365c4639442a7293fb97b5adb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &241963618
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &495676700
 AudioListener:
   m_ObjectHideFlags: 0
@@ -873,6 +891,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3253169165792359639, guid: baa5f3781fb923647adc222841b2166d,
     type: 3}
   defaultCrosshairTransform: {fileID: 0}
+  instance: {fileID: 0}
 --- !u!1 &628646502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
+  shakeDuration: 0.15
+  shakeMagnitude: 0.1
 --- !u!1 &1002322615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,6 +2120,7 @@ MonoBehaviour:
   shootSFX: {fileID: 7576822044597323289}
   projectilePrefab: {fileID: 0}
   defaultCrosshairTransform: {fileID: 0}
+  instance: {fileID: 0}
 --- !u!1001 &1324487605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2965,9 +2987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefabs:
-  - {fileID: 7041327370257340693, guid: 4c5c607ed9a9c654abcc7ef6ccc6bbd6, type: 3}
-  - {fileID: 8062240061681212829, guid: b6b6e762cb336ae4b85c3c6464cad999, type: 3}
-  - {fileID: 5185535270346167467, guid: b2600aa35fe41844ba7c0ed8c6896146, type: 3}
+  - {fileID: 275632477902116704, guid: 58d028b903bc1f342a5ebc8cec5aa084, type: 3}
+  - {fileID: 467316824936082518, guid: 1164b97ec1e004c4f8b5d15fce0737bc, type: 3}
+  - {fileID: 1538277377715534710, guid: 1cd8c301f1f1f604db72161842db4a44, type: 3}
   alienFightersPrefab: {fileID: 3383727399755451197, guid: c9cd149447967d54ea287e747030249d,
     type: 3}
 --- !u!4 &1613203152
@@ -3983,7 +4005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2058671496
 Transform:
   m_ObjectHideFlags: 0
@@ -4216,6 +4238,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426456698320830599, guid: a9e5ffe10da4e1d49979a4475359a560,
+        type: 3}
+      propertyPath: m_UsePerEyeCameras
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426456698730931837, guid: a9e5ffe10da4e1d49979a4475359a560,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e5ffe10da4e1d49979a4475359a560, type: 3}
@@ -4574,6 +4606,11 @@ PrefabInstance:
       propertyPath: maxRequiredAsteroids
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 240384476}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a28844a65d01442a79760166555544, type: 3}
 --- !u!4 &2214633136757923672

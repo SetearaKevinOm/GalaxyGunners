@@ -27,8 +27,10 @@ namespace Kevin
         public AudioSource shootSFX;
         public GameObject projectilePrefab;
         public Transform defaultCrosshairTransform;
+        public GameManager instance;
         public void Start()
         {
+            instance = GameManager.Instance;
             flashParticle = barrelFlash.GetComponent<ParticleSystem>();
             crosshair = gameObject.GetComponentInChildren<Crosshair>();
             laserLine = GetComponentInChildren<LineRenderer>();

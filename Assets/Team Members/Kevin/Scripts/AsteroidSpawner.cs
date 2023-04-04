@@ -1,39 +1,44 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Kevin;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class AsteroidSpawner : MonoBehaviour
 {
     public SpawnManager spawnManager;
-    
+    public bool tutorialMode;
     private BoxCollider boxCollider;
     private Vector3 cubeSize;
     private Vector3 cubeCentre;
-
-    public void OnEnable()
+    private GameManager _instance;
+    
+    public void Start()
     {
+        _instance = GameManager.Instance;
         boxCollider = GetComponentInChildren<BoxCollider>();
         cubeSize = boxCollider.size;
         cubeCentre = boxCollider.transform.position;
-    }
-
-    public void Start()
-    {
         StartCoroutine(SpawnAsteroids());
     }
 
     private IEnumerator SpawnAsteroids()
     {
         yield return new WaitForSeconds(5f);
-        
-        for (int i = 0; i < spawnManager.asteroidPrefabs.Count; i++)
+        if (_instance.currentAsteroidsDestroyed >= 20)
         {
-            Instantiate(spawnManager.asteroidPrefabs[i], Randomizer(), Quaternion.identity);
+            tutorialMode = false;
         }
+        if (tutorialMode)
+        {
+            for (int i = 0; i < spawnManager.asteroidPrefabs.Count; i++)
+            {
+                Instantiate(spawnManager.asteroidPrefabs[i], Randomizer(), Quaternion.identity);
+            }
 
-        StartCoroutine(SpawnAsteroids());
+            StartCoroutine(SpawnAsteroids());
+        }
     }
 
     private Vector3 Randomizer()

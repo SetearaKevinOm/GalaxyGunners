@@ -11,7 +11,7 @@ public class AlienFighters : EnemyBase
         if (canMove)
         {
             gameObject.transform.rotation = Quaternion.Euler(Vector3.forward * 100f);
-            transform.LookAt(GameManager.Instance.shipCollisionBox.transform.position);
+            transform.LookAt(GameManager.Instance.enemyThreshold.transform.position);
             transform.position += transform.forward * projectileSpeed * Time.deltaTime;
         }
     }

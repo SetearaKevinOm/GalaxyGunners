@@ -13,10 +13,13 @@ namespace Kevin
         [Header("GameObject References")]
         public GameObject vrAvatar;
         public GameObject shipCollisionBox;
+        public GameObject enemyThreshold;
         
         [Header("Game State Variables")] 
         public int shipHealth;
         public int currentPlayerDamage;
+        public int maxRequiredAsteroids;
+        public int currentAsteroidsDestroyed;
 
         private static GameManager _instance;
 

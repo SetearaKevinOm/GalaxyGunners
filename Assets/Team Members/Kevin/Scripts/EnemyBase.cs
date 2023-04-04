@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Kevin;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
@@ -14,6 +15,10 @@ public class EnemyBase : MonoBehaviour
       health -= dmg;
       if (health <= 0f)
       {
+         if (gameObject.GetComponent<Asteroid>() != null)
+         {
+            GameManager.Instance.currentAsteroidsDestroyed++;
+         }
          Destroy(gameObject);
       }
    }

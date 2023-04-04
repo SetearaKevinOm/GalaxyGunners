@@ -10,13 +10,25 @@ public class UIManager : MonoBehaviour
 {
     public Slider shipHealthSlider;
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI asteroidText;
+    private GameManager _instance;
     public void Start()
     {
-        shipHealthSlider.maxValue = GameManager.Instance.shipHealth;
+        _instance = GameManager.Instance;
+        shipHealthSlider.maxValue = _instance.shipHealth;
     }
     public void Update()
     {
-        shipHealthSlider.value = GameManager.Instance.shipHealth;
-        healthText.text = GameManager.Instance.shipHealth.ToString();
+        shipHealthSlider.value = _instance.shipHealth;
+        healthText.text = _instance.shipHealth.ToString();
+        if (_instance.currentAsteroidsDestroyed < _instance.maxRequiredAsteroids)
+        {
+            asteroidText.text = _instance.currentAsteroidsDestroyed.ToString();
+        }
+        else if (_instance.currentAsteroidsDestroyed >= _instance.maxRequiredAsteroids)
+        {
+            asteroidText.text = _instance.maxRequiredAsteroids.ToString();
+        }
+        
     }
 }

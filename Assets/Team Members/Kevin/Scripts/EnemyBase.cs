@@ -24,6 +24,7 @@ public class EnemyBase : MonoBehaviour
          if (gameObject.GetComponent<Asteroid>() != null)
          {
             GameManager.Instance.currentAsteroidsDestroyed++;
+            GameManager.Instance.EndGame();
          }
          Destroy(gameObject);
       }

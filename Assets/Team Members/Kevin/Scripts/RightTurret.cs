@@ -7,12 +7,15 @@ using UnityEngine;
 
 public class RightTurret : Turrets
 {
+    //public Transform turretTransform;
     public void Update()
     {
         //if (handsConnected == false) return;
         
         turretPivotPoints.LookAt(crosshairTransform.transform.position);
+        //turretTransform.rotation.x = Mathf.Clamp(handTransform.rotation.x,handTransform.rotation.y,handTransform.rotation.z);
         transform.rotation = handTransform.rotation;
+        Debug.Log(handTransform.rotation);
         transform.LookAt(crosshair.transform);
         
         /*RaycastHit hitInfo;
@@ -30,6 +33,11 @@ public class RightTurret : Turrets
             Debug.DrawRay(transform.position, transform.forward * range, Color.red);
             crosshairTransform.position = defaultCrosshairTransform.position;
         }*/
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            instance.PlayNextScript();
+        }
         
         if (Input.GetKey(KeyCode.Mouse1))
         {

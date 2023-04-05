@@ -13,19 +13,30 @@ namespace Kevin
         public UIManager uiManager;
 
         [Header("GameObject References")] 
+        public AsteroidSpawner asteroidSpawner;
         public DialogueManager dialogueManager;
         public VisualizerScript visualizerScript;
         public GameObject vrAvatar;
         public CameraShake cameraShake;
         public GameObject shipCollisionBox;
         public GameObject enemyThreshold;
+        public GameObject tutorialTargets;
         
         [Header("Game State Variables")] 
         public int shipHealth;
         public int currentPlayerDamage;
+        
         public int maxRequiredAsteroids;
         public int currentAsteroidsDestroyed;
+        
+        public bool rightHandConnected;
+        public bool leftHandConnected;
+        public bool bothHandsConnected;
 
+        public int tutorialTargetCount;
+        public bool tutorialStart;
+        
+        
         [Header("Power Ups")] 
         public bool quickFire;
         public bool buckShot;
@@ -66,14 +77,20 @@ namespace Kevin
 
         public void EndGame()
         {
-            if (currentAsteroidsDestroyed >= 5)
+            if (currentAsteroidsDestroyed >= maxRequiredAsteroids)
             {
                 PlayNextScript();
                 //Debug.Log("Ending Game!");
-                //var fader = ScreenFader.Instance;
-                //fader.FadeTo(Color.black,1f);
-                //ExperienceApp.End();
+                var fader = ScreenFader.Instance;
+                fader.FadeTo(Color.black,1f);
+                ExperienceApp.End();
             }
+        }
+
+        public void SpawnAsteroidBegin()
+        {
+            PlayNextScript();
+            asteroidSpawner.BeginSpawn();
         }
 
         /*public void TriggerVibration(AudioClip vibrationAudio, OVRInput.Controller controller)

@@ -10,12 +10,12 @@ public class RightTurret : Turrets
     //public Transform turretTransform;
     public void Update()
     {
-        //if (handsConnected == false) return;
+        if (instance.rightHandConnected == false) return;
         
         turretPivotPoints.LookAt(crosshairTransform.transform.position);
         //turretTransform.rotation.x = Mathf.Clamp(handTransform.rotation.x,handTransform.rotation.y,handTransform.rotation.z);
         transform.rotation = handTransform.rotation;
-        Debug.Log(handTransform.rotation);
+        //Debug.Log(handTransform.rotation);
         transform.LookAt(crosshair.transform);
         
         /*RaycastHit hitInfo;
@@ -57,7 +57,7 @@ public class RightTurret : Turrets
 
     public void HoverEnd()
     {
-        handsConnected = true;
+        //handsConnected = true;
     }
     
     #region ShootRight

@@ -28,7 +28,7 @@ namespace Kevin
         public GameObject projectilePrefab;
         public Transform defaultCrosshairTransform;
         public GameManager instance;
-        public bool handsConnected = true;
+        //public bool handsConnected;
         public void Start()
         {
             instance = GameManager.Instance;

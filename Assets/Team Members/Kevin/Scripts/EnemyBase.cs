@@ -19,6 +19,23 @@ public class EnemyBase : MonoBehaviour
          AudioSource.PlayClipAtPoint(impactSound, GameManager.Instance.vrAvatar.transform.position);
          Instantiate(impactParticle, gameObject.transform.position, Quaternion.identity);
       }
+
+      if (gameObject.GetComponent<TutorialTargets>() != null)
+      {
+         AudioSource.PlayClipAtPoint(impactSound, GameManager.Instance.vrAvatar.transform.position);
+         Instantiate(impactParticle, gameObject.transform.position, Quaternion.identity);
+         if (GameManager.Instance.tutorialTargetCount <= 3)
+         {
+            GameManager.Instance.tutorialTargetCount++;
+         }
+         else
+         {
+            GameManager.Instance.tutorialStart = true;
+            GameManager.Instance.SpawnAsteroidBegin();
+         }
+         
+      }
+         
       if (health <= 0f)
       {
          if (gameObject.GetComponent<Asteroid>() != null)

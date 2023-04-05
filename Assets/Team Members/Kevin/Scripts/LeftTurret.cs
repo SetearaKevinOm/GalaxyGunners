@@ -10,7 +10,7 @@ public class LeftTurret : Turrets
     
     public void Update()
     {
-        //if (handsConnected == false) return;
+        if (instance.leftHandConnected == false) return;
         
         turretPivotPoints.LookAt(crosshairTransform.transform.position);
         transform.rotation = handTransform.rotation;
@@ -44,7 +44,7 @@ public class LeftTurret : Turrets
     
     public void HoverEnd()
     {
-        handsConnected = true;
+        //handsConnected = true;
     }
 
 

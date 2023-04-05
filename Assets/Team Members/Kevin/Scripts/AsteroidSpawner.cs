@@ -8,18 +8,22 @@ using Random = UnityEngine.Random;
 public class AsteroidSpawner : MonoBehaviour
 {
     public SpawnManager spawnManager;
-    public bool tutorialMode;
+    //public bool tutorialMode;
     private BoxCollider boxCollider;
     private Vector3 cubeSize;
     private Vector3 cubeCentre;
     private GameManager _instance;
-    
+    public float timer = 5f;
+
     public void Start()
     {
         _instance = GameManager.Instance;
         boxCollider = GetComponentInChildren<BoxCollider>();
         cubeSize = boxCollider.size;
         cubeCentre = boxCollider.transform.position;
+    }
+    public void BeginSpawn()
+    {
         StartCoroutine(SpawnAsteroids());
     }
 
@@ -28,9 +32,9 @@ public class AsteroidSpawner : MonoBehaviour
         yield return new WaitForSeconds(5f);
         if (_instance.currentAsteroidsDestroyed >= 20)
         {
-            tutorialMode = false;
+            _instance.tutorialStart = false;
         }
-        if (tutorialMode)
+        if (_instance.tutorialStart)
         {
             for (int i = 0; i < spawnManager.asteroidPrefabs.Count; i++)
             {

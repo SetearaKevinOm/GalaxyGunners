@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Kevin;
 using UnityEngine;
 
-public class HandConnection : MonoBehaviour
+public class RightHandConnection : MonoBehaviour
 {
     public GameManager instance;
     public void OnEnable()
@@ -14,7 +14,7 @@ public class HandConnection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        LeftHand leftHand = other.GetComponent<LeftHand>();
+        /*LeftHand leftHand = other.GetComponent<LeftHand>();
         RightHand rightHand = other.GetComponent<RightHand>();
         other.gameObject.SetActive(false);
         if (leftHand)
@@ -32,6 +32,19 @@ public class HandConnection : MonoBehaviour
             instance.PlayNextScript();
             instance.tutorialTargets.SetActive(true);
         }
-        gameObject.SetActive(false);
+        gameObject.SetActive(false);*/
+        RightHand rightHand = other.GetComponent<RightHand>();
+        if (rightHand != null)
+        {
+            other.gameObject.SetActive(false);
+            instance.rightHandConnected = true;
+            gameObject.SetActive(false);
+        }
+        if (instance.leftHandConnected && instance.rightHandConnected)
+        {
+            instance.bothHandsConnected = true;
+            instance.PlayNextScript();
+            instance.tutorialTargets.SetActive(true);
+        }
     }
 }

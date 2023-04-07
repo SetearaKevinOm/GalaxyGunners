@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosiveVFX : MonoBehaviour
+public class VFXBase : MonoBehaviour
 {
     private IEnumerator Start()
     {

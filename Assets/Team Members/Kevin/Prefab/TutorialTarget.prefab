@@ -96,7 +96,9 @@ MonoBehaviour:
   enemyDamage: 0
   projectileSpeed: 0
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
-  impactParticle: {fileID: 2658960854855228939, guid: 07de3c72bff34884a99d21b6dba3a91a,
+  impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
+    type: 3}
+  explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
     type: 3}
 --- !u!135 &8879007738569334873
 SphereCollider:

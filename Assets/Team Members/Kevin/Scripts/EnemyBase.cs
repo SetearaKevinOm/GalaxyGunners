@@ -10,6 +10,7 @@ public class EnemyBase : MonoBehaviour
    public float projectileSpeed;
    public AudioClip impactSound;
    public ParticleSystem impactParticle;
+   public ParticleSystem explosionParticle;
    public void OnClicked(int dmg)
    {
       Debug.Log("Hit!");
@@ -31,12 +32,16 @@ public class EnemyBase : MonoBehaviour
       {
          if (gameObject.GetComponent<Asteroid>() != null)
          {
+            AudioSource.PlayClipAtPoint(impactSound, GameManager.Instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
             GameManager.Instance.currentAsteroidsDestroyed++;
             GameManager.Instance.EndGame();
          }
 
          if (gameObject.GetComponent<TutorialTargets>() != null)
          {
+            AudioSource.PlayClipAtPoint(impactSound, GameManager.Instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
             if (GameManager.Instance.tutorialTargetCount < 3)
             {
                GameManager.Instance.tutorialTargetCount++;

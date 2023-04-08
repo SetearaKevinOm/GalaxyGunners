@@ -12,15 +12,30 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI asteroidText;
     private GameManager _instance;
-    public void Start()
+    
+    public void OnEnable()
     {
         _instance = GameManager.Instance;
         shipHealthSlider.maxValue = _instance.shipHealth;
+        UpdateShipHealth();
+        _instance.shipCollisionBox.GetComponent<ShipCollision>().shipTakeDamage += UpdateShipHealth;
+        _instance.OnAsteroidDestroyed += UpdateAsteroidCount;
     }
-    public void Update()
+
+    public void OnDisable()
+    {
+        _instance.shipCollisionBox.GetComponent<ShipCollision>().shipTakeDamage -= UpdateShipHealth;
+        _instance.OnAsteroidDestroyed -= UpdateAsteroidCount;
+    }
+
+    private void UpdateShipHealth()
     {
         shipHealthSlider.value = _instance.shipHealth;
         healthText.text = _instance.shipHealth.ToString();
+    }
+
+    private void UpdateAsteroidCount()
+    {
         if (_instance.currentAsteroidsDestroyed < _instance.maxRequiredAsteroids)
         {
             asteroidText.text = _instance.currentAsteroidsDestroyed.ToString();
@@ -29,6 +44,5 @@ public class UIManager : MonoBehaviour
         {
             asteroidText.text = _instance.maxRequiredAsteroids.ToString();
         }
-        
     }
 }

@@ -11,17 +11,19 @@ namespace Kevin
     {
         [Header("Component References")]
         public UIManager uiManager;
-
-        [Header("GameObject References")] 
         public AsteroidSpawner asteroidSpawner;
         public DialogueManager dialogueManager;
         public VisualizerScript visualizerScript;
+        public RubbishBin rubbishBinScript;
+        
+        [Header("GameObject References")]
         public GameObject vrAvatar;
         public CameraShake cameraShake;
         public GameObject shipCollisionBox;
         public GameObject enemyThreshold;
         public GameObject tutorialTargets;
         public GameObject handConnectors;
+        
         
         [Header("Game State Variables")] 
         public int shipHealth;
@@ -44,31 +46,39 @@ namespace Kevin
         public bool buckShot;
         public bool laserBeam;
         
-        private static GameManager _instance;
-
-        public static GameManager Instance
-        {
-            get
-            {
-                if(_instance == null)
-                    Debug.LogError("Game Manager is NULL!");
-                return _instance;
-            }
-        }
+        public Action OnAsteroidDestroyed;
         
+        public static GameManager Instance { get; private set; }
         
-
         private void Awake()
         {
-            _instance = this;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            uiManager = GetComponentInChildren<UIManager>();
+            asteroidSpawner = GetComponentInChildren<AsteroidSpawner>();
+            dialogueManager = GetComponentInChildren<DialogueManager>();
+            rubbishBinScript = GetComponentInChildren<RubbishBin>();
         }
+
+
+        public void AsteroidDestroyed()
+        {
+            currentAsteroidsDestroyed++;
+            OnAsteroidDestroyed.Invoke();
+        }
+        
 
         public IEnumerator Start()
         {
             yield return new WaitForSeconds(3f);
             visualizerScript.track = dialogueManager.gameDialogue[0];
             visualizerScript.PlayAudioClip();
-            StartCoroutine(ShowConnectors());
         }
 
         public void PlayNextScript()
@@ -76,12 +86,6 @@ namespace Kevin
             if(visualizerScript.currentAudioIndex >=7)return;
             visualizerScript.currentAudioIndex++;
             visualizerScript.PlayAudioClip();
-        }
-
-        private IEnumerator ShowConnectors()
-        {
-            yield return new WaitForSeconds(6f);
-            handConnectors.SetActive(true);
         }
 
         public void EndGame()

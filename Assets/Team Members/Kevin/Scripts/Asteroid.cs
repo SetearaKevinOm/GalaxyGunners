@@ -7,12 +7,8 @@ using Random = UnityEngine.Random;
 
 public class Asteroid : EnemyBase
 {
-    
-
-    public GameManager instance;
-    public void OnEnable()
+    public void Start()
     {
-        instance = GameManager.Instance;
         projectileSpeed = Random.Range(10f, 15f);
     }
 

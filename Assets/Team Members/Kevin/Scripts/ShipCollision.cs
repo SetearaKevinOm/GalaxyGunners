@@ -10,6 +10,8 @@ public class ShipCollision : MonoBehaviour
     public float shakeDuration;
     public float shakeMagnitude;
 
+    public Action shipTakeDamage;
+
     public IEnumerator Start()
     {
         yield return new WaitForSeconds(2f);
@@ -22,9 +24,13 @@ public class ShipCollision : MonoBehaviour
         if (enemyBase != null)
         {
             instance.shipHealth -= enemyBase.enemyDamage;
+            shipTakeDamage.Invoke();
             //StartCoroutine(instance.cameraShake.Shake(shakeDuration, shakeMagnitude));
-            Destroy(col.gameObject);
+            col.gameObject.SetActive(false);
+            col.gameObject.transform.position = instance.rubbishBinScript.transform.position;
             Debug.Log("Ship has been hit: " + enemyBase.enemyDamage);
         }
     }
+
+    
 }

@@ -1599,7 +1599,7 @@ MonoBehaviour:
   barrelFlash: {fileID: 764300932}
   flashParticle: {fileID: 764300935}
   crosshair: {fileID: 1432191907}
-  fireRate: 0.3
+  fireRate: 0.5
   canShoot: 1
   laserLine: {fileID: 0}
   shootSFX: {fileID: 7576822044597323289}
@@ -1607,6 +1607,7 @@ MonoBehaviour:
     type: 3}
   defaultCrosshairTransform: {fileID: 0}
   instance: {fileID: 0}
+  rapidFire: 0
 --- !u!1 &628646502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2533,6 +2534,7 @@ MonoBehaviour:
     type: 3}
   defaultCrosshairTransform: {fileID: 0}
   instance: {fileID: 0}
+  rapidFire: 0
 --- !u!4 &1221223490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 275632477902116705, guid: 58d028b903bc1f342a5ebc8cec5aa084,

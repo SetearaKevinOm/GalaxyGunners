@@ -102,8 +102,10 @@ public class RightTurret : Turrets
         laserLine.enabled = false;
     }
 
-    private IEnumerator RFireRateDelay()    
+    private IEnumerator RFireRateDelay()
     {
+        if (halfFireRate) fireRate = 0.25f;
+        if (rapidFireRate) fireRate = 0.05f;
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }

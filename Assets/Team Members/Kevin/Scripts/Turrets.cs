@@ -29,6 +29,8 @@ namespace Kevin
         public Transform defaultCrosshairTransform;
         public GameManager instance;
         //public bool handsConnected;
+        public bool halfFireRate;
+        public bool rapidFireRate;
         public void Start()
         {
             instance = GameManager.Instance;

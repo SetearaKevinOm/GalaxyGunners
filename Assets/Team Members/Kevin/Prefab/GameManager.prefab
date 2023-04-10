@@ -240,7 +240,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: /10
+  m_text: /25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c55de1145b61874b997d2eafe73dd5a, type: 2}
   m_sharedMaterial: {fileID: 6927639242933894648, guid: 1c55de1145b61874b997d2eafe73dd5a,
@@ -2972,13 +2972,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e47aa15b030bd7488ef7c2d45ea4e34, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 199
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4124,6 +4124,8 @@ MonoBehaviour:
   visualizerScript: {fileID: 2109537327}
   rubbishBinScript: {fileID: 0}
   objectPool: {fileID: 0}
+  leftTurret: {fileID: 0}
+  rightTurret: {fileID: 0}
   vrAvatar: {fileID: 0}
   cameraShake: {fileID: 0}
   shipCollisionBox: {fileID: 0}
@@ -4138,8 +4140,8 @@ MonoBehaviour:
   currentAsteroidsDestroyed: 0
   maxRequiredAsteroids: 10
   currentAliensDestroyed: 0
-  maxRequiredAliens: 10
-  isColorSchemed: 0
+  maxRequiredAliens: 25
+  isColorSchemed: 1
   quickFire: 0
   buckShot: 0
   laserBeam: 0

@@ -17,7 +17,8 @@ namespace Kevin
         public VisualizerScript visualizerScript;
         public RubbishBin rubbishBinScript;
         public ObjectPool objectPool;
-        public Turrets turrets;
+        public LeftTurret leftTurret;
+        public RightTurret rightTurret;
         
         [Header("GameObject References")]
         public GameObject vrAvatar;
@@ -99,6 +100,8 @@ namespace Kevin
         public void SpawnAsteroidBegin()
         {
             PlayNextScript();
+            leftTurret.halfFireRate = true;
+            rightTurret.halfFireRate = true;
             asteroidSpawner.BeginSpawn();
         }
         public void AsteroidDestroyed()
@@ -117,8 +120,10 @@ namespace Kevin
             }
         }
 
-        public IEnumerator SpawnAlienBegin()
+        private IEnumerator SpawnAlienBegin()
         {
+            leftTurret.rapidFireRate = true;
+            rightTurret.rapidFireRate = true;
             yield return new WaitForSeconds(5f);
             PlayNextScript();
             alienFighterSpawner.BeginSpawn();

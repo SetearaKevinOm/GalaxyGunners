@@ -8,15 +8,12 @@ public class EnemyProjectile : EnemyBase
 {
     private Rigidbody _rb;
     public Transform balisticsTransform;
-    private void OnEnable()
+    
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         enemyDamage = 50;
         projectileSpeed = Random.Range(2500f,3000f);
-    }
-    
-    private void Start()
-    {
         if (_rb == null) return;
         _rb.AddForce(balisticsTransform.transform.forward * projectileSpeed,ForceMode.Force);
     }

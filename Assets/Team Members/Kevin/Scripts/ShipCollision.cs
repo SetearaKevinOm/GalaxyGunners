@@ -28,7 +28,7 @@ public class ShipCollision : MonoBehaviour
             //StartCoroutine(instance.cameraShake.Shake(shakeDuration, shakeMagnitude));
             col.gameObject.SetActive(false);
             col.gameObject.transform.position = instance.rubbishBinScript.transform.position;
-            Debug.Log("Ship has been hit: " + enemyBase.enemyDamage);
+            //Debug.Log("Ship has been hit: " + enemyBase.enemyDamage);
         }
     }
 

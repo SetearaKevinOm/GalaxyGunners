@@ -8,6 +8,7 @@ public class AlienFighters : EnemyBase
     public Transform alienLaser;
     public GameObject alienProjectile;
     public int randomShootDelay;
+    
     public IEnumerator Start()
     {
         yield return new WaitForSeconds(2f);

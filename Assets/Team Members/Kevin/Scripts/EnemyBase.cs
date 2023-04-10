@@ -16,6 +16,7 @@ public class EnemyBase : ColorEnum
    public int enemyDamage;
    public float projectileSpeed;
    public AudioClip impactSound;
+   public AudioClip spawnSound;
    public ParticleSystem impactParticle;
    public ParticleSystem explosionParticle;
    public MyColor myColor;
@@ -30,7 +31,6 @@ public class EnemyBase : ColorEnum
       {
          instance = GameManager.Instance;
       }
-      Debug.Log("Hit!");
       health -= dmg;
       AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
       Instantiate(impactParticle, gameObject.transform.position, Quaternion.identity);

@@ -208,6 +208,7 @@ MonoBehaviour:
   enemyDamage: 25
   projectileSpeed: 25
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
+  spawnSound: {fileID: 8300000, guid: 496a80b98c464f0499f4b1a8384df565, type: 3}
   impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
     type: 3}
   explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,

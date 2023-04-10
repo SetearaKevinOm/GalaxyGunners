@@ -10,8 +10,6 @@ public class LeftTurret : Turrets
     
     public void Update()
     {
-        //if (instance.leftHandConnected == false) return;
-        
         turretPivotPoints.LookAt(crosshairTransform.transform.position);
         transform.rotation = handTransform.rotation;
         transform.LookAt(crosshair.transform);
@@ -33,7 +31,7 @@ public class LeftTurret : Turrets
         
         var device = VRDevice.Device;
         var leftHand = device.SecondaryInputDevice;
-
+        //if (leftHand.GetButton(VRButton.Trigger) == null) return;
         if(leftHand.GetButton(VRButton.Trigger))
         {
             turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
@@ -41,13 +39,6 @@ public class LeftTurret : Turrets
         }
     }
     #region ShootLeft
-    
-    public void HoverEnd()
-    {
-        //handsConnected = true;
-    }
-
-
     void ShootLeft()
     {
         if (canShoot)
@@ -55,7 +46,7 @@ public class LeftTurret : Turrets
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
                 Quaternion.LookRotation(balistics.transform.forward));
             //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
-            go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Red;
+            go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Blue;
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(LFireRateDelay());
             flashParticle.Play();
@@ -66,34 +57,20 @@ public class LeftTurret : Turrets
                 EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
                 if (enemyBase != null)
                 {
-                    //laserLine.SetPosition(1, hitInfo.point);
-                    //StartCoroutine(ShootLine());
                     currentTurretDamage = GameManager.Instance.currentPlayerDamage;
                     enemyBase.OnClicked(currentTurretDamage);
-                }
-                else 
-                {
-                    //laserLine.SetPosition(1,balistics.transform.position + (balistics.transform.forward * range));
-                    //StartCoroutine(ShootLine());
                 }
             }
             canShoot = false;
         }
         
     }
-
-    private IEnumerator ShootLine()
-    {
-        laserLine.enabled = true;
-        yield return new WaitForSeconds(0.5f);
-        laserLine.enabled = false;
-    }
-
     private IEnumerator LFireRateDelay()
     {
+        if (halfFireRate) fireRate = 0.2f;
+        if (rapidFireRate) fireRate = 0.1f;
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }
-
     #endregion
 }

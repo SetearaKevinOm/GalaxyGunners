@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Kevin;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,34 +9,43 @@ public class AlienFighterSpawner : MonoBehaviour
 {
     public SpawnManager spawnManager;
     public int spawnAmount;
-    
+    public GameManager _instance;
     private BoxCollider boxCollider;
     private Vector3 cubeSize;
     private Vector3 cubeCentre;
+    private int randomDelay;
 
     public void OnEnable()
     {
         boxCollider = GetComponentInChildren<BoxCollider>();
         cubeSize = boxCollider.size;
         cubeCentre = boxCollider.transform.position;
+        _instance = GameManager.Instance;
     }
 
-    public void Start()
+    public void BeginSpawn()
     {
         StartCoroutine(SpawnAlienFighters());
     }
 
     private IEnumerator SpawnAlienFighters()
     {
-        yield return new WaitForSeconds(10f);
-        
-        for (int i = 0; i < spawnAmount; i++)
+        randomDelay = Random.Range(3, 7);
+        yield return new WaitForSeconds(randomDelay);
+        if (!_instance.alienPhaseEnd)
         {
-            Instantiate(spawnManager.alienFightersPrefab, Randomizer(), Quaternion.identity);
-
+            for (int i = 0; i < spawnManager.alienFightersPrefab.Count; i++)
+            {
+                Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
+            }
+            StartCoroutine(SpawnAlienFighters());
         }
-
-        StartCoroutine(SpawnAlienFighters());
+        else if(_instance.alienPhaseEnd)
+        {
+            StopCoroutine(SpawnAlienFighters());
+        }
+        
+        
     }
 
     private Vector3 Randomizer()

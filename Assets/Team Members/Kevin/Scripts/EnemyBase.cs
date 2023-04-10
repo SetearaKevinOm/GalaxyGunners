@@ -56,22 +56,28 @@ public class EnemyBase : ColorEnum
             //AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
             //Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
             instance.AsteroidDestroyed();
-            instance.EndGame();
+            instance.EndAsteroidPhase();
          }
 
          if (gameObject.GetComponent<TutorialTargets>() != null)
          {
             //AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
             //Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
-            if (instance.tutorialTargetCount < 3)
+            if (instance.tutorialTargetCount < 4)
             {
                instance.tutorialTargetCount++;
             }
-            if (instance.tutorialTargetCount >= 3)
+            if (instance.tutorialTargetCount >= 4)
             {
                instance.tutorialStart = true;
                instance.SpawnAsteroidBegin();
             }
+         }
+
+         if (gameObject.GetComponent<AlienFighters>() != null)
+         {
+            instance.AlienDestroyed();
+            instance.EndAlienPhase();
          }
          Destroy(gameObject);
       }

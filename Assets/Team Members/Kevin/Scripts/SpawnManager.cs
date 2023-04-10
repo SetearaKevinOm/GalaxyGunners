@@ -8,6 +8,6 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> asteroidPrefabs;
 
     [Header("Alien Fighter Prefabs")]
-    public GameObject alienFightersPrefab;
+    public List<GameObject> alienFightersPrefab;
 
 }

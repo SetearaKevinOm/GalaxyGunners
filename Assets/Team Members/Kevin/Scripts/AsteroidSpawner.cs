@@ -30,11 +30,7 @@ public class AsteroidSpawner : MonoBehaviour
     private IEnumerator SpawnAsteroids()
     {
         yield return new WaitForSeconds(5f);
-        if (_instance.currentAsteroidsDestroyed >= 20)
-        {
-            _instance.tutorialStart = false;
-        }
-        if (_instance.tutorialStart)
+        if(!_instance.asteroidPhaseEnd)
         {
             for (int i = 0; i < spawnManager.asteroidPrefabs.Count; i++)
             {
@@ -42,6 +38,10 @@ public class AsteroidSpawner : MonoBehaviour
             }
 
             StartCoroutine(SpawnAsteroids());
+        }
+        else if (_instance.asteroidPhaseEnd)
+        {
+            StopCoroutine(SpawnAsteroids());
         }
     }
 

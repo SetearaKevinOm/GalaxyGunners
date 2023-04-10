@@ -7,15 +7,10 @@ using UnityEngine;
 
 public class RightTurret : Turrets
 {
-    //public Transform turretTransform;
     public void Update()
     {
-        if (instance.rightHandConnected == false) return;
-        
         turretPivotPoints.LookAt(crosshairTransform.transform.position);
-        //turretTransform.rotation.x = Mathf.Clamp(handTransform.rotation.x,handTransform.rotation.y,handTransform.rotation.z);
         transform.rotation = handTransform.rotation;
-        //Debug.Log(handTransform.rotation);
         transform.LookAt(crosshair.transform);
         
         /*RaycastHit hitInfo;
@@ -54,12 +49,6 @@ public class RightTurret : Turrets
             ShootRight();
         }
     }
-
-    public void HoverEnd()
-    {
-        //handsConnected = true;
-    }
-    
     #region ShootRight
 
     void ShootRight()
@@ -77,7 +66,7 @@ public class RightTurret : Turrets
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
                 Quaternion.LookRotation(balistics.transform.forward));
             //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
-            go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Blue;
+            go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Red;
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(RFireRateDelay());
             flashParticle.Play();
@@ -88,29 +77,14 @@ public class RightTurret : Turrets
                 EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
                 if (enemyBase != null)
                 {
-                    //laserLine.SetPosition(1, hitInfo.point);
-                    //StartCoroutine(ShootLine());
+                    
                     currentTurretDamage = GameManager.Instance.currentPlayerDamage;
                     enemyBase.OnClicked(currentTurretDamage);
-                }
-                else 
-                {
-                    //laserLine.SetPosition(1,balistics.transform.position + (balistics.transform.forward * range));
-                    //StartCoroutine(ShootLine());
                 }
             }
             canShoot = false;
         }
-        
     }
-    
-    private IEnumerator ShootLine()
-    {
-        laserLine.enabled = true;
-        yield return new WaitForSeconds(0.5f);
-        laserLine.enabled = false;
-    }
-
     private IEnumerator RFireRateDelay()
     {
         if (halfFireRate) fireRate = 0.25f;

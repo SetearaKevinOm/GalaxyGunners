@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
-  health: 100
+  health: 75
   enemyDamage: 15
   projectileSpeed: 20
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
@@ -55,6 +55,7 @@ MonoBehaviour:
     type: 3}
   explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
     type: 3}
+  myColor: 1
 --- !u!65 &275632477902116711
 BoxCollider:
   m_ObjectHideFlags: 0

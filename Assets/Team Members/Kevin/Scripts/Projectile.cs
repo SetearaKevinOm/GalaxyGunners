@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Kevin;
 using UnityEngine;
 
 /*public enum ProjectileColor
@@ -30,22 +31,35 @@ public class Projectile : ColorEnum
     private IEnumerator ProjectileLife()
     {
         yield return new WaitForSeconds(3f);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     public void OnTriggerEnter(Collider other)
     {
         EnemyBase enemy = other.GetComponent<EnemyBase>();
-        if (enemy != null && myColor == enemy.myColor)
+        if (GameManager.Instance.isColorSchemed)
         {
-            enemy.OnClicked(projectileDmg);
-            StartCoroutine(ProjectileHitLife());
+            if (enemy != null && myColor == enemy.myColor)
+            {
+                enemy.OnClicked(projectileDmg);
+                StartCoroutine(ProjectileHitLife());
+            }
         }
+        else if(!GameManager.Instance.isColorSchemed)
+        {
+            if (enemy != null)
+            {
+                enemy.OnClicked(projectileDmg);
+                StartCoroutine(ProjectileHitLife());
+            }
+        }
+        
+        
     }
 
     private IEnumerator ProjectileHitLife()
     {
-        yield return new WaitForSeconds(0.25f);
-        gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.05f);
+        Destroy(gameObject);
     }
 }

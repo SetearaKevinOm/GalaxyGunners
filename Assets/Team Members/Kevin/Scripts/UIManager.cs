@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public Slider shipHealthSlider;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI asteroidText;
+    public TextMeshProUGUI alienText;
     private GameManager _instance;
     
     public void OnEnable()
@@ -20,12 +21,14 @@ public class UIManager : MonoBehaviour
         UpdateShipHealth();
         _instance.shipCollisionBox.GetComponent<ShipCollision>().shipTakeDamage += UpdateShipHealth;
         _instance.OnAsteroidDestroyed += UpdateAsteroidCount;
+        _instance.OnAlienDestroyed += UpdateAlientCount;
     }
 
     public void OnDisable()
     {
         _instance.shipCollisionBox.GetComponent<ShipCollision>().shipTakeDamage -= UpdateShipHealth;
         _instance.OnAsteroidDestroyed -= UpdateAsteroidCount;
+        _instance.OnAlienDestroyed -= UpdateAlientCount;
     }
 
     private void UpdateShipHealth()
@@ -43,6 +46,18 @@ public class UIManager : MonoBehaviour
         else if (_instance.currentAsteroidsDestroyed >= _instance.maxRequiredAsteroids)
         {
             asteroidText.text = _instance.maxRequiredAsteroids.ToString();
+        }
+    }
+
+    private void UpdateAlientCount()
+    {
+        if (_instance.currentAliensDestroyed < _instance.maxRequiredAliens)
+        {
+            alienText.text = _instance.currentAliensDestroyed.ToString();
+        }
+        else if (_instance.currentAliensDestroyed >= _instance.maxRequiredAliens)
+        {
+            alienText.text = _instance.maxRequiredAliens.ToString();
         }
     }
 }

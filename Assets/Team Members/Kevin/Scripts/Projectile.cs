@@ -3,16 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+/*public enum ProjectileColor
+{
+    Red,
+    Blue
+}*/
+public class Projectile : ColorEnum
 {
     private Rigidbody _rb;
     public float projectileSpeed;
     public Transform balisticsTransform;
     public int projectileDmg;
+    public MyColor myColor;
+   
     private void OnEnable()
     {
         _rb = GetComponent<Rigidbody>();
-        
     }
     
     private void Start()
@@ -24,13 +30,13 @@ public class Projectile : MonoBehaviour
     private IEnumerator ProjectileLife()
     {
         yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void OnTriggerEnter(Collider other)
     {
         EnemyBase enemy = other.GetComponent<EnemyBase>();
-        if (enemy != null)
+        if (enemy != null && myColor == enemy.myColor)
         {
             enemy.OnClicked(projectileDmg);
             StartCoroutine(ProjectileHitLife());
@@ -40,6 +46,6 @@ public class Projectile : MonoBehaviour
     private IEnumerator ProjectileHitLife()
     {
         yield return new WaitForSeconds(0.25f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

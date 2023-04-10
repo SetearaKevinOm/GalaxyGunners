@@ -15,6 +15,7 @@ namespace Kevin
         public DialogueManager dialogueManager;
         public VisualizerScript visualizerScript;
         public RubbishBin rubbishBinScript;
+        public ObjectPool objectPool;
         
         [Header("GameObject References")]
         public GameObject vrAvatar;
@@ -64,6 +65,7 @@ namespace Kevin
             asteroidSpawner = GetComponentInChildren<AsteroidSpawner>();
             dialogueManager = GetComponentInChildren<DialogueManager>();
             rubbishBinScript = GetComponentInChildren<RubbishBin>();
+            objectPool = GetComponentInChildren<ObjectPool>();
         }
 
 

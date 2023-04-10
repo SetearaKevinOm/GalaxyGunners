@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     
     public void OnEnable()
     {
-        _instance = GameManager.Instance;
+        _instance = GetComponentInParent<GameManager>();
         shipHealthSlider.maxValue = _instance.shipHealth;
         UpdateShipHealth();
         _instance.shipCollisionBox.GetComponent<ShipCollision>().shipTakeDamage += UpdateShipHealth;

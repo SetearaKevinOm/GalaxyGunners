@@ -10,6 +10,7 @@ public class Asteroid : EnemyBase
     public void Start()
     {
         projectileSpeed = Random.Range(10f, 15f);
+        StartCoroutine(Life());
     }
 
     public void Update()
@@ -18,5 +19,10 @@ public class Asteroid : EnemyBase
         //transform.eulerAngles = Vector3.forward * projectileSpeed * Time.deltaTime;
         transform.LookAt(instance.shipCollisionBox.transform.position);
         transform.position += transform.forward * projectileSpeed * Time.deltaTime;
+    }
+
+    private IEnumerator Life()
+    {
+        yield return new WaitForSeconds(30f);
     }
 }

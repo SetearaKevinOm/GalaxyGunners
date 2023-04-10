@@ -66,9 +66,18 @@ public class RightTurret : Turrets
     {
         if (canShoot)
         {
+            /*GameObject go = instance.objectPool.GetPooledObject();
+            if (go != null)
+            {
+                go.transform.position = balistics.transform.position;
+                Quaternion.LookRotation(balistics.transform.forward);
+                go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
+                go.SetActive(true);
+            }*/
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
                 Quaternion.LookRotation(balistics.transform.forward));
             //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
+            go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Blue;
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(RFireRateDelay());
             flashParticle.Play();

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8329180443591404484}
   - component: {fileID: 3087275462452279343}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: RightProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   projectileSpeed: 10000
   balisticsTransform: {fileID: 0}
   projectileDmg: 25
+  myColor: 1
 --- !u!54 &4827846808945838292
 Rigidbody:
   m_ObjectHideFlags: 0

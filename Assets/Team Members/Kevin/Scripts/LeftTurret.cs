@@ -46,7 +46,7 @@ public class LeftTurret : Turrets
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
                 Quaternion.LookRotation(balistics.transform.forward));
             //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
-            go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Blue;
+            //go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Blue;
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(LFireRateDelay());
             flashParticle.Play();

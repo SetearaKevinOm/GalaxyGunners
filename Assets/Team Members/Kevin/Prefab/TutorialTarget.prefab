@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82c97815f01775d4899d78255a373dfe, type: 2}
+  - {fileID: 2100000, guid: e88ea78156fbd814c8e6a135b5d87879, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,14 +92,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ed76d335660b944b5636a2b9e336b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
   health: 50
   enemyDamage: 0
   projectileSpeed: 0
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
+  spawnSound: {fileID: 0}
   impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
     type: 3}
   explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
     type: 3}
+  myColor: 1
 --- !u!135 &8879007738569334873
 SphereCollider:
   m_ObjectHideFlags: 0

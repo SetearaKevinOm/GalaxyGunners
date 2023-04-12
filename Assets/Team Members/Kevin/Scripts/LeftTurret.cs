@@ -14,24 +14,14 @@ public class LeftTurret : Turrets
         transform.rotation = handTransform.rotation;
         transform.LookAt(crosshair.transform);
         
-        /*RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
-        {
-            Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.green);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.forward * range, Color.red);
-        }
-        
-        if (Input.GetKey(KeyCode.Mouse0))
+        /*if (Input.GetKey(KeyCode.Mouse0))
         {
             ShootLeft();
         }*/
         
         var device = VRDevice.Device;
         var leftHand = device.SecondaryInputDevice;
-        //if (leftHand.GetButton(VRButton.Trigger) == null) return;
+        if (leftHand == null) return;
         if(leftHand.GetButton(VRButton.Trigger))
         {
             turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
@@ -43,24 +33,13 @@ public class LeftTurret : Turrets
     {
         if (canShoot)
         {
+            //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
                 Quaternion.LookRotation(balistics.transform.forward));
-            //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
-            //go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Blue;
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(LFireRateDelay());
             flashParticle.Play();
             shootSFX.Play();
-            RaycastHit hitInfo;
-            if (Physics.Raycast(crosshairTransform.position, transform.forward * range, out hitInfo, range))
-            {
-                EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
-                if (enemyBase != null)
-                {
-                    currentTurretDamage = GameManager.Instance.currentPlayerDamage;
-                    enemyBase.OnClicked(currentTurretDamage);
-                }
-            }
             canShoot = false;
         }
         

@@ -41,7 +41,7 @@ public class Projectile : ColorEnum
         {
             if (enemy != null && myColor == enemy.myColor)
             {
-                enemy.OnClicked(projectileDmg);
+                enemy.OnClicked(projectileDmg, transform);
                 StartCoroutine(ProjectileHitLife());
             }
         }
@@ -49,7 +49,7 @@ public class Projectile : ColorEnum
         {
             if (enemy != null)
             {
-                enemy.OnClicked(projectileDmg);
+                enemy.OnClicked(projectileDmg, transform);
                 StartCoroutine(ProjectileHitLife());
             }
         }

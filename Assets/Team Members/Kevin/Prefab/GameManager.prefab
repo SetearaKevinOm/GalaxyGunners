@@ -240,7 +240,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: /25
+  m_text: /30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c55de1145b61874b997d2eafe73dd5a, type: 2}
   m_sharedMaterial: {fileID: 6927639242933894648, guid: 1c55de1145b61874b997d2eafe73dd5a,
@@ -1060,8 +1060,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628646502}
   m_LocalRotation: {x: 0.20751978, y: -0, z: -0, w: 0.97823083}
-  m_LocalPosition: {x: 0, y: 0, z: 66.992905}
-  m_LocalScale: {x: 0.8318834, y: 0.41771132, z: 0.670333}
+  m_LocalPosition: {x: 0, y: 0, z: 68.5}
+  m_LocalScale: {x: 0.5324053, y: 0.26733524, z: 0.42901313}
   m_Children:
   - {fileID: 1002322616}
   - {fileID: 241963619}
@@ -1071,7 +1071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 23.954, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -65.5, y: -14.523911}
+  m_AnchoredPosition: {x: -67.1, y: -11.1}
   m_SizeDelta: {x: 79.4, y: 24.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &628646509
@@ -1891,8 +1891,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853970000}
   m_LocalRotation: {x: 0.20751978, y: -0, z: -0, w: 0.97823083}
-  m_LocalPosition: {x: 0, y: 0, z: 77.5}
-  m_LocalScale: {x: 0.8318834, y: 0.41771132, z: 0.670333}
+  m_LocalPosition: {x: 0, y: 0, z: 63}
+  m_LocalScale: {x: 0.5324053, y: 0.26733524, z: 0.42901313}
   m_Children:
   - {fileID: 2109784848}
   - {fileID: 828863142}
@@ -1902,7 +1902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 23.954, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -65.5, y: 9}
+  m_AnchoredPosition: {x: -67.1, y: -23.6}
   m_SizeDelta: {x: 79.4, y: 24.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &853970007
@@ -2602,7 +2602,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: /10
+  m_text: /15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c55de1145b61874b997d2eafe73dd5a, type: 2}
   m_sharedMaterial: {fileID: 6927639242933894648, guid: 1c55de1145b61874b997d2eafe73dd5a,
@@ -3266,8 +3266,8 @@ MonoBehaviour:
   - {fileID: 275632477902116704, guid: 58d028b903bc1f342a5ebc8cec5aa084, type: 3}
   - {fileID: 467316824936082518, guid: 1164b97ec1e004c4f8b5d15fce0737bc, type: 3}
   alienFightersPrefab:
-  - {fileID: 5590594794471327112, guid: 4b2c1b0962ef15e4bb6770f7d1e00748, type: 3}
-  - {fileID: 3383727399755451197, guid: c9cd149447967d54ea287e747030249d, type: 3}
+  - {fileID: 4627790860292289565, guid: 9db8a680eede1a549a6445ee30987426, type: 3}
+  - {fileID: 249475407611280523, guid: 0fd6a229372104b4ca4040152de0fad4, type: 3}
 --- !u!1 &1642845238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,7 +3683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1613203151}
-  timer: 0
+  timer: 5
 --- !u!1 &2074286562
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,13 +4138,14 @@ MonoBehaviour:
   alienPhaseEnd: 0
   tutorialTargetCount: 0
   currentAsteroidsDestroyed: 0
-  maxRequiredAsteroids: 10
+  maxRequiredAsteroids: 15
   currentAliensDestroyed: 0
-  maxRequiredAliens: 25
-  isColorSchemed: 1
+  maxRequiredAliens: 30
+  isColorSchemed: 0
   quickFire: 0
   buckShot: 0
   laserBeam: 0
+  asteroidsSpawned: []
 --- !u!1 &5065428820301891739
 GameObject:
   m_ObjectHideFlags: 0

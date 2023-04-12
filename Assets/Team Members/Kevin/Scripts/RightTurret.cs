@@ -12,27 +12,11 @@ public class RightTurret : Turrets
         turretPivotPoints.LookAt(crosshairTransform.transform.position);
         transform.rotation = handTransform.rotation;
         transform.LookAt(crosshair.transform);
-        
-        /*RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, transform.forward * range, out hitInfo))
-        {
-            Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.green);
-            EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
-            if (enemyBase != null)
-            {
-                crosshairTransform.position = hitInfo.point;
-            }
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.forward * range, Color.red);
-            crosshairTransform.position = defaultCrosshairTransform.position;
-        }*/
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             instance.PlayNextScript();
-        }
+        }*/
         
         if (Input.GetKey(KeyCode.Mouse1))
         {
@@ -55,6 +39,7 @@ public class RightTurret : Turrets
     {
         if (canShoot)
         {
+            //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
             /*GameObject go = instance.objectPool.GetPooledObject();
             if (go != null)
             {
@@ -65,30 +50,19 @@ public class RightTurret : Turrets
             }*/
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,
                 Quaternion.LookRotation(balistics.transform.forward));
-            //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
-            //go.GetComponent<Projectile>().myColor = ColorEnum.MyColor.Red;
+            
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(RFireRateDelay());
             flashParticle.Play();
             shootSFX.Play();
-            RaycastHit hitInfo;
-            if (Physics.Raycast(crosshairTransform.position, transform.forward * range, out hitInfo, range))
-            {
-                EnemyBase enemyBase = hitInfo.collider.gameObject.GetComponent<EnemyBase>();
-                if (enemyBase != null)
-                {
-                    
-                    currentTurretDamage = GameManager.Instance.currentPlayerDamage;
-                    enemyBase.OnClicked(currentTurretDamage);
-                }
-            }
+            
             canShoot = false;
         }
     }
     private IEnumerator RFireRateDelay()
     {
-        if (halfFireRate) fireRate = 0.25f;
-        if (rapidFireRate) fireRate = 0.05f;
+        if (halfFireRate) fireRate = 0.2f;
+        if (rapidFireRate) fireRate = 0.1f;
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }

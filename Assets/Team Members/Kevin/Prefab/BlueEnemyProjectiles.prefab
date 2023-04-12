@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4318191549266427433}
-  m_Mesh: {fileID: 4300002, guid: afbbf42a35d3ca347aea29a1457035cc, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &4303269631128685143
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -231,6 +231,7 @@ MonoBehaviour:
   enemyDamage: 0
   projectileSpeed: 0
   impactSound: {fileID: 0}
+  spawnSound: {fileID: 0}
   impactParticle: {fileID: 0}
   explosionParticle: {fileID: 0}
   myColor: 0

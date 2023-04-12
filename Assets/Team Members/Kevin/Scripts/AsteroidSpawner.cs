@@ -13,7 +13,8 @@ public class AsteroidSpawner : MonoBehaviour
     private Vector3 cubeSize;
     private Vector3 cubeCentre;
     private GameManager _instance;
-    public float timer = 5f;
+    public float timer;
+    
 
     public void Start()
     {
@@ -29,14 +30,16 @@ public class AsteroidSpawner : MonoBehaviour
 
     private IEnumerator SpawnAsteroids()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(timer);
         if(!_instance.asteroidPhaseEnd)
         {
             for (int i = 0; i < spawnManager.asteroidPrefabs.Count; i++)
             {
-                Instantiate(spawnManager.asteroidPrefabs[i], Randomizer(), Quaternion.identity);
+                GameObject go = Instantiate(spawnManager.asteroidPrefabs[i], Randomizer(), Quaternion.identity);
+                GameObject go2 = Instantiate(spawnManager.asteroidPrefabs[i], Randomizer(), Quaternion.identity);
+                _instance.AsteroidList(go, go2);
+                
             }
-
             StartCoroutine(SpawnAsteroids());
         }
         else if (_instance.asteroidPhaseEnd)

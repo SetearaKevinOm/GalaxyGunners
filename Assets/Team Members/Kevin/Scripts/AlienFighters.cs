@@ -8,12 +8,33 @@ public class AlienFighters : EnemyBase
     public Transform alienLaser;
     public GameObject alienProjectile;
     public int randomShootDelay;
-    
-    public IEnumerator Start()
+    public GameObject forceField;
+    public bool randomForceFields;
+
+    public void Start()
+    {
+        if(randomForceFields) ForceFieldRandomizer();
+        StartCoroutine(DelayedStart());
+    }
+    private IEnumerator DelayedStart()
     {
         yield return new WaitForSeconds(2f);
         randomShootDelay = Random.Range(2, 5);
         ShootPlayer();
+    }
+    
+    private void ForceFieldRandomizer()
+    {
+        forceField = GetComponentInChildren<ForceField>().gameObject;
+        int coinFlip = Random.Range(0, 101);
+        if (coinFlip <= 49)
+        {
+            forceField.SetActive(true);
+        }
+        else
+        {
+            forceField.SetActive(false);
+        }
     }
 
     private void ShootPlayer()

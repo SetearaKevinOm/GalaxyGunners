@@ -8,12 +8,11 @@ using Random = UnityEngine.Random;
 public class AlienFighterSpawner : MonoBehaviour
 {
     public SpawnManager spawnManager;
-    public int spawnAmount;
     public GameManager _instance;
     private BoxCollider boxCollider;
     private Vector3 cubeSize;
     private Vector3 cubeCentre;
-    private int randomDelay;
+    public int spawnTimer;
 
     public void OnEnable()
     {
@@ -30,12 +29,13 @@ public class AlienFighterSpawner : MonoBehaviour
 
     private IEnumerator SpawnAlienFighters()
     {
-        randomDelay = Random.Range(3, 7);
-        yield return new WaitForSeconds(randomDelay);
+        yield return new WaitForSeconds(spawnTimer);
         if (!_instance.alienPhaseEnd)
         {
             for (int i = 0; i < spawnManager.alienFightersPrefab.Count; i++)
             {
+                Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
+                Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
                 Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
             }
             StartCoroutine(SpawnAlienFighters());

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlienLaser : MonoBehaviour
+public class ForceField : EnemyBase
 {
     // Start is called before the first frame update
     void Start()

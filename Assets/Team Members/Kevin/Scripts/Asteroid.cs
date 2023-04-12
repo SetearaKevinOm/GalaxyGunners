@@ -24,5 +24,7 @@ public class Asteroid : EnemyBase
     private IEnumerator Life()
     {
         yield return new WaitForSeconds(30f);
+        GameManager.Instance.asteroidsSpawned.Remove(gameObject);
+        Destroy(gameObject);
     }
 }

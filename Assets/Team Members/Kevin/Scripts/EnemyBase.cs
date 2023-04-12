@@ -3,12 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Kevin;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-/*public enum EnemyColor
-{
-   Red,
-   Blue
-}*/
 public class EnemyBase : ColorEnum
 {
    public GameManager instance;
@@ -25,27 +21,17 @@ public class EnemyBase : ColorEnum
    {
       instance = GameManager.Instance;
    }
-   public void OnClicked(int dmg)
+   public void OnClicked(int dmg, Transform projectilePosition)
    {
       if (instance == null)
       {
          instance = GameManager.Instance;
       }
       health -= dmg;
+      Debug.Log(health);
       AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-      Instantiate(impactParticle, gameObject.transform.position, Quaternion.identity);
-      /*if (gameObject.GetComponent<Asteroid>() != null)
-      {
-         AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-         Instantiate(impactParticle, gameObject.transform.position, Quaternion.identity);
-      }
-
-      if (gameObject.GetComponent<TutorialTargets>() != null)
-      {
-         AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-         Instantiate(impactParticle, gameObject.transform.position, Quaternion.identity);
-        
-      }*/
+      Instantiate(impactParticle, projectilePosition.position, Quaternion.identity);
+      
          
       if (health <= 0f)
       {
@@ -53,16 +39,12 @@ public class EnemyBase : ColorEnum
          Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
          if (gameObject.GetComponent<Asteroid>() != null)
          {
-            //AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-            //Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
-            instance.AsteroidDestroyed();
+            instance.AsteroidDestroyed(gameObject);
             instance.EndAsteroidPhase();
          }
 
          if (gameObject.GetComponent<TutorialTargets>() != null)
          {
-            //AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-            //Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
             if (instance.tutorialTargetCount < 4)
             {
                instance.tutorialTargetCount++;

@@ -104,8 +104,9 @@ namespace Kevin
             rightTurret.halfFireRate = true;
             asteroidSpawner.BeginSpawn();
         }
-        public void AsteroidDestroyed()
+        public void AsteroidDestroyed(GameObject go)
         {
+            asteroidsSpawned.Remove(go);
             currentAsteroidsDestroyed++;
             OnAsteroidDestroyed.Invoke();
         }
@@ -116,7 +117,17 @@ namespace Kevin
                 //Get Rid of remnants
                 asteroidPhaseEnd = true;
                 PlayNextScript();
+                //ClearAsteroids();
                 StartCoroutine(SpawnAlienBegin());
+            }
+        }
+
+        private void ClearAsteroids()
+        {
+            for (int i = 0; i <= asteroidsSpawned.Count; i++)
+            {
+                asteroidsSpawned.Remove(asteroidsSpawned[i]);
+                Destroy(asteroidsSpawned[i]);
             }
         }
 
@@ -153,6 +164,12 @@ namespace Kevin
 
         #endregion
         
+        public List<GameObject> asteroidsSpawned;
+        public void AsteroidList(GameObject go, GameObject go2)
+        {
+            asteroidsSpawned.Add(go);
+            asteroidsSpawned.Add(go2);
+        }
 
         /*public void EndGame()
         {

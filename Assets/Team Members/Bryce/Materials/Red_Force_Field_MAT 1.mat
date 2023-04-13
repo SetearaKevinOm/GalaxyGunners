@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blue_Force_Field_MAT
+  m_Name: Red_Force_Field_MAT 1
   m_Shader: {fileID: 4800000, guid: 735d7942b9386e543b178ec63a06854d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -29,4 +29,4 @@ Material:
     - _IntersectPower: 0
     - _RimStrength: 2.08
     m_Colors:
-    - _Color: {r: 0, g: 0.15383482, b: 1, a: 0}
+    - _Color: {r: 1, g: 0, b: 0, a: 0}

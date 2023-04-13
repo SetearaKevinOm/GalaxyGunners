@@ -13,7 +13,7 @@ public class AlienFighters : EnemyBase
 
     public void Start()
     {
-        if(randomForceFields) ForceFieldRandomizer();
+        //if(randomForceFields) ForceFieldRandomizer();
         StartCoroutine(DelayedStart());
     }
     private IEnumerator DelayedStart()

@@ -78,11 +78,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDialogue:
-  - {fileID: 8300000, guid: 5ab5b766dbccd30499217e5690875bfb, type: 3}
-  - {fileID: 8300000, guid: 64dcdeca7f6d24e4ca7eb23e99f0af30, type: 3}
-  - {fileID: 8300000, guid: 5b6ec6dfa99c7f74d8322b6104a335da, type: 3}
-  - {fileID: 8300000, guid: 18b387b626c8e084ca05b9163cdfbd4e, type: 3}
-  - {fileID: 8300000, guid: e537ffa5f7efbc240b59615a92a10ae0, type: 3}
+  - {fileID: 8300000, guid: f03f61f8bec38ce42b12ede685a98bfb, type: 3}
+  - {fileID: 8300000, guid: ffa8b8912bcb6fb4c974d62285cfdd1d, type: 3}
+  - {fileID: 8300000, guid: a0c46e4b2bdfeab48969b04d97265f71, type: 3}
+  - {fileID: 8300000, guid: 74d2f00a801fd7c40b70c59ad4ccda88, type: 3}
+  - {fileID: 8300000, guid: 2959d37b95e54a948aa2217858af5050, type: 3}
 --- !u!1 &222554013
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: /30
+  m_text: /NA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c55de1145b61874b997d2eafe73dd5a, type: 2}
   m_sharedMaterial: {fileID: 6927639242933894648, guid: 1c55de1145b61874b997d2eafe73dd5a,
@@ -865,6 +865,36 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!1 &392284065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 392284066}
+  m_Layer: 0
+  m_Name: 'LtargetTransform '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &392284066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392284065}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.90051, y: -0.5300958, z: 1.3468664}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2045452050285327764}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450221677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1060,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &495007033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 495007034}
+  m_Layer: 0
+  m_Name: RtargetTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &495007034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495007033}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 31.369488, y: -0.5300958, z: 1.3468664}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2045452050285327764}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628646502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,7 +3302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613203150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.3, y: 6.8, z: 67.65899}
+  m_LocalPosition: {x: -6.3, y: 19.9, z: 67.65899}
   m_LocalScale: {x: 0.3572, y: 0.3572, z: 0.3572}
   m_Children:
   - {fileID: 2061956405}
@@ -3636,8 +3696,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1613203151}
-  spawnAmount: 5
   _instance: {fileID: 0}
+  spawnTimer: 10
+  maxEnemies: 5
+  alienFighters: []
 --- !u!1 &2061956403
 GameObject:
   m_ObjectHideFlags: 0
@@ -4102,6 +4164,8 @@ Transform:
   - {fileID: 174816030}
   - {fileID: 4368736288926573854}
   - {fileID: 8212451822238563967}
+  - {fileID: 495007034}
+  - {fileID: 392284066}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4131,6 +4195,8 @@ MonoBehaviour:
   shipCollisionBox: {fileID: 0}
   enemyThreshold: {fileID: 0}
   tutorialTargets: {fileID: 0}
+  targetTransformR: {fileID: 495007033}
+  targetTransformL: {fileID: 392284065}
   shipHealth: 10000
   currentPlayerDamage: 25
   tutorialStart: 0
@@ -4140,7 +4206,7 @@ MonoBehaviour:
   currentAsteroidsDestroyed: 0
   maxRequiredAsteroids: 15
   currentAliensDestroyed: 0
-  maxRequiredAliens: 30
+  maxRequiredAliens: 100
   isColorSchemed: 0
   quickFire: 0
   buckShot: 0

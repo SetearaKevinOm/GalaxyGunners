@@ -9,13 +9,15 @@ public class ShipCollision : MonoBehaviour
     public GameManager instance;
     public float shakeDuration;
     public float shakeMagnitude;
-
+    public AudioSource shipHitSFX;
+    
     public Action shipTakeDamage;
 
     public IEnumerator Start()
     {
         yield return new WaitForSeconds(2f);
         instance = GameManager.Instance;
+        shipHitSFX = GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter(Collider col)
@@ -24,6 +26,7 @@ public class ShipCollision : MonoBehaviour
         if (enemyBase != null)
         {
             instance.shipHealth -= enemyBase.enemyDamage;
+            if(shipHitSFX != null) shipHitSFX.PlayOneShot(shipHitSFX.clip);
             shipTakeDamage.Invoke();
             //StartCoroutine(instance.cameraShake.Shake(shakeDuration, shakeMagnitude));
             col.gameObject.SetActive(false);

@@ -28,23 +28,27 @@ public class EnemyBase : ColorEnum
          instance = GameManager.Instance;
       }
       health -= dmg;
-      Debug.Log(health);
+      //Debug.Log(health);
       AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
       Instantiate(impactParticle, projectilePosition.position, Quaternion.identity);
       
          
       if (health <= 0f)
       {
-         AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-         Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
+         
          if (gameObject.GetComponent<Asteroid>() != null)
          {
+            AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
             instance.AsteroidDestroyed(gameObject);
             instance.EndAsteroidPhase();
+            Destroy(gameObject);
          }
 
          if (gameObject.GetComponent<TutorialTargets>() != null)
          {
+            AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
             if (instance.tutorialTargetCount < 4)
             {
                instance.tutorialTargetCount++;
@@ -54,14 +58,24 @@ public class EnemyBase : ColorEnum
                instance.tutorialStart = true;
                instance.SpawnAsteroidBegin();
             }
+            Destroy(gameObject);
          }
 
          if (gameObject.GetComponent<AlienFighters>() != null)
          {
-            instance.AlienDestroyed();
+            AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
+            instance.AlienDestroyed(gameObject);
             instance.EndAlienPhase();
+            Destroy(gameObject);
          }
-         Destroy(gameObject);
+
+         if (gameObject.GetComponent<ForceField>() != null)
+         {
+            AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, projectilePosition.position, Quaternion.identity);
+            Destroy(gameObject);
+         }
       }
    }
 }

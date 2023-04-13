@@ -13,6 +13,8 @@ public class AlienFighterSpawner : MonoBehaviour
     private Vector3 cubeSize;
     private Vector3 cubeCentre;
     public int spawnTimer;
+    public int maxEnemies;
+    public List<GameObject> alienFighters;
 
     public void OnEnable()
     {
@@ -34,9 +36,13 @@ public class AlienFighterSpawner : MonoBehaviour
         {
             for (int i = 0; i < spawnManager.alienFightersPrefab.Count; i++)
             {
-                Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
-                Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
-                Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
+                if (alienFighters.Count <= maxEnemies)
+                {
+                    GameObject go = Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
+                    GameObject go2 = Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
+                    alienFighters.Add(go);
+                    alienFighters.Add(go2);
+                }
             }
             StartCoroutine(SpawnAlienFighters());
         }
@@ -50,9 +56,9 @@ public class AlienFighterSpawner : MonoBehaviour
 
     private Vector3 Randomizer()
     {
-        float randomInCubeX = Random.Range(-cubeSize.x/2, cubeSize.x/2);
-        float randomInCubeY = Random.Range(-cubeSize.y/2, cubeSize.y/2);
-        float randomInCubeZ = Random.Range(-cubeSize.z/2, cubeSize.z/2);
+        float randomInCubeX = Random.Range(-cubeSize.x/4, cubeSize.x/4);
+        float randomInCubeY = Random.Range(-cubeSize.y/4, cubeSize.y/4);
+        float randomInCubeZ = Random.Range(-cubeSize.z/4, cubeSize.z/4);
         Vector3 randomPositionInCube = new Vector3(randomInCubeX, randomInCubeY, randomInCubeZ);
         return cubeCentre + randomPositionInCube;
     }

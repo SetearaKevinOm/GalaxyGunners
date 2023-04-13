@@ -19,6 +19,7 @@ namespace Kevin
         public ObjectPool objectPool;
         public LeftTurret leftTurret;
         public RightTurret rightTurret;
+        public AudioManager audioManager;
         
         [Header("GameObject References")]
         public GameObject vrAvatar;
@@ -26,6 +27,8 @@ namespace Kevin
         public GameObject shipCollisionBox;
         public GameObject enemyThreshold;
         public GameObject tutorialTargets;
+        public GameObject targetTransformR;
+        public GameObject targetTransformL;
 
 
         [Header("Game State Variables")] 
@@ -72,6 +75,7 @@ namespace Kevin
             dialogueManager = GetComponentInChildren<DialogueManager>();
             rubbishBinScript = GetComponentInChildren<RubbishBin>();
             objectPool = GetComponentInChildren<ObjectPool>();
+            audioManager = GetComponentInChildren<AudioManager>();
         }
         
         public IEnumerator Start()
@@ -79,13 +83,15 @@ namespace Kevin
             yield return new WaitForSeconds(3f);
             visualizerScript.track = dialogueManager.gameDialogue[0];
             visualizerScript.PlayAudioClip();
+            audioManager.bgmMusic.volume = 0f;
             StartCoroutine(SpawnTutorialMines());
         }
 
         private IEnumerator SpawnTutorialMines()
         {
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(12f);
             tutorialTargets.SetActive(true);
+            audioManager.bgmMusic.volume = 0.05f;
         }
 
         public void PlayNextScript()
@@ -95,13 +101,24 @@ namespace Kevin
             visualizerScript.PlayAudioClip();
         }
 
+        
+
         #region Game Phases
 
         public void SpawnAsteroidBegin()
         {
             PlayNextScript();
-            leftTurret.halfFireRate = true;
-            rightTurret.halfFireRate = true;
+            audioManager.bgmMusic.volume = 0f;
+            StartCoroutine(DelayAsteroidScript());
+            
+        }
+        
+        private IEnumerator DelayAsteroidScript()
+        {
+            yield return new WaitForSeconds(6f);
+            PlayNextScript();
+            yield return new WaitForSeconds(2f);
+            audioManager.bgmMusic.volume = 0.05f;
             asteroidSpawner.BeginSpawn();
         }
         public void AsteroidDestroyed(GameObject go)
@@ -114,6 +131,7 @@ namespace Kevin
         {
             if (currentAsteroidsDestroyed >= maxRequiredAsteroids && asteroidPhaseEnd == false)
             {
+                audioManager.bgmMusic.volume = 0f;
                 //Get Rid of remnants
                 asteroidPhaseEnd = true;
                 PlayNextScript();
@@ -133,14 +151,17 @@ namespace Kevin
 
         private IEnumerator SpawnAlienBegin()
         {
-            leftTurret.rapidFireRate = true;
-            rightTurret.rapidFireRate = true;
+            leftTurret.halfFireRate = true;
+            rightTurret.halfFireRate = true;
             yield return new WaitForSeconds(5f);
             PlayNextScript();
             alienFighterSpawner.BeginSpawn();
+            yield return new WaitForSeconds(6f);
+            audioManager.bgmMusic.volume = 0.05f;
         }
-        public void AlienDestroyed()
+        public void AlienDestroyed(GameObject go)
         {
+            alienFighterSpawner.alienFighters.Remove(go);
             currentAliensDestroyed++;
             OnAlienDestroyed.Invoke();
         }

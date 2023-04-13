@@ -42,7 +42,8 @@ public class Projectile : ColorEnum
             if (enemy != null && myColor == enemy.myColor)
             {
                 enemy.OnClicked(projectileDmg, transform);
-                StartCoroutine(ProjectileHitLife());
+                Destroy(gameObject);
+                //StartCoroutine(ProjectileHitLife());
             }
         }
         else if(!GameManager.Instance.isColorSchemed)
@@ -50,7 +51,8 @@ public class Projectile : ColorEnum
             if (enemy != null)
             {
                 enemy.OnClicked(projectileDmg, transform);
-                StartCoroutine(ProjectileHitLife());
+                Destroy(gameObject);
+                //StartCoroutine(ProjectileHitLife());
             }
         }
         

@@ -34,6 +34,8 @@ namespace Kevin
         [Header("Game State Variables")] 
         public int shipHealth;
         public int currentPlayerDamage;
+        public float gameplayVolume;
+        public float dialogueVolume;
         
         [Header("Game State Logic")]
         public bool tutorialStart;
@@ -83,7 +85,7 @@ namespace Kevin
             yield return new WaitForSeconds(3f);
             visualizerScript.track = dialogueManager.gameDialogue[0];
             visualizerScript.PlayAudioClip();
-            audioManager.bgmMusic.volume = 0f;
+            audioManager.bgmMusic.volume = dialogueVolume;
             StartCoroutine(SpawnTutorialMines());
         }
 
@@ -91,7 +93,7 @@ namespace Kevin
         {
             yield return new WaitForSeconds(12f);
             tutorialTargets.SetActive(true);
-            audioManager.bgmMusic.volume = 0.05f;
+            audioManager.bgmMusic.volume = gameplayVolume;
         }
 
         public void PlayNextScript()
@@ -108,7 +110,7 @@ namespace Kevin
         public void SpawnAsteroidBegin()
         {
             PlayNextScript();
-            audioManager.bgmMusic.volume = 0f;
+            audioManager.bgmMusic.volume = dialogueVolume;
             StartCoroutine(DelayAsteroidScript());
             
         }
@@ -117,13 +119,14 @@ namespace Kevin
         {
             yield return new WaitForSeconds(6f);
             PlayNextScript();
-            yield return new WaitForSeconds(2f);
-            audioManager.bgmMusic.volume = 0.05f;
             asteroidSpawner.BeginSpawn();
+            yield return new WaitForSeconds(7f);
+            audioManager.bgmMusic.volume = gameplayVolume;
         }
         public void AsteroidDestroyed(GameObject go)
         {
             asteroidsSpawned.Remove(go);
+            asteroidSpawner.asteroids.Remove(go);
             currentAsteroidsDestroyed++;
             OnAsteroidDestroyed.Invoke();
         }
@@ -131,7 +134,7 @@ namespace Kevin
         {
             if (currentAsteroidsDestroyed >= maxRequiredAsteroids && asteroidPhaseEnd == false)
             {
-                audioManager.bgmMusic.volume = 0f;
+                audioManager.bgmMusic.volume = dialogueVolume;
                 //Get Rid of remnants
                 asteroidPhaseEnd = true;
                 PlayNextScript();
@@ -151,13 +154,13 @@ namespace Kevin
 
         private IEnumerator SpawnAlienBegin()
         {
-            leftTurret.halfFireRate = true;
-            rightTurret.halfFireRate = true;
             yield return new WaitForSeconds(5f);
             PlayNextScript();
             alienFighterSpawner.BeginSpawn();
-            yield return new WaitForSeconds(6f);
-            audioManager.bgmMusic.volume = 0.05f;
+            yield return new WaitForSeconds(9f);
+            leftTurret.halfFireRate = true;
+            rightTurret.halfFireRate = true;
+            audioManager.bgmMusic.volume = gameplayVolume;
         }
         public void AlienDestroyed(GameObject go)
         {

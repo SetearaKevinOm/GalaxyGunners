@@ -37,7 +37,7 @@ public class VisualizerScript : MonoBehaviour
         //_audioSource.loop = loop;
         track = instance.dialogueManager.gameDialogue[currentAudioIndex];
         _audioSource.clip = track;
-        _audioSource.volume = 0.5f;
+        _audioSource.volume = 1f;
         _audioSource.priority = 1;
         _audioSource.Play();
     }

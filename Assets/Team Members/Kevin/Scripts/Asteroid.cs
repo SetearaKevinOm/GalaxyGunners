@@ -49,6 +49,7 @@ public class Asteroid : EnemyBase
     {
         yield return new WaitForSeconds(30f);
         GameManager.Instance.asteroidsSpawned.Remove(gameObject);
+        GameManager.Instance.asteroidSpawner.asteroids.Remove(gameObject);
         Destroy(gameObject);
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9079138874253334682}
   - component: {fileID: 6932687648822606307}
   - component: {fileID: 7622275410330407293}
+  - component: {fileID: 2550792927235807855}
   m_Layer: 0
   m_Name: BlueFighter
   m_TagString: Untagged
@@ -141,6 +142,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2550792927235807855
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627790860292289565}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b6c2862292d9ce41b5ea812d7abbac9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7983858909251582199
 GameObject:
   m_ObjectHideFlags: 0

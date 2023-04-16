@@ -150,7 +150,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4627790860292289565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2b6c2862292d9ce41b5ea812d7abbac9, type: 2}
   m_CullingMode: 0
@@ -250,16 +250,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8530502262048654862}
     m_Modifications:
-    - target: {fileID: 5232064399669306499, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
-        type: 3}
-      propertyPath: m_Name
-      value: ForceShield
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232064399669306499, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5232064399669306508, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -330,6 +320,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5232064399669306499, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ForceShield
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232064399669306499, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5232064398763645510, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
         type: 3}
       propertyPath: health
@@ -365,11 +365,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8530502262048654862}
     m_Modifications:
-    - target: {fileID: 2448673330573307425, guid: c19d33b92ace5054590293f8e6692ebd,
-        type: 3}
-      propertyPath: m_Name
-      value: ForceField_MAT
-      objectReference: {fileID: 0}
     - target: {fileID: 7886792285875194684, guid: c19d33b92ace5054590293f8e6692ebd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -439,6 +434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5574
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448673330573307425, guid: c19d33b92ace5054590293f8e6692ebd,
+        type: 3}
+      propertyPath: m_Name
+      value: ForceField_MAT
       objectReference: {fileID: 0}
     - target: {fileID: 3646637500046098280, guid: c19d33b92ace5054590293f8e6692ebd,
         type: 3}

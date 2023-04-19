@@ -55,6 +55,7 @@ MonoBehaviour:
   explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
     type: 3}
   myColor: 0
+  wrongColorSFX: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
   alienLaser: {fileID: 6164478019046544777}
   alienProjectile: {fileID: 4318191549266427433, guid: 14605829151505840b1ecb31ee9a6eab,
     type: 3}
@@ -149,8 +150,7 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9079138874253334682, guid: 9db8a680eede1a549a6445ee30987426, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9db8a680eede1a549a6445ee30987426, type: 3}
 --- !u!4 &5558167497677319039 stripped
 Transform:

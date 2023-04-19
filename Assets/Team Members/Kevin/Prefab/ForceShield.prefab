@@ -71,6 +71,7 @@ MonoBehaviour:
   explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
     type: 3}
   myColor: 1
+  wrongColorSFX: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
 --- !u!54 &122897032
 Rigidbody:
   m_ObjectHideFlags: 0

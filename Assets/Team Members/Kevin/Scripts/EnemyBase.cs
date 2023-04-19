@@ -16,10 +16,19 @@ public class EnemyBase : ColorEnum
    public ParticleSystem impactParticle;
    public ParticleSystem explosionParticle;
    public MyColor myColor;
+   public AudioClip wrongColorSFX;
    
    public void OnEnable()
    {
       instance = GameManager.Instance;
+   }
+
+   public void WrongColor(Transform projectilePosition)
+   {
+      //Debug.Log("Wrong Color!");
+      AudioSource.PlayClipAtPoint(wrongColorSFX, instance.vrAvatar.transform.position);
+      //play sound 
+      //show ui
    }
    public void OnClicked(int dmg, Transform projectilePosition)
    {

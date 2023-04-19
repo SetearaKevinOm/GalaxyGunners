@@ -51,6 +51,17 @@ public class Projectile : ColorEnum
                 enemyParent.OnClicked(projectileDmg, transform);
                 Destroy(gameObject);
             }
+            else if (enemy != null && myColor != enemy.myColor)
+            {
+                enemy.WrongColor(transform);
+                Destroy(gameObject);
+                //StartCoroutine(ProjectileHitLife());
+            }
+            else if (enemyParent != null && myColor != enemy.myColor)
+            {
+                enemyParent.WrongColor(transform);
+                Destroy(gameObject);
+            }
         }
         else if(!GameManager.Instance.isColorSchemed)
         {

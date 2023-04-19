@@ -11,7 +11,6 @@ public class AlienFighters : EnemyBase
     public int randomShootDelay;
     public GameObject forceField;
     public bool randomForceFields;
-   
 
     [Header("Hacky AI")] 
     public bool hack;

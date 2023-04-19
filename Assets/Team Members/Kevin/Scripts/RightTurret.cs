@@ -54,8 +54,7 @@ public class RightTurret : Turrets
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(RFireRateDelay());
             flashParticle.Play();
-            shootSFX.Play();
-            
+            shootSFX.PlayOneShot(shootSFX.clip);
             canShoot = false;
         }
     }

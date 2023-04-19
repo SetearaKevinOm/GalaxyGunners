@@ -1513,6 +1513,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueFighterBase
       objectReference: {fileID: 0}
+    - target: {fileID: 712736293858575135, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 731807434111120864, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8145,6 +8150,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedFighterBase
       objectReference: {fileID: 0}
+    - target: {fileID: 8846631398587591903, guid: e685aebf409ae02448bbe768a6effe9d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8846631398587591902, guid: e685aebf409ae02448bbe768a6effe9d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9160,7 +9170,7 @@ PrefabInstance:
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}
       propertyPath: isColorSchemed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}

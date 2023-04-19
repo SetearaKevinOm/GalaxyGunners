@@ -22,6 +22,7 @@ public class AlienFighters : EnemyBase
     
     public void Start()
     {
+        AudioSource.PlayClipAtPoint(spawnSound, transform.position);
         //if(randomForceFields) ForceFieldRandomizer();
         StartCoroutine(DelayedStart());
     }

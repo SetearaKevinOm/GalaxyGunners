@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Kevin;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class AlienFighters : EnemyBase
 {
@@ -10,7 +11,16 @@ public class AlienFighters : EnemyBase
     public int randomShootDelay;
     public GameObject forceField;
     public bool randomForceFields;
+   
 
+    [Header("Hacky AI")] 
+    public bool hack;
+    public bool goingLeft;
+    public bool goingRight;
+    public float speed;
+    public float moveRate;
+    public float timer;
+    
     public void Start()
     {
         //if(randomForceFields) ForceFieldRandomizer();
@@ -19,11 +29,16 @@ public class AlienFighters : EnemyBase
     private IEnumerator DelayedStart()
     {
         yield return new WaitForSeconds(2f);
+        int coinFlip = Random.Range(0, 100);
+        if (coinFlip < 50)goingLeft = true;
+        else goingRight = true;
+        
         randomShootDelay = Random.Range(2, 5);
+        speed = Random.Range(5f, 10f);
         ShootPlayer();
     }
-    
-    private void ForceFieldRandomizer()
+
+    /*private void ForceFieldRandomizer()
     {
         forceField = GetComponentInChildren<ForceField>().gameObject;
         int coinFlip = Random.Range(0, 101);
@@ -35,7 +50,7 @@ public class AlienFighters : EnemyBase
         {
             forceField.SetActive(false);
         }
-    }
+    }*/
 
     private void ShootPlayer()
     {
@@ -53,5 +68,33 @@ public class AlienFighters : EnemyBase
     public void Update()
     {
         transform.LookAt(GameManager.Instance.shipCollisionBox.transform.position);
+        if (!hack) return;
+        timer += Time.deltaTime;
+        if (timer >= 5f)
+        {
+            ChangeDirection();
+            timer = 0f;
+        }
+        
+        if (goingLeft) Moving(Vector3.left);
+        if (goingRight) Moving(Vector3.right);
+    }
+
+    private void ChangeDirection()
+    {
+        if (goingLeft)
+        {
+            goingLeft = false;
+            goingRight = true;
+        }
+        else if (goingRight)
+        {
+            goingLeft = true;
+            goingRight = false;
+        }
+    }
+    private void Moving(Vector3 direction)
+    {
+        transform.position += direction * (Time.deltaTime * speed);
     }
 }

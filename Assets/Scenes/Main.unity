@@ -8110,7 +8110,7 @@ PrefabInstance:
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}
       propertyPath: isColorSchemed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}
@@ -8121,6 +8121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueVolume
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: maxRequiredAsteroids
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1868549772, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8190,6 +8195,16 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 1613203151, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: alienFightersPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 8846631398587591903, guid: e685aebf409ae02448bbe768a6effe9d,
+        type: 3}
+    - target: {fileID: 1613203151, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: alienFightersPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 712736293858575135, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a28844a65d01442a79760166555544, type: 3}
 --- !u!4 &2214633136757923672

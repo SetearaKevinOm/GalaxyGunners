@@ -99,7 +99,7 @@ MonoBehaviour:
   instance: {fileID: 0}
   health: 100
   enemyDamage: 25
-  projectileSpeed: 25
+  projectileSpeed: 50
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
   spawnSound: {fileID: 8300000, guid: 496a80b98c464f0499f4b1a8384df565, type: 3}
   impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
@@ -113,6 +113,12 @@ MonoBehaviour:
   randomShootDelay: 0
   forceField: {fileID: 0}
   randomForceFields: 1
+  hack: 0
+  goingLeft: 0
+  goingRight: 0
+  speed: 0
+  moveRate: 0
+  timer: 0
 --- !u!135 &2556563978072879477
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -150,11 +156,11 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249475407611280523}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2b6c2862292d9ce41b5ea812d7abbac9, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -250,6 +256,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3831729128659963544}
     m_Modifications:
+    - target: {fileID: 2448673330573307425, guid: c19d33b92ace5054590293f8e6692ebd,
+        type: 3}
+      propertyPath: m_Name
+      value: ForceField_MAT (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7886792285875194684, guid: c19d33b92ace5054590293f8e6692ebd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -320,11 +331,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5574
       objectReference: {fileID: 0}
-    - target: {fileID: 2448673330573307425, guid: c19d33b92ace5054590293f8e6692ebd,
-        type: 3}
-      propertyPath: m_Name
-      value: ForceField_MAT (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3646637500046098280, guid: c19d33b92ace5054590293f8e6692ebd,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -366,6 +372,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3831729128659963544}
     m_Modifications:
+    - target: {fileID: 5232064399669306499, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ForceShield
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232064399669306499, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5232064399669306508, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -435,16 +451,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232064399669306499, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
-        type: 3}
-      propertyPath: m_Name
-      value: ForceShield
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232064399669306499, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5232064398763645510, guid: a2ef7e2cd10e25c45b38772bd0bb32b9,
         type: 3}

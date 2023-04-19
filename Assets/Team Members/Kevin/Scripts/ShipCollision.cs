@@ -23,9 +23,20 @@ public class ShipCollision : MonoBehaviour
     public void OnTriggerEnter(Collider col)
     {
         EnemyBase enemyBase = col.GetComponent<EnemyBase>();
+        EnemyBase enemyChildren = col.GetComponentInChildren<EnemyBase>();
         if (enemyBase != null)
         {
             instance.shipHealth -= enemyBase.enemyDamage;
+            if(shipHitSFX != null) shipHitSFX.PlayOneShot(shipHitSFX.clip);
+            shipTakeDamage.Invoke();
+            //StartCoroutine(instance.cameraShake.Shake(shakeDuration, shakeMagnitude));
+            col.gameObject.SetActive(false);
+            col.gameObject.transform.position = instance.rubbishBinScript.transform.position;
+            //Debug.Log("Ship has been hit: " + enemyBase.enemyDamage);
+        }
+        else if (enemyChildren != null)
+        {
+            instance.shipHealth -= enemyChildren.enemyDamage;
             if(shipHitSFX != null) shipHitSFX.PlayOneShot(shipHitSFX.clip);
             shipTakeDamage.Invoke();
             //StartCoroutine(instance.cameraShake.Shake(shakeDuration, shakeMagnitude));

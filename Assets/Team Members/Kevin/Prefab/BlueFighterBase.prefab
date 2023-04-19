@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &712736293858575135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 731807434111120864}
+  - component: {fileID: 1683688499}
+  m_Layer: 0
+  m_Name: BlueFighterBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &731807434111120864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712736293858575135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5558167497677319039}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1683688499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712736293858575135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73cce9b286f501b4d86ed2462c49116f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  health: 100
+  enemyDamage: 25
+  projectileSpeed: 25
+  impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
+  spawnSound: {fileID: 8300000, guid: 496a80b98c464f0499f4b1a8384df565, type: 3}
+  impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
+    type: 3}
+  explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
+    type: 3}
+  myColor: 0
+  alienLaser: {fileID: 6164478019046544777}
+  alienProjectile: {fileID: 4318191549266427433, guid: 14605829151505840b1ecb31ee9a6eab,
+    type: 3}
+  randomShootDelay: 0
+  forceField: {fileID: 0}
+  randomForceFields: 1
+  hack: 0
+  goingLeft: 0
+  goingRight: 0
+  speed: 0
+  moveRate: 0
+  timer: 0
+--- !u!1001 &4269691140065602929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 731807434111120864}
+    m_Modifications:
+    - target: {fileID: 4627790860292289565, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueFighter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550792927235807855, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550792927235807855, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550792927235807855, guid: 9db8a680eede1a549a6445ee30987426,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9079138874253334682, guid: 9db8a680eede1a549a6445ee30987426, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 9db8a680eede1a549a6445ee30987426, type: 3}
+--- !u!4 &5558167497677319039 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8530502262048654862, guid: 9db8a680eede1a549a6445ee30987426,
+    type: 3}
+  m_PrefabInstance: {fileID: 4269691140065602929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6164478019046544777 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7983858909251582200, guid: 9db8a680eede1a549a6445ee30987426,
+    type: 3}
+  m_PrefabInstance: {fileID: 4269691140065602929}
+  m_PrefabAsset: {fileID: 0}

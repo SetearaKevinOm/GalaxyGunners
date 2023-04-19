@@ -37,6 +37,7 @@ public class Projectile : ColorEnum
     public void OnTriggerEnter(Collider other)
     {
         EnemyBase enemy = other.GetComponent<EnemyBase>();
+        EnemyBase enemyParent = other.GetComponentInParent<EnemyBase>();
         if (GameManager.Instance.isColorSchemed)
         {
             if (enemy != null && myColor == enemy.myColor)
@@ -44,6 +45,11 @@ public class Projectile : ColorEnum
                 enemy.OnClicked(projectileDmg, transform);
                 Destroy(gameObject);
                 //StartCoroutine(ProjectileHitLife());
+            }
+            else if (enemyParent != null && myColor == enemy.myColor)
+            {
+                enemyParent.OnClicked(projectileDmg, transform);
+                Destroy(gameObject);
             }
         }
         else if(!GameManager.Instance.isColorSchemed)
@@ -53,6 +59,11 @@ public class Projectile : ColorEnum
                 enemy.OnClicked(projectileDmg, transform);
                 Destroy(gameObject);
                 //StartCoroutine(ProjectileHitLife());
+            }
+            else if (enemyParent != null)
+            {
+                enemyParent.OnClicked(projectileDmg, transform);
+                Destroy(gameObject);
             }
         }
         

@@ -13,7 +13,7 @@ public class EnemyProjectile : EnemyBase
     {
         _rb = GetComponent<Rigidbody>();
         enemyDamage = 50;
-        projectileSpeed = Random.Range(2500f,3000f);
+        projectileSpeed = Random.Range(7500f,8000f);
         if (_rb == null) return;
         _rb.AddForce(balisticsTransform.transform.forward * projectileSpeed,ForceMode.Force);
     }

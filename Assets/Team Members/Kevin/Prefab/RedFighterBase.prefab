@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8846631398587591903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8846631398587591902}
+  - component: {fileID: 311141352}
+  m_Layer: 0
+  m_Name: RedFighterBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8846631398587591902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846631398587591903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5757998588874129330}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &311141352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846631398587591903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73cce9b286f501b4d86ed2462c49116f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  health: 100
+  enemyDamage: 25
+  projectileSpeed: 50
+  impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
+  spawnSound: {fileID: 8300000, guid: 496a80b98c464f0499f4b1a8384df565, type: 3}
+  impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
+    type: 3}
+  explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
+    type: 3}
+  myColor: 1
+  alienLaser: {fileID: 6288914905833554244}
+  alienProjectile: {fileID: 4640908850135307527, guid: 9011b49834bf9c94e98d74be5af6d1af,
+    type: 3}
+  randomShootDelay: 0
+  forceField: {fileID: 0}
+  randomForceFields: 1
+  hack: 0
+  goingLeft: 0
+  goingRight: 0
+  speed: 0
+  moveRate: 0
+  timer: 0
+--- !u!1001 &8846631399034302762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8846631398587591902}
+    m_Modifications:
+    - target: {fileID: 249475407611280523, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_Name
+      value: RedFighter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556563978072879477, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2559701890908272423, guid: 0fd6a229372104b4ca4040152de0fad4,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4517378126767427596, guid: 0fd6a229372104b4ca4040152de0fad4, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0fd6a229372104b4ca4040152de0fad4, type: 3}
+--- !u!4 &5757998588874129330 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3831729128659963544, guid: 0fd6a229372104b4ca4040152de0fad4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8846631399034302762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6288914905833554244 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3279529462565171310, guid: 0fd6a229372104b4ca4040152de0fad4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8846631399034302762}
+  m_PrefabAsset: {fileID: 0}

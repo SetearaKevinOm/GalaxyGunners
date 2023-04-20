@@ -36,8 +36,6 @@ public class UIManager : MonoBehaviour
     {
         shipHealthSlider.value = _instance.shipHealth;
         healthText.text = _instance.shipHealth.ToString();
-
-        uiShipRef.GetComponent<ShipDamageUI>().ShipDamaged();
     }
 
     private void UpdateAsteroidCount()

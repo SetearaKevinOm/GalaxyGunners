@@ -12,7 +12,8 @@ public class ShipDamageUI : MonoBehaviour
     public GameObject uiRef;
     private Image currentImage;
     public GameManager managerRef;
-
+    public Light warningLight;
+    public AudioSource dmgSFX;
     
     public IEnumerator Start()
     {
@@ -24,11 +25,25 @@ public class ShipDamageUI : MonoBehaviour
     public void ShipDamaged()
     {
         currentImage.sprite = redShip;
-        Invoke("ResetImage",0.5f);
+        warningLight.gameObject.SetActive(true);
+        dmgSFX.Play();
+        StartCoroutine(ResetState());
     }
 
-    public void ResetImage()
+    private IEnumerator ResetState()
     {
+        yield return new WaitForSeconds(0.5f);
+        currentImage.sprite = redShip;
+        yield return new WaitForSeconds(0.5f);
+        currentImage.sprite = blueShip;
+        warningLight.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        currentImage.sprite = redShip;
+        yield return new WaitForSeconds(0.5f);
+        currentImage.sprite = blueShip; 
+        yield return new WaitForSeconds(0.5f);
+        currentImage.sprite = redShip;
+        yield return new WaitForSeconds(0.5f);
         currentImage.sprite = blueShip;
     }
 }

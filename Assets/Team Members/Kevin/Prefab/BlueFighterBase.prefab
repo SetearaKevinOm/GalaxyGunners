@@ -48,8 +48,8 @@ MonoBehaviour:
   health: 100
   enemyDamage: 25
   projectileSpeed: 25
-  impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
-  spawnSound: {fileID: 8300000, guid: 7adf0111f7c027f4e80110c0887ed610, type: 3}
+  impactSound: {fileID: 8300000, guid: f146e1f624e91034ca7203a7614c26f2, type: 3}
+  spawnSound: {fileID: 8300000, guid: 065ddc88c6d5f034eb52b509141210a8, type: 3}
   impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
     type: 3}
   explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
@@ -150,7 +150,8 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9079138874253334682, guid: 9db8a680eede1a549a6445ee30987426, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9db8a680eede1a549a6445ee30987426, type: 3}
 --- !u!4 &5558167497677319039 stripped
 Transform:

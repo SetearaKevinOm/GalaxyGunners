@@ -33,7 +33,7 @@ public class AlienFighters : EnemyBase
         if (coinFlip < 50)goingLeft = true;
         else goingRight = true;
         
-        randomShootDelay = Random.Range(2, 5);
+        randomShootDelay = Random.Range(3, 10);
         speed = Random.Range(5f, 10f);
         ShootPlayer();
     }
@@ -54,6 +54,7 @@ public class AlienFighters : EnemyBase
 
     private void ShootPlayer()
     {
+        if (gameObject == null) return;
         GameObject go = Instantiate(alienProjectile, alienLaser.position,
             Quaternion.LookRotation(alienLaser.transform.forward));
         go.GetComponent<EnemyProjectile>().balisticsTransform = alienLaser;
@@ -63,11 +64,12 @@ public class AlienFighters : EnemyBase
     private IEnumerator ShootDelay()
     {
         yield return new WaitForSeconds(randomShootDelay);
-        ShootPlayer();
+        if (gameObject != null) ShootPlayer();
     }
     public void Update()
     {
-        transform.LookAt(GameManager.Instance.shipCollisionBox.transform.position);
+        if (GameManager.Instance == null) return;
+        transform.LookAt(GameManager.Instance .shipCollisionBox.transform.position);
         if (!hack) return;
         timer += Time.deltaTime;
         if (timer >= 5f)

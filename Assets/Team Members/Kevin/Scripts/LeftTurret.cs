@@ -16,6 +16,7 @@ public class LeftTurret : Turrets
         
         /*if (Input.GetKey(KeyCode.Mouse0))
         {
+            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             ShootLeft();
         }*/
         
@@ -46,9 +47,9 @@ public class LeftTurret : Turrets
     }
     private IEnumerator LFireRateDelay()
     {
-        if (halfFireRate) fireRate = 0.2f;
-        if (rapidFireRate) fireRate = 0.1f;
-        if (rapidrapidFireRate) fireRate = 0.05f;
+        if (halfFireRate) fireRate = 0.3f;
+        if (rapidFireRate) fireRate = 0.2f;
+        if (rapidrapidFireRate) fireRate = 0.1f;
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }

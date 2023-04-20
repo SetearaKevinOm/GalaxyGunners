@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731807434111120864}
   - component: {fileID: 1683688499}
+  - component: {fileID: 1851109615}
   m_Layer: 0
   m_Name: BlueFighterBase
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
-  health: 150
+  health: 50
   enemyDamage: 50
   projectileSpeed: 25
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
@@ -68,6 +69,19 @@ MonoBehaviour:
   speed: 0
   moveRate: 0
   timer: 0
+--- !u!135 &1851109615
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712736293858575135}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5.83
+  m_Center: {x: 0.000002861023, y: -0.0000007748604, z: -1.31}
 --- !u!1 &5489446056260061355
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,7 +4937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
-  health: 150
+  health: 100
   enemyDamage: 0
   projectileSpeed: 0
   impactSound: {fileID: 8300000, guid: f146e1f624e91034ca7203a7614c26f2, type: 3}
@@ -5055,7 +5069,7 @@ SphereCollider:
   m_GameObject: {fileID: 8897364901832120684}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 5.83
   m_Center: {x: 0.000002861023, y: -0.0000007748604, z: -1.31}

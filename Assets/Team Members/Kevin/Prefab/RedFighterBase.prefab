@@ -4885,7 +4885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
-  health: 150
+  health: 100
   enemyDamage: 0
   projectileSpeed: 0
   impactSound: {fileID: 8300000, guid: f146e1f624e91034ca7203a7614c26f2, type: 3}
@@ -4987,7 +4987,7 @@ SphereCollider:
   m_GameObject: {fileID: 8769595811842231713}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 5.83
   m_Center: {x: 0.000002861023, y: -0.0000007748604, z: -1.41}
@@ -5036,6 +5036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8846631398587591902}
   - component: {fileID: 311141352}
+  - component: {fileID: 1422749577}
   m_Layer: 0
   m_Name: RedFighterBase
   m_TagString: Untagged
@@ -5071,7 +5072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
-  health: 150
+  health: 50
   enemyDamage: 50
   projectileSpeed: 50
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
@@ -5094,3 +5095,16 @@ MonoBehaviour:
   speed: 0
   moveRate: 0
   timer: 0
+--- !u!135 &1422749577
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846631398587591903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5.83
+  m_Center: {x: 0.000002861023, y: -0.0000007748604, z: -1.41}

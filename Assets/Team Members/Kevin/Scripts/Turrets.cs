@@ -31,6 +31,7 @@ namespace Kevin
         //public bool handsConnected;
         public bool halfFireRate;
         public bool rapidFireRate;
+        public bool rapidrapidFireRate;
         public void Start()
         {
             instance = GameManager.Instance;

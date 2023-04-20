@@ -71,7 +71,14 @@ public class EnemyBase : ColorEnum
             }
             Destroy(gameObject);
          }
-
+         
+         if (gameObject.GetComponent<ForceField>() != null)
+         {
+            AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, projectilePosition.position, Quaternion.identity);
+            Destroy(gameObject);
+         }
+         
          if (gameObject.GetComponent<AlienFighters>() != null)
          {
             AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
@@ -80,18 +87,19 @@ public class EnemyBase : ColorEnum
             instance.EndAlienPhase();
             Destroy(gameObject);
          }
-
-         if (gameObject.GetComponent<ForceField>() != null)
-         {
-            AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-            Instantiate(explosionParticle, projectilePosition.position, Quaternion.identity);
-            Destroy(gameObject);
-         }
-         
          if (gameObject.GetComponent<BossTurrets>() != null)
          {
             AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
             Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
+            instance.TurretDestroyed(gameObject);
+            Destroy(gameObject);
+         }
+
+         if (gameObject.GetComponent<Boss>() != null)
+         {
+            AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
+            instance.StartEndPhase();
             Destroy(gameObject);
          }
       }

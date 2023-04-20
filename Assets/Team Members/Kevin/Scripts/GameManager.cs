@@ -29,6 +29,7 @@ namespace Kevin
         public GameObject tutorialTargets;
         public GameObject targetTransformR;
         public GameObject targetTransformL;
+        public GameObject bossShip;
 
 
         [Header("Game State Variables")] 
@@ -47,6 +48,7 @@ namespace Kevin
         public int maxRequiredAsteroids;
         public int currentAliensDestroyed;
         public int maxRequiredAliens;
+        public int turretsDestroyedCount;
         
         
         public bool isColorSchemed;
@@ -84,6 +86,7 @@ namespace Kevin
         {
             yield return new WaitForSeconds(3f);
             visualizerScript.track = dialogueManager.gameDialogue[0];
+            //intro
             visualizerScript.PlayAudioClip();
             audioManager.bgmMusic.volume = dialogueVolume;
             StartCoroutine(SpawnTutorialMines());
@@ -109,6 +112,7 @@ namespace Kevin
 
         public void SpawnAsteroidBegin()
         {
+            //complete tutorial
             PlayNextScript();
             audioManager.bgmMusic.volume = dialogueVolume;
             StartCoroutine(DelayAsteroidScript());
@@ -117,10 +121,12 @@ namespace Kevin
         
         private IEnumerator DelayAsteroidScript()
         {
-            yield return new WaitForSeconds(6f);
-            PlayNextScript();
+            yield return new WaitForSeconds(0.5f);
+            //start asteroid
+            //PlayNextScript();
             asteroidSpawner.BeginSpawn();
-            yield return new WaitForSeconds(7f);
+            leftTurret.halfFireRate = true;
+            rightTurret.halfFireRate = true;
             audioManager.bgmMusic.volume = gameplayVolume;
         }
         public void AsteroidDestroyed(GameObject go)
@@ -137,7 +143,7 @@ namespace Kevin
                 audioManager.bgmMusic.volume = dialogueVolume;
                 //Get Rid of remnants
                 asteroidPhaseEnd = true;
-                PlayNextScript();
+                //PlayNextScript();
                 //ClearAsteroids();
                 StartCoroutine(SpawnAlienBegin());
             }
@@ -158,8 +164,9 @@ namespace Kevin
             PlayNextScript();
             alienFighterSpawner.BeginSpawn();
             yield return new WaitForSeconds(9f);
-            leftTurret.halfFireRate = true;
-            rightTurret.halfFireRate = true;
+            //fire rate
+            leftTurret.rapidFireRate = true;
+            rightTurret.rapidFireRate = true;
             audioManager.bgmMusic.volume = gameplayVolume;
         }
         public void AlienDestroyed(GameObject go)
@@ -172,18 +179,65 @@ namespace Kevin
         {
             if (currentAliensDestroyed >= maxRequiredAliens && alienPhaseEnd == false)
             {
-                //Get Rid of remnants
+                //We want the aliens to fly off at this point
                 alienPhaseEnd = true;
-                PlayNextScript();
-                Debug.Log("Alien Phase Ended");
-                //start boss phase
+                StartCoroutine(StartBossPhase());
             }
         }
 
-        public void EndBossPhase()
+        private IEnumerator StartBossPhase()
         {
-            //end boss sequence
-            //end game
+            yield return new WaitForSeconds(3f);
+            PlayNextScript();
+            yield return new WaitForSeconds(5f);
+            PlayNextScript();
+            yield return new WaitForSeconds(10f);
+            bossShip.SetActive(true);
+            rightTurret.rapidrapidFireRate = true;
+            leftTurret.rapidrapidFireRate = true;
+        }
+
+        public void TurretDestroyed(GameObject go)
+        {
+            turretsDestroyedCount++;
+            bossShip.GetComponent<Boss>().health -= 150;
+            if (turretsDestroyedCount >= 4)
+            {
+                bossShip.GetComponent<Boss>().health -= 150;
+                BossShipFight();
+            }
+        }
+
+        private void BossShipFight()
+        {
+            bossShip.GetComponent<BoxCollider>().enabled = true;
+        }
+
+        public void StartEndPhase()
+        {
+            StartCoroutine(EndingDialogue());
+        }
+        
+        private IEnumerator EndingDialogue()
+        {
+            yield return new WaitForSeconds(2f);
+            PlayNextScript();
+            yield return new WaitForSeconds(5f);
+            HyperDriveSequence();
+            
+        }
+
+        private void HyperDriveSequence()
+        {
+            Debug.Log("Hyper!!!!");
+            EndGamePhase();
+        }
+        private void EndGamePhase()
+        {
+            Debug.Log("Ending Game!");
+            var fader = ScreenFader.Instance;
+            fader.FadeTo(Color.black,3f);
+            ExperienceApp.End();
         }
 
         #endregion

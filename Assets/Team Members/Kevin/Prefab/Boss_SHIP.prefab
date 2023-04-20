@@ -1007,7 +1007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &749440497524583364
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
-  health: 500
+  health: 5000
   enemyDamage: 0
   projectileSpeed: 0
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
@@ -1047,7 +1047,7 @@ MonoBehaviour:
     type: 3}
   explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
     type: 3}
-  myColor: 1
+  myColor: 2
   wrongColorSFX: {fileID: 0}
   redFighterPrefab: {fileID: 0}
   blueFighterPrefab: {fileID: 0}
@@ -5639,23 +5639,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
         type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
+      propertyPath: enemyDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
       propertyPath: myColor
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
       value: 0.6884818
       objectReference: {fileID: 0}
-    - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: health
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
       propertyPath: wrongColorSFX
@@ -5738,23 +5742,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
         type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
+      propertyPath: enemyDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
       propertyPath: myColor
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
       value: 0.8711591
       objectReference: {fileID: 0}
-    - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: health
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
       propertyPath: wrongColorSFX
@@ -5837,6 +5845,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
         type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
+      propertyPath: enemyDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
       propertyPath: myColor
       value: 2
       objectReference: {fileID: 0}
@@ -5854,6 +5872,10 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: health
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
       propertyPath: myColor
@@ -5940,6 +5962,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
         type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
+      propertyPath: enemyDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729768636606225622, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
       propertyPath: myColor
       value: 2
       objectReference: {fileID: 0}
@@ -5957,6 +5989,10 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: health
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
       propertyPath: myColor

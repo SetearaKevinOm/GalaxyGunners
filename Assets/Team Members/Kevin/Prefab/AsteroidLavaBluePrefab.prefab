@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
-  health: 75
-  enemyDamage: 15
+  health: 100
+  enemyDamage: 25
   projectileSpeed: 20
   impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
   spawnSound: {fileID: 8300000, guid: 496a80b98c464f0499f4b1a8384df565, type: 3}

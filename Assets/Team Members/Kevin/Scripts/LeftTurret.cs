@@ -48,6 +48,7 @@ public class LeftTurret : Turrets
     {
         if (halfFireRate) fireRate = 0.2f;
         if (rapidFireRate) fireRate = 0.1f;
+        if (rapidrapidFireRate) fireRate = 0.05f;
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }

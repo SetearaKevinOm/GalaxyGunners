@@ -60,8 +60,9 @@ public class RightTurret : Turrets
     }
     private IEnumerator RFireRateDelay()
     {
-        if (halfFireRate) fireRate = 0.2f;
-        if (rapidFireRate) fireRate = 0.1f;
+        if (halfFireRate) fireRate = 0.3f;
+        if (rapidFireRate) fireRate = 0.2f;
+        if (rapidrapidFireRate) fireRate = 0.1f;
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }

@@ -7,7 +7,8 @@ public class ColorEnum : MonoBehaviour
     public enum MyColor
     {
         Blue,
-        Red
+        Red,
+        Any
     }
 }
 

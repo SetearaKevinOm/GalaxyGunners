@@ -26,7 +26,8 @@ public class EnemyBase : ColorEnum
    public void WrongColor(Transform projectilePosition)
    {
       //Debug.Log("Wrong Color!");
-      AudioSource.PlayClipAtPoint(wrongColorSFX, instance.vrAvatar.transform.position);
+      if (wrongColorSFX == null) return;
+      AudioSource.PlayClipAtPoint(wrongColorSFX, GameManager.Instance.vrAvatar.transform.position);
       //play sound 
       //show ui
    }
@@ -38,6 +39,7 @@ public class EnemyBase : ColorEnum
       }
       health -= dmg;
       //Debug.Log(health);
+      if (impactSound == null) return;
       AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
       Instantiate(impactParticle, projectilePosition.position, Quaternion.identity);
       
@@ -83,6 +85,13 @@ public class EnemyBase : ColorEnum
          {
             AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
             Instantiate(explosionParticle, projectilePosition.position, Quaternion.identity);
+            Destroy(gameObject);
+         }
+         
+         if (gameObject.GetComponent<BossTurrets>() != null)
+         {
+            AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
+            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
          }
       }

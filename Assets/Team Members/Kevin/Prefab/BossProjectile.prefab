@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4780685153384319650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -141.34134, y: 102.13818, z: 435.17746}
-  m_LocalScale: {x: 6.3395705, y: 6.3395705, z: 6.3395705}
+  m_LocalScale: {x: 2.3407278, y: 2.3407278, z: 2.3407278}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4780685153384319650}
-  m_Mesh: {fileID: 4300006, guid: 71e6e8f0e9dd9164da8d88a237ed787b, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &4759569690270662364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ TrailRenderer:
   m_Time: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 10
+    widthMultiplier: 1.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -167,17 +167,17 @@ TrailRenderer:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0, a: 1}
       key1: {r: 1, g: 0.48346776, b: 0, a: 1}
-      key2: {r: 1, g: 0.87903225, b: 0, a: 0}
-      key3: {r: 1, g: 1, b: 1, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 1, g: 0.49567357, b: 0, a: 0}
+      key3: {r: 1, g: 0.87903225, b: 0, a: 0}
+      key4: {r: 1, g: 1, b: 1, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 24094
-      ctime2: 46260
-      ctime3: 65535
-      ctime4: 0
+      ctime0: 32382
+      ctime1: 43369
+      ctime2: 51850
+      ctime3: 57825
+      ctime4: 65535
       ctime5: 0
       ctime6: 0
       ctime7: 0
@@ -190,7 +190,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 4
+      m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
@@ -228,11 +228,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
   health: 0
-  enemyDamage: 0
+  enemyDamage: 50
   projectileSpeed: 0
   impactSound: {fileID: 0}
   spawnSound: {fileID: 0}
   impactParticle: {fileID: 0}
   explosionParticle: {fileID: 0}
   myColor: 0
+  wrongColorSFX: {fileID: 0}
   balisticsTransform: {fileID: 0}

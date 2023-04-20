@@ -40,7 +40,12 @@ public class Projectile : ColorEnum
         EnemyBase enemyParent = other.GetComponentInParent<EnemyBase>();
         if (GameManager.Instance.isColorSchemed)
         {
-            if (enemy != null && myColor == enemy.myColor)
+            if (enemy != null && enemy.myColor == MyColor.Any)
+            {
+                enemyParent.OnClicked(projectileDmg, transform);
+                Destroy(gameObject);
+            }
+            else if (enemy != null && myColor == enemy.myColor)
             {
                 enemy.OnClicked(projectileDmg, transform);
                 Destroy(gameObject);

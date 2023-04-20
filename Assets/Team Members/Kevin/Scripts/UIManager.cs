@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI asteroidText;
     public TextMeshProUGUI alienText;
     private GameManager _instance;
+    public GameObject uiShipRef;
     
     public void OnEnable()
     {
@@ -35,6 +36,8 @@ public class UIManager : MonoBehaviour
     {
         shipHealthSlider.value = _instance.shipHealth;
         healthText.text = _instance.shipHealth.ToString();
+
+        uiShipRef.GetComponent<ShipDamageUI>().ShipDamaged();
     }
 
     private void UpdateAsteroidCount()

@@ -11,6 +11,7 @@ public class AlienFighters : EnemyBase
     public int randomShootDelay;
     public GameObject forceField;
     public bool randomForceFields;
+    public GameObject warpVFX;
 
     [Header("Hacky AI")] 
     public bool hack;
@@ -22,6 +23,7 @@ public class AlienFighters : EnemyBase
     
     public void Start()
     {
+        warpVFX.GetComponent<ParticleSystem>().Play();
         AudioSource.PlayClipAtPoint(spawnSound, transform.position);
         //if(randomForceFields) ForceFieldRandomizer();
         StartCoroutine(DelayedStart());

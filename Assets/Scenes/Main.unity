@@ -1406,7 +1406,7 @@ PrefabInstance:
     - target: {fileID: 1523901800887617466, guid: 9577b14f14166ae4395ae8f29d238375,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 749440497524583364, guid: 9577b14f14166ae4395ae8f29d238375,
         type: 3}
@@ -1692,17 +1692,17 @@ PrefabInstance:
     - target: {fileID: 731807434111120864, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.989258
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 731807434111120864, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.334688
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 731807434111120864, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66.3911
+      value: 71.9
       objectReference: {fileID: 0}
     - target: {fileID: 731807434111120864, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df,
         type: 3}
@@ -7521,7 +7521,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8648,17 +8648,17 @@ PrefabInstance:
     - target: {fileID: 8846631398587591902, guid: e685aebf409ae02448bbe768a6effe9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.875405
+      value: -33.5
       objectReference: {fileID: 0}
     - target: {fileID: 8846631398587591902, guid: e685aebf409ae02448bbe768a6effe9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.918626
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8846631398587591902, guid: e685aebf409ae02448bbe768a6effe9d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 69.20224
+      value: 40.7
       objectReference: {fileID: 0}
     - target: {fileID: 8846631398587591902, guid: e685aebf409ae02448bbe768a6effe9d,
         type: 3}

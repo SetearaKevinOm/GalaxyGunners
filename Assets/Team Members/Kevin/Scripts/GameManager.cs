@@ -30,6 +30,7 @@ namespace Kevin
         public GameObject targetTransformR;
         public GameObject targetTransformL;
         public GameObject bossShip;
+        public GameObject binCollision;
 
 
         [Header("Game State Variables")] 
@@ -179,7 +180,6 @@ namespace Kevin
         {
             if (currentAliensDestroyed >= maxRequiredAliens && alienPhaseEnd == false)
             {
-                //We want the aliens to fly off at this point
                 alienPhaseEnd = true;
                 StartCoroutine(StartBossPhase());
             }

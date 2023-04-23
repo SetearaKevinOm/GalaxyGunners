@@ -20,18 +20,59 @@ public class RightTurret : Turrets
         
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
-            ShootRight();
+            turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
+            //play vrrrrr sound
+            if(Input.GetKey(KeyCode.Mouse1) && chargeTime < 2)
+            {
+                isCharging = true;
+                if (isCharging)
+                {
+                    chargeTime += Time.deltaTime * chargeSpeed;
+                }
+            }
+            else if (Input.GetKey(KeyCode.Mouse1) && chargeTime >= 2)
+            {
+                turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
+                ShootRight();
+            }
+        }
+        else 
+        {
+            isCharging = false;
+            chargeTime = 0;
         }
         
         var device = VRDevice.Device;
         var rightHand = device.PrimaryInputDevice;
         
-        if(rightHand.GetButton(VRButton.Trigger))
+        /*if(rightHand.GetButton(VRButton.Trigger))
         {
             turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             ShootRight();
-        }
+        }*/
+
+        /*if (rightHand.GetButton(VRButton.Trigger))
+        {
+            turretObject.transform.Rotate(new Vector3(0,0,5f),Space.Self);
+            //play vrrrrr sound
+            if(Input.GetKey(KeyCode.Mouse1) && chargeTime < 2)
+            {
+                isCharging = true;
+                if (isCharging)
+                {
+                    chargeTime += Time.deltaTime * chargeSpeed;
+                }
+            }
+            else if (Input.GetKey(KeyCode.Mouse1) && chargeTime >= 2)
+            {
+                turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
+                ShootRight();
+            }
+        }else 
+        {
+            isCharging = false;
+            chargeTime = 0;
+        }*/
     }
     #region ShootRight
 

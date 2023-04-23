@@ -14,11 +14,11 @@ public class LeftTurret : Turrets
         transform.rotation = handTransform.rotation;
         transform.LookAt(crosshair.transform);
         
-        /*if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
             ShootLeft();
-        }*/
+        }
         
         var device = VRDevice.Device;
         var leftHand = device.SecondaryInputDevice;

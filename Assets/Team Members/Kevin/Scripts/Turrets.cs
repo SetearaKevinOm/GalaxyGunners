@@ -32,6 +32,10 @@ namespace Kevin
         public bool halfFireRate;
         public bool rapidFireRate;
         public bool rapidrapidFireRate;
+
+        public bool isCharging;
+        public float chargeSpeed;
+        public float chargeTime;
         public void Start()
         {
             instance = GameManager.Instance;

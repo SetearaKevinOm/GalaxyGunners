@@ -204,7 +204,7 @@ namespace Kevin
         {
             turretsDestroyedCount++;
             bossShip.GetComponent<Boss>().health -= 150;
-            if (turretsDestroyedCount >= 4)
+            if (turretsDestroyedCount >= 5)
             {
                 bossShip.GetComponent<Boss>().health -= 150;
                 BossShipFight();

@@ -8,7 +8,7 @@ public class BinTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
+        if (other.GetComponentInParent<AlienFighters>().gameObject == null) return;
         other.GetComponentInParent<AlienFighters>().gameObject.SetActive(false);
     }
 }

@@ -94,12 +94,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828839897004247017}
-  m_LocalRotation: {x: -0, y: -0, z: 2.2204458e-16, w: 1}
-  m_LocalPosition: {x: -0, y: -0.0416, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -3.053113e-16, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 957908281726521177}
-  m_Father: {fileID: 8154551249233116284}
+  m_Father: {fileID: 2757163759289731803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -18.268002, z: 0}
 --- !u!33 &2108063180510702774
@@ -147,6 +147,38 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1105547165468284750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2757163759289731803}
+  m_Layer: 0
+  m_Name: PivotPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2757163759289731803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105547165468284750}
+  m_LocalRotation: {x: -0.0000000026775524, y: -0.15873995, z: -0.000000020489097,
+    w: 0.9873205}
+  m_LocalPosition: {x: 0, y: 0.041386746, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8998906161525430395}
+  m_Father: {fileID: 2288300971134861728}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2604903135615268938
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,13 +202,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2604903135615268938}
-  m_LocalRotation: {x: -0.70710665, y: -0.000000010995874, z: -0.0000000937112, w: 0.707107}
-  m_LocalPosition: {x: 0, y: 0.1999, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.113}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 957908281726521177}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5186837625148467966
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,38 +287,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &6051652414869697238
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8154551249233116284}
-  m_Layer: 0
-  m_Name: PivotPosiiton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8154551249233116284
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6051652414869697238}
-  m_LocalRotation: {x: -0.0000000027939677, y: -0.15873997, z: -0.000000013038516,
-    w: 0.9873205}
-  m_LocalPosition: {x: 0, y: 0.08298675, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8998906161525430395}
-  m_Father: {fileID: 2288300971134861728}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9063327027180081842
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8154551249233116284}
+  - {fileID: 2757163759289731803}
   m_Father: {fileID: 4403282750910711011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -395,7 +395,7 @@ MonoBehaviour:
   bossProjectile: {fileID: 4780685153384319650, guid: 0fb8ec5c426859944aa51dd274df5b3a,
     type: 3}
   laser: {fileID: 2604903135615268941}
-  rotationPoint: {fileID: 6051652414869697238}
+  rotationPoint: {fileID: 1105547165468284750}
 --- !u!135 &8457812710986553831
 SphereCollider:
   m_ObjectHideFlags: 0

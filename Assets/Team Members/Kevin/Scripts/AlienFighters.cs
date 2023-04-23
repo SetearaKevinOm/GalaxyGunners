@@ -16,6 +16,9 @@ public class AlienFighters : EnemyBase
     public bool inCombat;
     public bool singleRef;
     public float speed;
+    public bool isKamikaze;
+
+    public List<Animation> animations;
     
     
     public void Start()
@@ -33,12 +36,18 @@ public class AlienFighters : EnemyBase
         randomShootDelay = Random.Range(3, 10);
         speed = 45f;
         ShootPlayer();
-        StartCoroutine(Kamikaze());
+        int coinFlip = Random.Range(0, 100);
+        if (coinFlip <= 75)
+        {
+            isKamikaze = true;
+            StartCoroutine(Kamikaze());
+        }
+        
     }
 
     private IEnumerator Kamikaze()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(10f);
         inCombat = false;
     }
 

@@ -34,8 +34,11 @@ namespace Kevin
         public bool rapidrapidFireRate;
 
         public bool isCharging;
-        public float chargeSpeed;
+        public float chargeSpeed = 3f;
         public float chargeTime;
+        public bool chargeAudioPlay;
+
+        public AudioSource chargeSFX;
         public void Start()
         {
             instance = GameManager.Instance;

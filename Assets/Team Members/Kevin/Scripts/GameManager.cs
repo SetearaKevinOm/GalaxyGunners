@@ -31,6 +31,9 @@ namespace Kevin
         public GameObject targetTransformL;
         public GameObject bossShip;
         public GameObject binCollision;
+        public GameObject asteroidUIPanel;
+        public GameObject alienUIPanel;
+        public GameObject bossUIPanel;
 
 
         [Header("Game State Variables")] 
@@ -53,11 +56,6 @@ namespace Kevin
         
         
         public bool isColorSchemed;
-        
-        [Header("Power Ups")] 
-        public bool quickFire;
-        public bool buckShot;
-        public bool laserBeam;
         
         public Action OnAsteroidDestroyed;
         public Action OnAlienDestroyed;
@@ -126,6 +124,7 @@ namespace Kevin
             //start asteroid
             //PlayNextScript();
             asteroidSpawner.BeginSpawn();
+            asteroidUIPanel.SetActive(true);
             leftTurret.halfFireRate = true;
             rightTurret.halfFireRate = true;
             audioManager.bgmMusic.volume = gameplayVolume;
@@ -164,6 +163,8 @@ namespace Kevin
             yield return new WaitForSeconds(5f);
             PlayNextScript();
             alienFighterSpawner.BeginSpawn();
+            asteroidUIPanel.SetActive(false);
+            alienUIPanel.SetActive(true);
             yield return new WaitForSeconds(9f);
             //fire rate
             leftTurret.rapidFireRate = true;
@@ -193,6 +194,8 @@ namespace Kevin
             PlayNextScript();
             yield return new WaitForSeconds(10f);
             bossShip.SetActive(true);
+            alienUIPanel.SetActive(false);
+            bossUIPanel.SetActive(true);
             rightTurret.rapidrapidFireRate = true;
             leftTurret.rapidrapidFireRate = true;
         }

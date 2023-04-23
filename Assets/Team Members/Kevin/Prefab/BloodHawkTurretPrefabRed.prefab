@@ -94,13 +94,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828839897004247017}
-  m_LocalRotation: {x: -0.0000000029103826, y: -0.15873997, z: -0.000000010710209,
-    w: 0.9873204}
-  m_LocalPosition: {x: 0, y: 0.08298675, z: 0}
-  m_LocalScale: {x: 1.0890728, y: 4.3799396, z: 2.7393222}
+  m_LocalRotation: {x: -0, y: -0, z: 2.2204458e-16, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2604903136710562380}
-  m_Father: {fileID: 2288300971134861728}
+  - {fileID: 957908281726521177}
+  m_Father: {fileID: 8154551249233116284}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -18.268002, z: 0}
 --- !u!33 &2108063180510702774
@@ -178,37 +177,6 @@ Transform:
   m_Father: {fileID: 957908281726521177}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
---- !u!1 &2604903136710562381
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2604903136710562380}
-  m_Layer: 0
-  m_Name: BarrelPivotPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2604903136710562380
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2604903136710562381}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.00128, z: -0.00011}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 957908281726521177}
-  m_Father: {fileID: 8998906161525430395}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5186837625148467966
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,12 +202,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5186837625148467966}
-  m_LocalRotation: {x: 0.7071068, y: 0.000000014901158, z: -0.000000007750601, w: 0.7071068}
-  m_LocalPosition: {x: -0.000012857849, y: 0.00039452704, z: 0.003991737}
-  m_LocalScale: {x: 0.18748954, y: 0.10566382, z: 0.22723442}
+  m_LocalRotation: {x: 0.7071068, y: 0.000000029802315, z: 0.0000000071505566, w: 0.7071068}
+  m_LocalPosition: {x: -0.00001285571, y: -0.0008854695, z: 0.0038817371}
+  m_LocalScale: {x: 0.1874896, y: 0.10566406, z: 0.22723474}
   m_Children:
   - {fileID: 2604903135615268941}
-  m_Father: {fileID: 2604903136710562380}
+  m_Father: {fileID: 8998906161525430395}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &655031259361403047
@@ -287,6 +255,38 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &6051652414869697238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8154551249233116284}
+  m_Layer: 0
+  m_Name: PivotPosiiton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8154551249233116284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051652414869697238}
+  m_LocalRotation: {x: -0.0000000027939677, y: -0.15873997, z: -0.000000013038516,
+    w: 0.9873205}
+  m_LocalPosition: {x: 0, y: 0.08298675, z: 0}
+  m_LocalScale: {x: 1.089073, y: 4.3799386, z: 2.7393227}
+  m_Children:
+  - {fileID: 8998906161525430395}
+  m_Father: {fileID: 2288300971134861728}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9063327027180081842
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 0.7218834, z: 3}
   m_Children:
-  - {fileID: 8998906161525430395}
+  - {fileID: 8154551249233116284}
   m_Father: {fileID: 4403282750910711011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -395,7 +395,7 @@ MonoBehaviour:
   bossProjectile: {fileID: 4780685153384319650, guid: 0fb8ec5c426859944aa51dd274df5b3a,
     type: 3}
   laser: {fileID: 2604903135615268941}
-  rotationPoint: {fileID: 2604903136710562381}
+  rotationPoint: {fileID: 6051652414869697238}
 --- !u!135 &8457812710986553831
 SphereCollider:
   m_ObjectHideFlags: 0

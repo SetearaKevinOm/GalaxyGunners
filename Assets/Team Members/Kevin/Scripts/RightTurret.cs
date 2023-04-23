@@ -27,6 +27,11 @@ public class RightTurret : Turrets
                 isCharging = true;
                 if (isCharging)
                 {
+                    /*if (chargeAudioPlay)
+                    {
+                        chargeSFX.PlayOneShot(chargeSFX.clip);
+                        chargeAudioPlay = false;
+                    }*/
                     chargeTime += Time.deltaTime * chargeSpeed;
                 }
             }
@@ -36,8 +41,9 @@ public class RightTurret : Turrets
                 ShootRight();
             }
         }
-        else 
+        else
         {
+            chargeAudioPlay = true;
             isCharging = false;
             chargeTime = 0;
         }

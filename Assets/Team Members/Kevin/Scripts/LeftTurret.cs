@@ -16,18 +16,53 @@ public class LeftTurret : Turrets
         
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
-            ShootLeft();
+            turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
+            //play vrrrrr sound
+            if(Input.GetKey(KeyCode.Mouse0) && chargeTime < 2)
+            {
+                isCharging = true;
+                if (isCharging)
+                {
+                    chargeTime += Time.deltaTime * chargeSpeed;
+                }
+            }
+            else if (Input.GetKey(KeyCode.Mouse0) && chargeTime >= 2)
+            {
+                turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
+                ShootLeft();
+            }
         }
-        
+        else 
+        {
+            isCharging = false;
+            chargeTime = 0;
+        }
         var device = VRDevice.Device;
         var leftHand = device.SecondaryInputDevice;
         if (leftHand == null) return;
-        if(leftHand.GetButton(VRButton.Trigger))
+        /*if(leftHand.GetButton(VRButton.Trigger))
         {
-            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
-            ShootLeft();
+            turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
+            //play vrrrrr sound
+            if(Input.GetKey(KeyCode.Mouse0) && chargeTime < 2)
+            {
+                isCharging = true;
+                if (isCharging)
+                {
+                    chargeTime += Time.deltaTime * chargeSpeed;
+                }
+            }
+            else if (Input.GetKey(KeyCode.Mouse0) && chargeTime >= 2)
+            {
+                turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
+                ShootLeft();
+            }
         }
+        else 
+        {
+            isCharging = false;
+            chargeTime = 0;
+        }*/
     }
     #region ShootLeft
     void ShootLeft()

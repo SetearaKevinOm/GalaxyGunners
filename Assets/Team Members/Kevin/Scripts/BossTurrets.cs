@@ -11,7 +11,7 @@ public class BossTurrets : EnemyBase
     public GameObject rotationPoint;
     public void Update()
     {
-        rotationPoint.transform.LookAt(GameManager.Instance .shipCollisionBox.transform.position);
+        rotationPoint.transform.LookAt(GameManager.Instance.shipCollisionBox.transform.position);
     }
 
     public void Start()

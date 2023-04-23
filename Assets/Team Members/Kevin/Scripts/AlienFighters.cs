@@ -33,9 +33,16 @@ public class AlienFighters : EnemyBase
         randomShootDelay = Random.Range(3, 10);
         speed = 45f;
         ShootPlayer();
+        StartCoroutine(Kamikaze());
     }
-    
-    private void ShootPlayer()
+
+    private IEnumerator Kamikaze()
+    {
+        yield return new WaitForSeconds(15f);
+        inCombat = false;
+    }
+
+        private void ShootPlayer()
     {
         if (gameObject == null) return;
         if (inCombat == false) return;

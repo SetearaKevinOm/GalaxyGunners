@@ -144,7 +144,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.99484634
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -193,7 +193,7 @@ TrailRenderer:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
-    numCapVertices: 0
+    numCapVertices: 90
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
@@ -235,4 +235,5 @@ MonoBehaviour:
   impactParticle: {fileID: 0}
   explosionParticle: {fileID: 0}
   myColor: 0
+  wrongColorSFX: {fileID: 0}
   balisticsTransform: {fileID: 0}

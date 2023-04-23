@@ -4602,6 +4602,8 @@ MonoBehaviour:
   asteroidUIPanel: {fileID: 628646502}
   alienUIPanel: {fileID: 853970000}
   bossUIPanel: {fileID: 2833100956068341689}
+  hyperdriveParticleFX1: {fileID: 0}
+  hyperdriveParticleFX2: {fileID: 0}
   shipHealth: 10000
   currentPlayerDamage: 25
   gameplayVolume: 0.2

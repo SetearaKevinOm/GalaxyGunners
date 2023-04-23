@@ -34,6 +34,8 @@ namespace Kevin
         public GameObject asteroidUIPanel;
         public GameObject alienUIPanel;
         public GameObject bossUIPanel;
+        public GameObject hyperdriveParticleFX1;
+        public GameObject hyperdriveParticleFX2;
 
 
         [Header("Game State Variables")] 
@@ -226,18 +228,29 @@ namespace Kevin
             yield return new WaitForSeconds(2f);
             PlayNextScript();
             yield return new WaitForSeconds(5f);
-            HyperDriveSequence();
+            StartCoroutine(HyperDriveSequence());
             
         }
 
-        private void HyperDriveSequence()
+        private IEnumerator HyperDriveSequence()
         {
+            hyperdriveParticleFX1.SetActive(true);
+            hyperdriveParticleFX2.SetActive(true);
+            yield return new WaitForSeconds(8f);
             Debug.Log("Hyper!!!!");
             EndGamePhase();
         }
         private void EndGamePhase()
         {
             Debug.Log("Ending Game!");
+            var fader = ScreenFader.Instance;
+            fader.FadeTo(Color.white,3f);
+            StartCoroutine(Delay());
+        }
+
+        private IEnumerator Delay()
+        {
+            yield return new WaitForSeconds(3f);
             var fader = ScreenFader.Instance;
             fader.FadeTo(Color.black,3f);
             ExperienceApp.End();

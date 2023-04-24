@@ -14,6 +14,10 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI alienText;
     private GameManager _instance;
     public GameObject uiShipRef;
+    public Image turretStatus;
+    public Image hyperDriveStatus;
+    public TextMeshProUGUI oxygenLevels;
+    public float oxygenLevel = 100f;
     
     public void OnEnable()
     {
@@ -30,6 +34,12 @@ public class UIManager : MonoBehaviour
         _instance.shipCollisionBox.GetComponent<ShipCollision>().shipTakeDamage -= UpdateShipHealth;
         _instance.OnAsteroidDestroyed -= UpdateAsteroidCount;
         _instance.OnAlienDestroyed -= UpdateAlientCount;
+    }
+
+    public void Update()
+    {
+        oxygenLevel -= Time.deltaTime/30;
+        oxygenLevels.text = ((int)oxygenLevel).ToString();
     }
 
     private void UpdateShipHealth()

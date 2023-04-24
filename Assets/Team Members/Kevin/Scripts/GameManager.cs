@@ -97,6 +97,8 @@ namespace Kevin
         {
             yield return new WaitForSeconds(12f);
             tutorialTargets.SetActive(true);
+            uiManager.turretStatus.color = Color.green;
+            ;
             audioManager.bgmMusic.volume = gameplayVolume;
         }
 
@@ -227,6 +229,7 @@ namespace Kevin
         private IEnumerator EndingDialogue()
         {
             yield return new WaitForSeconds(2f);
+            uiManager.hyperDriveStatus.color = Color.green;
             PlayNextScript();
             yield return new WaitForSeconds(5f);
             StartCoroutine(HyperDriveSequence());

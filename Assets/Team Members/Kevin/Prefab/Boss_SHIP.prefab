@@ -1001,6 +1001,7 @@ GameObject:
   - component: {fileID: 7612548190655792059}
   - component: {fileID: 8971391057845155147}
   - component: {fileID: 8971391057845155146}
+  - component: {fileID: 7497568908470457769}
   m_Layer: 0
   m_Name: Boss_SHIP
   m_TagString: Untagged
@@ -1053,6 +1054,7 @@ MonoBehaviour:
   blueFighterPrefab: {fileID: 0}
   redFighterHangar: {fileID: 563641318}
   blueFighterHangar: {fileID: 620447909}
+  healthBar: {fileID: 0}
 --- !u!54 &8971391057845155147
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1082,6 +1084,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 155.8288, y: 36.899216, z: 222.63504}
   m_Center: {x: 2.489212, y: 17.481895, z: 7.871399}
+--- !u!95 &7497568908470457769
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523901800887617466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40119fa52cacf2d49848b282ddee567f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1535529361087454374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,11 +5673,6 @@ PrefabInstance:
       propertyPath: myColor
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.6884818
-      objectReference: {fileID: 0}
     - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
       propertyPath: health
       value: 500
@@ -5665,6 +5681,11 @@ PrefabInstance:
       propertyPath: wrongColorSFX
       value: 
       objectReference: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
+    - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.6884818
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
 --- !u!4 &2729768635875855035 stripped
@@ -5755,11 +5776,6 @@ PrefabInstance:
       propertyPath: myColor
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8711591
-      objectReference: {fileID: 0}
     - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
       propertyPath: health
       value: 500
@@ -5768,6 +5784,11 @@ PrefabInstance:
       propertyPath: wrongColorSFX
       value: 
       objectReference: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
+    - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.8711591
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
 --- !u!4 &2729768636179609758 stripped
@@ -5858,6 +5879,18 @@ PrefabInstance:
       propertyPath: myColor
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: myColor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: wrongColorSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
     - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -5873,18 +5906,6 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
-      propertyPath: health
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
-      propertyPath: myColor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
-      propertyPath: wrongColorSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
 --- !u!4 &2729768637513074937 stripped
@@ -5975,6 +5996,18 @@ PrefabInstance:
       propertyPath: myColor
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: myColor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
+      propertyPath: wrongColorSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
     - target: {fileID: 357205429275860282, guid: c8bac8aca6f0c624f9b81adc3cecbe23,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -5990,18 +6023,6 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
-      propertyPath: health
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
-      propertyPath: myColor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 191801323, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
-      propertyPath: wrongColorSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8bac8aca6f0c624f9b81adc3cecbe23, type: 3}
 --- !u!4 &1404805369 stripped

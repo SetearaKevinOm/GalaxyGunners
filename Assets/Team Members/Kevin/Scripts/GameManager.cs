@@ -98,7 +98,6 @@ namespace Kevin
             yield return new WaitForSeconds(12f);
             tutorialTargets.SetActive(true);
             uiManager.turretStatus.color = Color.green;
-            ;
             audioManager.bgmMusic.volume = gameplayVolume;
         }
 
@@ -119,7 +118,6 @@ namespace Kevin
             PlayNextScript();
             audioManager.bgmMusic.volume = dialogueVolume;
             StartCoroutine(DelayAsteroidScript());
-            
         }
         
         private IEnumerator DelayAsteroidScript()
@@ -145,20 +143,8 @@ namespace Kevin
             if (currentAsteroidsDestroyed >= maxRequiredAsteroids && asteroidPhaseEnd == false)
             {
                 audioManager.bgmMusic.volume = dialogueVolume;
-                //Get Rid of remnants
                 asteroidPhaseEnd = true;
-                //PlayNextScript();
-                //ClearAsteroids();
                 StartCoroutine(SpawnAlienBegin());
-            }
-        }
-
-        private void ClearAsteroids()
-        {
-            for (int i = 0; i <= asteroidsSpawned.Count; i++)
-            {
-                asteroidsSpawned.Remove(asteroidsSpawned[i]);
-                Destroy(asteroidsSpawned[i]);
             }
         }
 
@@ -170,7 +156,6 @@ namespace Kevin
             asteroidUIPanel.SetActive(false);
             alienUIPanel.SetActive(true);
             yield return new WaitForSeconds(9f);
-            //fire rate
             leftTurret.rapidFireRate = true;
             rightTurret.rapidFireRate = true;
             audioManager.bgmMusic.volume = gameplayVolume;
@@ -231,7 +216,7 @@ namespace Kevin
             yield return new WaitForSeconds(2f);
             uiManager.hyperDriveStatus.color = Color.green;
             PlayNextScript();
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(10f);
             StartCoroutine(HyperDriveSequence());
             
         }

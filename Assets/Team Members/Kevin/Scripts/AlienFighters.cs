@@ -28,7 +28,6 @@ public class AlienFighters : EnemyBase
         AudioSource.PlayClipAtPoint(spawnSound, transform.position);
         animator = gameObject.GetComponentInChildren<Animator>();
         animator.SetInteger("AnimationCoinFlip",Random.Range(1, 3));
-        //animatorController.animationClips[0] = instance.uiManager.GetComponent<AnimationManager>().animationClips[Random.Range(0, instance.uiManager.GetComponent<AnimationManager>().animationClips.Count)];
         currentLookAtPosition = GameManager.Instance.shipCollisionBox.transform;
         inCombat = true;
         singleRef = true;

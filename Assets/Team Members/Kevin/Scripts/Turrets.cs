@@ -39,6 +39,11 @@ namespace Kevin
         public bool chargeAudioPlay;
 
         public AudioSource chargeSFX;
+        
+        //UI Animation Stuff
+        public GameObject leftGunUI;
+        public GameObject rightGunUI;
+        
         public void Start()
         {
             instance = GameManager.Instance;

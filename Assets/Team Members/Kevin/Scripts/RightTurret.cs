@@ -46,6 +46,7 @@ public class RightTurret : Turrets
             chargeAudioPlay = true;
             isCharging = false;
             chargeTime = 0;
+            rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
         }
         
         var device = VRDevice.Device;
@@ -84,6 +85,7 @@ public class RightTurret : Turrets
 
     void ShootRight()
     {
+	    rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildUP",0,0);
         if (canShoot)
         {
             //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);

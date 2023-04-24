@@ -36,6 +36,7 @@ public class LeftTurret : Turrets
         {
             isCharging = false;
             chargeTime = 0;
+            leftGunUI.GetComponent<Animator>().CrossFade("Left_BuildDown",0,0);
         }
         var device = VRDevice.Device;
         var leftHand = device.SecondaryInputDevice;
@@ -67,7 +68,8 @@ public class LeftTurret : Turrets
     #region ShootLeft
     void ShootLeft()
     {
-        if (canShoot)
+	    leftGunUI.GetComponent<Animator>().CrossFade("Left_BuildUP",0,0);
+	    if (canShoot)
         {
             //instance.TriggerVibration(shootSFX.clip,OVRInput.Controller.RTouch);
             GameObject go = Instantiate(projectilePrefab, balistics.transform.position,

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Kevin;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,13 +19,16 @@ public class AlienFighters : EnemyBase
     public float speed;
     public bool isKamikaze;
 
-    public List<Animation> animations;
+    public Animator animator;
     
     
     public void Start()
     {
         warpVFX.GetComponent<ParticleSystem>().Play();
         AudioSource.PlayClipAtPoint(spawnSound, transform.position);
+        animator = gameObject.GetComponentInChildren<Animator>();
+        animator.SetInteger("AnimationCoinFlip",Random.Range(1, 3));
+        //animatorController.animationClips[0] = instance.uiManager.GetComponent<AnimationManager>().animationClips[Random.Range(0, instance.uiManager.GetComponent<AnimationManager>().animationClips.Count)];
         currentLookAtPosition = GameManager.Instance.shipCollisionBox.transform;
         inCombat = true;
         singleRef = true;

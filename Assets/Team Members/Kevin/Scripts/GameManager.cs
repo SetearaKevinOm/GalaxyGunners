@@ -236,7 +236,7 @@ namespace Kevin
         {
             hyperdriveParticleFX1.SetActive(true);
             hyperdriveParticleFX2.SetActive(true);
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(7f);
             Debug.Log("Hyper!!!!");
             EndGamePhase();
         }
@@ -244,16 +244,9 @@ namespace Kevin
         {
             Debug.Log("Ending Game!");
             var fader = ScreenFader.Instance;
-            fader.FadeTo(Color.white,3f);
-            StartCoroutine(Delay());
-        }
-
-        private IEnumerator Delay()
-        {
-            yield return new WaitForSeconds(3f);
-            var fader = ScreenFader.Instance;
             fader.FadeTo(Color.black,3f);
             ExperienceApp.End();
+            
         }
 
         #endregion

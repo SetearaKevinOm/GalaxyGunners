@@ -194,8 +194,8 @@ namespace Kevin
             PlayNextScript();
             yield return new WaitForSeconds(5f);
             PlayNextScript();
-            yield return new WaitForSeconds(10f);
             bossShip.SetActive(true);
+            yield return new WaitForSeconds(10f);
             alienUIPanel.SetActive(false);
             bossUIPanel.SetActive(true);
             rightTurret.rapidrapidFireRate = true;
@@ -220,6 +220,7 @@ namespace Kevin
 
         public void StartEndPhase()
         {
+	        bossShip.GetComponent<Animator>().SetBool("ShipDead", true);
             StartCoroutine(EndingDialogue());
         }
         

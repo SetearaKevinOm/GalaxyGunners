@@ -100,7 +100,6 @@ public class EnemyBase : ColorEnum
             AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
             Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
             instance.StartEndPhase();
-            Destroy(gameObject);
          }
       }
    }

@@ -45,7 +45,12 @@ public class UIManager : MonoBehaviour
     private void UpdateShipHealth()
     {
         shipHealthSlider.value = _instance.shipHealth;
-        healthText.text = _instance.shipHealth.ToString();
+        /*float currentHealthPercentage = _instance.shipHealth / _instance.maxShipHealth;
+        Debug.Log("Current percentage is: " + currentHealthPercentage);
+        Debug.Log("Current Ship Health is " + _instance.shipHealth); 
+        Debug.Log("Current MAX Health is " + _instance.maxShipHealth);*/
+        healthText.text = (_instance.shipHealth/100).ToString();
+        //Debug.Log("Current percentage is: " + currentHealthPercentage);
     }
 
     private void UpdateAsteroidCount()

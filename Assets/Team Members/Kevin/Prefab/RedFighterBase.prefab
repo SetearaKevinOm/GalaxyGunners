@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5757998588874129330}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6574942134420707718
 GameObject:
@@ -63,7 +63,7 @@ Transform:
   m_LocalScale: {x: 1.5574, y: 1.5574, z: 1.5574}
   m_Children: []
   m_Father: {fileID: 5757998588874129330}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &5214879329241254095
 ParticleSystem:
@@ -4928,6 +4928,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4821151433934453110}
   - {fileID: 6288914905833554244}
   - {fileID: 1708570352051797147}
   m_Father: {fileID: 8846631398587591902}
@@ -4987,7 +4988,7 @@ SphereCollider:
   m_GameObject: {fileID: 8769595811842231713}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 5.83
   m_Center: {x: 0.000002861023, y: -0.0000007748604, z: -1.41}
@@ -5036,7 +5037,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8846631398587591902}
   - component: {fileID: 311141352}
-  - component: {fileID: 1422749577}
   m_Layer: 0
   m_Name: RedFighterBase
   m_TagString: Untagged
@@ -5056,7 +5056,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5757998588874129330}
-  - {fileID: 4821151433934453110}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5088,34 +5087,19 @@ MonoBehaviour:
   alienProjectile: {fileID: 4640908850135307527, guid: 9011b49834bf9c94e98d74be5af6d1af,
     type: 3}
   randomShootDelay: 0
-  forceField: {fileID: 0}
-  randomForceFields: 1
   warpVFX: {fileID: 7493764662768239333}
-  hack: 0
-  goingLeft: 0
-  goingRight: 0
+  currentLookAtPosition: {fileID: 0}
+  inCombat: 0
+  singleRef: 0
   speed: 0
-  moveRate: 0
-  timer: 0
---- !u!135 &1422749577
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8846631398587591903}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5.83
-  m_Center: {x: 0.000002861023, y: -0.0000007748604, z: -1.41}
+  isKamikaze: 0
+  animator: {fileID: 0}
 --- !u!1001 &3963404485566538826
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8846631398587591902}
+    m_TransformParent: {fileID: 5757998588874129330}
     m_Modifications:
     - target: {fileID: 5836634471370008239, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
@@ -5145,12 +5129,12 @@ PrefabInstance:
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
@@ -5160,7 +5144,7 @@ PrefabInstance:
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
@@ -5185,22 +5169,17 @@ PrefabInstance:
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.40000024
       objectReference: {fileID: 0}
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.40000024
       objectReference: {fileID: 0}
     - target: {fileID: 4905610303593158375, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: lengthInSec
       value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905610303593158375, guid: cbb4c7203b908a74888aea8adbcb36ff,
-        type: 3}
-      propertyPath: looping
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4905610303593158375, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
@@ -5224,23 +5203,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803220992543677049, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803220992543677049, guid: cbb4c7203b908a74888aea8adbcb36ff,
-        type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803220992543677049, guid: cbb4c7203b908a74888aea8adbcb36ff,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[1].time
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803220992543677049, guid: cbb4c7203b908a74888aea8adbcb36ff,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[2].time
-      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb4c7203b908a74888aea8adbcb36ff, type: 3}

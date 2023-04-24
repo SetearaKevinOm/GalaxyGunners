@@ -14,7 +14,7 @@ public class LeftTurret : Turrets
         transform.rotation = handTransform.rotation;
         transform.LookAt(crosshair.transform);
         
-        if (Input.GetKey(KeyCode.Mouse0))
+        /*if (Input.GetKey(KeyCode.Mouse0))
         {
             turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
             //play vrrrrr sound
@@ -37,15 +37,16 @@ public class LeftTurret : Turrets
             isCharging = false;
             chargeTime = 0;
             leftGunUI.GetComponent<Animator>().CrossFade("Left_BuildDown",0,0);
-        }
+        }*/
+        
         var device = VRDevice.Device;
         var leftHand = device.SecondaryInputDevice;
         if (leftHand == null) return;
-        /*if(leftHand.GetButton(VRButton.Trigger))
+        if(leftHand.GetButton(VRButton.Trigger))
         {
             turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
             //play vrrrrr sound
-            if(Input.GetKey(KeyCode.Mouse0) && chargeTime < 2)
+            if(leftHand.GetButton(VRButton.Trigger) && chargeTime < 2)
             {
                 isCharging = true;
                 if (isCharging)
@@ -53,7 +54,7 @@ public class LeftTurret : Turrets
                     chargeTime += Time.deltaTime * chargeSpeed;
                 }
             }
-            else if (Input.GetKey(KeyCode.Mouse0) && chargeTime >= 2)
+            else if (leftHand.GetButton(VRButton.Trigger) && chargeTime >= 2)
             {
                 turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
                 ShootLeft();
@@ -63,7 +64,8 @@ public class LeftTurret : Turrets
         {
             isCharging = false;
             chargeTime = 0;
-        }*/
+            leftGunUI.GetComponent<Animator>().CrossFade("Left_BuildDown",0,0);
+        }
     }
     #region ShootLeft
     void ShootLeft()

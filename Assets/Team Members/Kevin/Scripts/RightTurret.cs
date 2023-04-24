@@ -18,7 +18,7 @@ public class RightTurret : Turrets
             instance.PlayNextScript();
         }*/
         
-        if (Input.GetKey(KeyCode.Mouse1))
+        /*if (Input.GetKey(KeyCode.Mouse1))
         {
             turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
             //play vrrrrr sound
@@ -31,7 +31,7 @@ public class RightTurret : Turrets
                     {
                         chargeSFX.PlayOneShot(chargeSFX.clip);
                         chargeAudioPlay = false;
-                    }*/
+                    }#1#
                     chargeTime += Time.deltaTime * chargeSpeed;
                 }
             }
@@ -47,26 +47,22 @@ public class RightTurret : Turrets
             isCharging = false;
             chargeTime = 0;
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
-        }
-        
-        var device = VRDevice.Device;
-        var rightHand = device.PrimaryInputDevice;
-        
-        /*if(rightHand.GetButton(VRButton.Trigger))
-        {
-            turretObject.transform.Rotate(new Vector3(0,0,30f),Space.Self);
-            ShootRight();
         }*/
-
-        /*if (rightHand.GetButton(VRButton.Trigger))
+                    
+        /*if (Input.GetKey(KeyCode.Mouse1))
         {
-            turretObject.transform.Rotate(new Vector3(0,0,5f),Space.Self);
+            turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
             //play vrrrrr sound
             if(Input.GetKey(KeyCode.Mouse1) && chargeTime < 2)
             {
                 isCharging = true;
                 if (isCharging)
                 {
+                    /*if (chargeAudioPlay)
+                    {
+                        chargeSFX.PlayOneShot(chargeSFX.clip);
+                        chargeAudioPlay = false;
+                    }#1#
                     chargeTime += Time.deltaTime * chargeSpeed;
                 }
             }
@@ -75,11 +71,48 @@ public class RightTurret : Turrets
                 turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
                 ShootRight();
             }
-        }else 
+        }
+        else
         {
+            chargeAudioPlay = true;
             isCharging = false;
             chargeTime = 0;
+            rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
         }*/
+        
+        var device = VRDevice.Device;
+        var rightHand = device.PrimaryInputDevice;
+        
+        if(rightHand.GetButton(VRButton.Trigger))
+        {
+            turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
+            //play vrrrrr sound
+            if(rightHand.GetButton(VRButton.Trigger) && chargeTime < 2)
+            {
+                isCharging = true;
+                if (isCharging)
+                {
+                    /*if (chargeAudioPlay)
+                    {
+                        chargeSFX.PlayOneShot(chargeSFX.clip);
+                        chargeAudioPlay = false;
+                    }*/
+                    chargeTime += Time.deltaTime * chargeSpeed;
+                }
+            }
+            else if (rightHand.GetButton(VRButton.Trigger) && chargeTime >= 2)
+            {
+                turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
+                ShootRight();
+            }
+        }
+        else
+        {
+            chargeAudioPlay = true;
+            isCharging = false;
+            chargeTime = 0;
+            rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
+        }
     }
     #region ShootRight
 

@@ -8,6 +8,6 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
-        bgmMusic.Play();
+        //bgmMusic.Play();
     }
 }

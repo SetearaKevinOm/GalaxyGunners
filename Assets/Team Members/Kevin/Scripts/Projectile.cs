@@ -42,7 +42,7 @@ public class Projectile : ColorEnum
         {
             if (enemy != null && enemy.myColor == MyColor.Any)
             {
-                enemyParent.OnClicked(projectileDmg, transform);
+                enemy.OnClicked(projectileDmg, transform);
                 Destroy(gameObject);
             }
             else if (enemy != null && myColor == enemy.myColor)
@@ -51,7 +51,7 @@ public class Projectile : ColorEnum
                 Destroy(gameObject);
                 //StartCoroutine(ProjectileHitLife());
             }
-            else if (enemyParent != null && myColor == enemy.myColor)
+            else if (enemyParent != null && myColor == enemyParent.myColor)
             {
                 enemyParent.OnClicked(projectileDmg, transform);
                 Destroy(gameObject);
@@ -62,7 +62,7 @@ public class Projectile : ColorEnum
                 Destroy(gameObject);
                 //StartCoroutine(ProjectileHitLife());
             }
-            else if (enemyParent != null && myColor != enemy.myColor)
+            else if (enemyParent != null && myColor != enemyParent.myColor)
             {
                 enemyParent.WrongColor(transform);
                 Destroy(gameObject);

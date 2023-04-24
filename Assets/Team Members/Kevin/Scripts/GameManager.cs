@@ -40,6 +40,7 @@ namespace Kevin
 
         [Header("Game State Variables")] 
         public int shipHealth;
+        public int maxShipHealth;
         public int currentPlayerDamage;
         public float gameplayVolume;
         public float dialogueVolume;
@@ -213,10 +214,9 @@ namespace Kevin
         
         private IEnumerator EndingDialogue()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(7f);
             uiManager.hyperDriveStatus.color = Color.green;
             PlayNextScript();
-            yield return new WaitForSeconds(10f);
             StartCoroutine(HyperDriveSequence());
             
         }
@@ -225,17 +225,17 @@ namespace Kevin
         {
             hyperdriveParticleFX1.SetActive(true);
             hyperdriveParticleFX2.SetActive(true);
-            yield return new WaitForSeconds(7f);
-            Debug.Log("Hyper!!!!");
+            yield return new WaitForSeconds(6.5f);
+            var fader = ScreenFader.Instance;
+            fader.FadeTo(Color.white,3f);
+            yield return new WaitForSeconds(3f);
             EndGamePhase();
         }
         private void EndGamePhase()
         {
-            Debug.Log("Ending Game!");
             var fader = ScreenFader.Instance;
             fader.FadeTo(Color.black,3f);
             ExperienceApp.End();
-            
         }
 
         #endregion

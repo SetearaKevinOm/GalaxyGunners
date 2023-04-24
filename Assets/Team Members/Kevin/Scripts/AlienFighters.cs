@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Kevin;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 
 public class AlienFighters : EnemyBase
 {
@@ -51,6 +49,7 @@ public class AlienFighters : EnemyBase
     private IEnumerator Kamikaze()
     {
         yield return new WaitForSeconds(10f);
+        animator.enabled = false; 
         inCombat = false;
     }
 

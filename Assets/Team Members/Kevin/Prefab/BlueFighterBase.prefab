@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 731807434111120864}
   - component: {fileID: 1683688499}
-  - component: {fileID: 1851109615}
   m_Layer: 0
   m_Name: BlueFighterBase
   m_TagString: Untagged
@@ -30,7 +29,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5558167497677319039}
-  - {fileID: 5999292712661695785}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,28 +60,13 @@ MonoBehaviour:
   alienProjectile: {fileID: 4318191549266427433, guid: 14605829151505840b1ecb31ee9a6eab,
     type: 3}
   randomShootDelay: 0
-  forceField: {fileID: 0}
-  randomForceFields: 1
   warpVFX: {fileID: 8527244843865343674}
-  hack: 0
-  goingLeft: 0
-  goingRight: 0
+  currentLookAtPosition: {fileID: 0}
+  inCombat: 0
+  singleRef: 0
   speed: 0
-  moveRate: 0
-  timer: 0
---- !u!135 &1851109615
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712736293858575135}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5.83
-  m_Center: {x: 0.000002861023, y: -0.0000007748604, z: -1.31}
+  isKamikaze: 0
+  animator: {fileID: 0}
 --- !u!1 &5489446056260061355
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,6 +4997,7 @@ Transform:
   m_Children:
   - {fileID: 6164478019046544777}
   - {fileID: 46868596443737526}
+  - {fileID: 5999292712661695785}
   m_Father: {fileID: 731807434111120864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5071,7 +5055,7 @@ SphereCollider:
   m_GameObject: {fileID: 8897364901832120684}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 5.83
   m_Center: {x: 0.000002861023, y: -0.0000007748604, z: -1.31}
@@ -5115,7 +5099,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 731807434111120864}
+    m_TransformParent: {fileID: 5558167497677319039}
     m_Modifications:
     - target: {fileID: 5836634471370008239, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
@@ -5160,7 +5144,7 @@ PrefabInstance:
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
@@ -5185,22 +5169,17 @@ PrefabInstance:
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.40000024
       objectReference: {fileID: 0}
     - target: {fileID: 8496318662677175612, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.40000024
       objectReference: {fileID: 0}
     - target: {fileID: 4905610303593158375, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
       propertyPath: lengthInSec
       value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905610303593158375, guid: cbb4c7203b908a74888aea8adbcb36ff,
-        type: 3}
-      propertyPath: looping
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4905610303593158375, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
@@ -5224,23 +5203,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803220992543677049, guid: cbb4c7203b908a74888aea8adbcb36ff,
         type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803220992543677049, guid: cbb4c7203b908a74888aea8adbcb36ff,
-        type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803220992543677049, guid: cbb4c7203b908a74888aea8adbcb36ff,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[1].time
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803220992543677049, guid: cbb4c7203b908a74888aea8adbcb36ff,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[2].time
-      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb4c7203b908a74888aea8adbcb36ff, type: 3}

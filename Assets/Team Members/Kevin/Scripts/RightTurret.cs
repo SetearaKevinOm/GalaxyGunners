@@ -18,7 +18,7 @@ public class RightTurret : Turrets
             instance.PlayNextScript();
         }*/
         
-        /*if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse1))
         {
             turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
             //play vrrrrr sound
@@ -27,11 +27,6 @@ public class RightTurret : Turrets
                 isCharging = true;
                 if (isCharging)
                 {
-                    /*if (chargeAudioPlay)
-                    {
-                        chargeSFX.PlayOneShot(chargeSFX.clip);
-                        chargeAudioPlay = false;
-                    }#1#
                     chargeTime += Time.deltaTime * chargeSpeed;
                 }
             }
@@ -47,7 +42,7 @@ public class RightTurret : Turrets
             isCharging = false;
             chargeTime = 0;
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
-        }*/
+        }
                     
         /*if (Input.GetKey(KeyCode.Mouse1))
         {
@@ -80,7 +75,7 @@ public class RightTurret : Turrets
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
         }*/
         
-        var device = VRDevice.Device;
+        /*var device = VRDevice.Device;
         var rightHand = device.PrimaryInputDevice;
         
         if(rightHand.GetButton(VRButton.Trigger))
@@ -92,11 +87,6 @@ public class RightTurret : Turrets
                 isCharging = true;
                 if (isCharging)
                 {
-                    /*if (chargeAudioPlay)
-                    {
-                        chargeSFX.PlayOneShot(chargeSFX.clip);
-                        chargeAudioPlay = false;
-                    }*/
                     chargeTime += Time.deltaTime * chargeSpeed;
                 }
             }
@@ -112,7 +102,7 @@ public class RightTurret : Turrets
             isCharging = false;
             chargeTime = 0;
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
-        }
+        }*/
     }
     #region ShootRight
 

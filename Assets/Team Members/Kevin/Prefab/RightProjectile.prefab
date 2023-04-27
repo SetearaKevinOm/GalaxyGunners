@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd7a1be95ae93d44ae9c3c08a2c5166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10000
+  projectileSpeed: 100000
   balisticsTransform: {fileID: 0}
   projectileDmg: 25
   myColor: 1

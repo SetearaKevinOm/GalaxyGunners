@@ -14,8 +14,9 @@ public class BossTurrets : EnemyBase
         rotationPoint.transform.LookAt(GameManager.Instance.shipCollisionBox.transform.position);
     }
 
-    public void Start()
+    public IEnumerator Start()
     {
+        yield return new WaitForSeconds(7f);
         startTimer = Random.Range(5, 10);
         StartCoroutine(ShootTimer());
     }

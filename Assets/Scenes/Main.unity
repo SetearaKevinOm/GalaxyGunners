@@ -37309,6 +37309,11 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxGradient.key0.b
       value: 0.009225845
       objectReference: {fileID: 0}
+    - target: {fileID: 8462839626336044802, guid: 3c73940eb9df1194eb53386ee9b9fddf,
+        type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 764300934, guid: 3c73940eb9df1194eb53386ee9b9fddf, type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
@@ -37854,6 +37859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key0.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462839626336044802, guid: 3c73940eb9df1194eb53386ee9b9fddf,
+        type: 3}
+      propertyPath: stopAction
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 764300934, guid: 3c73940eb9df1194eb53386ee9b9fddf, type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
@@ -40375,6 +40385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BloodHawkBossPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 964251417149241337, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4267983455139005930, guid: a2fe36b58ddbab944b55c5b80d224a92,
         type: 3}

@@ -10,5 +10,6 @@ public class BinTrigger : MonoBehaviour
     {
         if (other.GetComponentInParent<AlienFighters>().gameObject == null) return;
         other.GetComponentInParent<AlienFighters>().gameObject.SetActive(false);
+        other.gameObject.SetActive(false);
     }
 }

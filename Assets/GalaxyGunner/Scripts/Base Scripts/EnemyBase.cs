@@ -37,7 +37,7 @@ public class EnemyBase : ColorEnum
       health -= dmg;
       if (impactSound == null) return;
       AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-      Instantiate(impactParticle, projectilePosition.position, Quaternion.identity);
+      Instantiate(impactParticle, projectilePosition.position - new Vector3(0,0,2f), Quaternion.identity);
       
          
       if (health <= 0f)

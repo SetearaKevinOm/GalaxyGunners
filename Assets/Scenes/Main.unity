@@ -39260,7 +39260,12 @@ PrefabInstance:
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}
       propertyPath: isColorSchemed
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: maxRequiredAliens
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1868549772, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_AnchorMax.x
@@ -39373,6 +39378,19 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2833100956068341689, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058671497, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: maxEnemies
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058671497, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: spawnTimer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1642845240, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_Value
       value: 1
@@ -39406,6 +39424,77 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146648653861348051, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146648653861348051, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2935327006853679585, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2935327006853679585, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -26.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 233443080, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: m_text
+      value: /30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435290457314486620, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435290457314486620, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274528026130589667, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_text
+      value: 'BloodHawk
+
+        Health'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274528026130589667, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274528026130589667, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -17.232168
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274528026130589667, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274528026130589667, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274528026130589667, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274528026130589667, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1868549773, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_Color.g
@@ -40820,11 +40909,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BloodHawkBossPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 964251417149241337, guid: a2fe36b58ddbab944b55c5b80d224a92,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4267983455139005930, guid: a2fe36b58ddbab944b55c5b80d224a92,
         type: 3}

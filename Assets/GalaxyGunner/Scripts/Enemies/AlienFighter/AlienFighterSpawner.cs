@@ -40,8 +40,10 @@ public class AlienFighterSpawner : MonoBehaviour
                 {
                     GameObject go = Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
                     GameObject go2 = Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
+                    GameObject go3 = Instantiate(spawnManager.alienFightersPrefab[Random.Range(0,1)], Randomizer(), Quaternion.identity);
                     alienFighters.Add(go);
                     alienFighters.Add(go2);
+                    alienFighters.Add(go3);
                 }
             }
             StartCoroutine(SpawnAlienFighters());

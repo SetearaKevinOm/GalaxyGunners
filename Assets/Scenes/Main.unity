@@ -6658,7 +6658,6 @@ GameObject:
   m_Component:
   - component: {fileID: 575608002}
   - component: {fileID: 575608003}
-  - component: {fileID: 575608004}
   m_Layer: 0
   m_Name: PivotPointRight
   m_TagString: Untagged
@@ -6693,45 +6692,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f785e0055d962724bbd43e030a2248e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
   turretObject: {fileID: 628185643}
-  turretPivotPoints: {fileID: 575608002}
-  crosshairTransform: {fileID: 1432191906}
-  balistics: {fileID: 1638955257}
-  handTransform: {fileID: 1596031382}
-  range: 10000
-  currentTurretDamage: 0
-  barrelFlash: {fileID: 764300932}
-  flashParticle: {fileID: 764300935}
-  crosshair: {fileID: 1432191907}
-  fireRate: 0.4
-  canShoot: 1
-  laserLine: {fileID: 0}
-  shootSFX: {fileID: 7576822044597323289}
+  balistics: {fileID: 0}
+  flashParticle: {fileID: 0}
   projectilePrefab: {fileID: 3253169165792359639, guid: baa5f3781fb923647adc222841b2166d,
     type: 3}
-  defaultCrosshairTransform: {fileID: 0}
-  instance: {fileID: 0}
+  leftGunUI: {fileID: 123361876}
+  rightGunUI: {fileID: 304314768}
+  shootingSFX:
+  - {fileID: 2102695719}
+  - {fileID: 623198797}
+  canShoot: 1
+  chargeSpeed: 3
+  chargeTime: 0
+  fireRate: 0.4
   halfFireRate: 0
   rapidFireRate: 0
   rapidrapidFireRate: 0
   isCharging: 0
-  chargeSpeed: 3
-  chargeTime: 0
-  chargeAudioPlay: 0
-  chargeSFX: {fileID: 575608004}
-  leftGunUI: {fileID: 123361876}
-  rightGunUI: {fileID: 304314768}
---- !u!82 &575608004
+  turretPivotPoints: {fileID: 575608002}
+  handTransform: {fileID: 1596031382}
+  crosshairTransform: {fileID: 1432191906}
+  crosshair: {fileID: 1432191907}
+  defaultCrosshairTransform: {fileID: 0}
+--- !u!1 &623198795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623198796}
+  - component: {fileID: 623198797}
+  m_Layer: 0
+  m_Name: 'Turret2Audio '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &623198796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623198795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 775495670}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &623198797
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575608001}
+  m_GameObject: {fileID: 623198795}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 247f10b866a570e4c8b94ea6ae67a448, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ae1feab4c5feacc46a18ec7a356e6c4d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -7062,21 +7088,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08cd91a724506d949b0961d914099a7c, type: 3}
---- !u!1 &764300932 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2442588491703582702, guid: 3c73940eb9df1194eb53386ee9b9fddf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1849430808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &764300933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8324178390186912324, guid: 3c73940eb9df1194eb53386ee9b9fddf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1849430808}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &764300935 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8462839626336044802, guid: 3c73940eb9df1194eb53386ee9b9fddf,
     type: 3}
   m_PrefabInstance: {fileID: 1849430808}
   m_PrefabAsset: {fileID: 0}
@@ -7109,6 +7123,8 @@ Transform:
   m_Children:
   - {fileID: 1191882921}
   - {fileID: 575608002}
+  - {fileID: 2102695718}
+  - {fileID: 623198796}
   m_Father: {fileID: 2214633136757923672}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17024,12 +17040,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134746310}
   m_CullTransparentMesh: 0
---- !u!1 &1190175643 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2442588491703582702, guid: 3c73940eb9df1194eb53386ee9b9fddf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2025274951}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1191882920
 GameObject:
   m_ObjectHideFlags: 0
@@ -17074,34 +17084,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47b864305840ae49a47815c7ced538e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
   turretObject: {fileID: 566478686818602874}
-  turretPivotPoints: {fileID: 1191882921}
-  crosshairTransform: {fileID: 1920165222}
-  balistics: {fileID: 30820770}
-  handTransform: {fileID: 2056768708}
-  range: 10000
-  currentTurretDamage: 0
-  barrelFlash: {fileID: 1190175643}
-  flashParticle: {fileID: 2025274953}
-  crosshair: {fileID: 1920165223}
-  fireRate: 0.4
-  canShoot: 1
-  laserLine: {fileID: 0}
-  shootSFX: {fileID: 7576822044597323289}
+  balistics: {fileID: 0}
+  flashParticle: {fileID: 0}
   projectilePrefab: {fileID: 6126889377571740722, guid: 543f55ea21663b6428bb5ee8f2f7ba41,
     type: 3}
-  defaultCrosshairTransform: {fileID: 0}
-  instance: {fileID: 0}
+  leftGunUI: {fileID: 123361876}
+  rightGunUI: {fileID: 304314768}
+  shootingSFX:
+  - {fileID: 2102695719}
+  - {fileID: 623198797}
+  canShoot: 1
+  chargeSpeed: 3
+  chargeTime: 0
+  fireRate: 0.4
   halfFireRate: 0
   rapidFireRate: 0
   rapidrapidFireRate: 0
   isCharging: 0
-  chargeSpeed: 3
-  chargeTime: 0
-  chargeAudioPlay: 0
-  chargeSFX: {fileID: 0}
-  leftGunUI: {fileID: 123361876}
-  rightGunUI: {fileID: 304314768}
+  turretPivotPoints: {fileID: 1191882921}
+  handTransform: {fileID: 2056768708}
+  crosshairTransform: {fileID: 1920165222}
+  crosshair: {fileID: 1920165223}
+  defaultCrosshairTransform: {fileID: 0}
 --- !u!1 &1212250436
 GameObject:
   m_ObjectHideFlags: 0
@@ -38130,12 +38136,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2025274951}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &2025274953 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8462839626336044802, guid: 3c73940eb9df1194eb53386ee9b9fddf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2025274951}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2056465430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38255,6 +38255,133 @@ MonoBehaviour:
   - {fileID: 1729724646}
   - {fileID: 452026548}
   - {fileID: 492000911}
+--- !u!1 &2102695717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2102695718}
+  - component: {fileID: 2102695719}
+  m_Layer: 0
+  m_Name: Turret1Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2102695718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102695717}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 775495670}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2102695719
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102695717}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fea217cb9e11f6f4595dff69dcd78d4e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2129983331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40362,7 +40489,6 @@ GameObject:
   - component: {fileID: 2214633136757923672}
   - component: {fileID: 6249952251932273285}
   - component: {fileID: 423006375062335261}
-  - component: {fileID: 7576822044597323289}
   m_Layer: 0
   m_Name: Turret_Arms
   m_TagString: Untagged
@@ -40370,102 +40496,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &7576822044597323289
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7576822044597323288}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3e6134c2cfc17fe4294e9be7b7c88e2e, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!33 &7598032608310857871
 MeshFilter:
   m_ObjectHideFlags: 0

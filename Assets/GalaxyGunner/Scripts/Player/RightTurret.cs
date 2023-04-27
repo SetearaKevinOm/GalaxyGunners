@@ -38,7 +38,6 @@ public class RightTurret : Turrets
         }
         else
         {
-            chargeAudioPlay = true;
             isCharging = false;
             chargeTime = 0;
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
@@ -126,7 +125,7 @@ public class RightTurret : Turrets
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(RFireRateDelay());
             flashParticle.Play();
-            shootSFX.PlayOneShot(shootSFX.clip);
+            shootingSFX[Random.Range(0,1)].PlayOneShot(shootingSFX[Random.Range(0,1)].clip);
             canShoot = false;
         }
     }

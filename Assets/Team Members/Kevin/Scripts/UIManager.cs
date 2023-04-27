@@ -38,19 +38,25 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        oxygenLevel -= Time.deltaTime/30;
+        oxygenLevel -= Time.deltaTime / 30f;
         oxygenLevels.text = ((int)oxygenLevel).ToString();
+        // this code will probably never be need because the oxygen levels stay at a high number usually and is only used for visual juice.
+        if (oxygenLevel >= 80f) oxygenLevels.color = Color.green;
+        if (oxygenLevel >= 30 && oxygenLevel < 80) oxygenLevels.color = Color.yellow;
+        if (oxygenLevel < 30) oxygenLevels.color = Color.red;
     }
 
     private void UpdateShipHealth()
     {
+        if(_instance.shipHealth >= 8000) healthText.color = Color.green;
+        if (_instance.shipHealth > 3000 && _instance.shipHealth < 8000) healthText.color = Color.yellow;
+        if (_instance.shipHealth <= 3000) healthText.color = Color.red;
+        
+        //On the off chance the player loses all their HP, place holder for now it just runs the end experience function
+        if(_instance.shipHealth < 1) _instance.EndGamePhase();
+        
         shipHealthSlider.value = _instance.shipHealth;
-        /*float currentHealthPercentage = _instance.shipHealth / _instance.maxShipHealth;
-        Debug.Log("Current percentage is: " + currentHealthPercentage);
-        Debug.Log("Current Ship Health is " + _instance.shipHealth); 
-        Debug.Log("Current MAX Health is " + _instance.maxShipHealth);*/
         healthText.text = (_instance.shipHealth/100).ToString();
-        //Debug.Log("Current percentage is: " + currentHealthPercentage);
     }
 
     private void UpdateAsteroidCount()

@@ -236,7 +236,7 @@ namespace Kevin
             yield return new WaitForSeconds(3f);
             EndGamePhase();
         }
-        private void EndGamePhase()
+        public void EndGamePhase()
         {
             var fader = ScreenFader.Instance;
             fader.FadeTo(Color.black,3f);

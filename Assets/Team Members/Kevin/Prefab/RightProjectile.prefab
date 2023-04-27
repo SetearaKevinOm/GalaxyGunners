@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3256949173431155283}
-  - component: {fileID: 3266486648877258087}
   - component: {fileID: 3274275967835963561}
   - component: {fileID: 3252642219057886591}
   - component: {fileID: 4827846808945838292}
@@ -36,14 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3266486648877258087
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3253169165792359639}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3274275967835963561
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd7a1be95ae93d44ae9c3c08a2c5166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 100000
+  projectileSpeed: 10000
   balisticsTransform: {fileID: 0}
   projectileDmg: 25
   myColor: 1
@@ -151,7 +142,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 3
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.7
@@ -209,7 +200,7 @@ TrailRenderer:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
-    numCapVertices: 0
+    numCapVertices: 4
     alignment: 0
     textureMode: 0
     shadowBias: 0.5

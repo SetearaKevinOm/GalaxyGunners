@@ -25,11 +25,8 @@ public class EnemyBase : ColorEnum
 
    public void WrongColor(Transform projectilePosition)
    {
-      //Debug.Log("Wrong Color!");
       if (wrongColorSFX == null) return;
       AudioSource.PlayClipAtPoint(wrongColorSFX, GameManager.Instance.vrAvatar.transform.position);
-      //play sound 
-      //show ui
    }
    public void OnClicked(int dmg, Transform projectilePosition)
    {
@@ -38,7 +35,6 @@ public class EnemyBase : ColorEnum
          instance = GameManager.Instance;
       }
       health -= dmg;
-      //Debug.Log(health);
       if (impactSound == null) return;
       AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
       Instantiate(impactParticle, projectilePosition.position, Quaternion.identity);
@@ -75,14 +71,14 @@ public class EnemyBase : ColorEnum
          if (gameObject.GetComponent<ForceField>() != null)
          {
             AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-            Instantiate(explosionParticle, projectilePosition.position, Quaternion.identity);
+            Instantiate(explosionParticle, projectilePosition.transform.position, Quaternion.identity);
             Destroy(gameObject);
          }
          
          if (gameObject.GetComponent<AlienFighters>() != null)
          {
             AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
+            Instantiate(explosionParticle, projectilePosition.transform.position, Quaternion.identity);
             instance.AlienDestroyed(gameObject);
             instance.EndAlienPhase();
             Destroy(gameObject);
@@ -90,7 +86,7 @@ public class EnemyBase : ColorEnum
          if (gameObject.GetComponent<BossTurrets>() != null)
          {
             AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
-            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
+            Instantiate(explosionParticle, projectilePosition.transform.position, Quaternion.identity);
             instance.TurretDestroyed(gameObject);
             Destroy(gameObject);
          }
@@ -99,6 +95,7 @@ public class EnemyBase : ColorEnum
          {
             AudioSource.PlayClipAtPoint(impactSound, instance.vrAvatar.transform.position);
             Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
+            //play explosion sequence
             instance.StartEndPhase();
          }
       }

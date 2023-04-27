@@ -19,6 +19,7 @@ public class Projectile : ColorEnum
    
     private void OnEnable()
     {
+        projectileSpeed = GameManager.Instance.currentProjectileSpeed;
         _rb = GetComponent<Rigidbody>();
     }
     

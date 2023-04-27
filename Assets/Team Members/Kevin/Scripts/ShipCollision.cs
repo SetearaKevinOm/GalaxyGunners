@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Kevin;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ShipCollision : MonoBehaviour
 {
     public GameManager instance;
     public Action shipTakeDamage;
-
+    public GameObject windowPrefab;
+    public ParticleSystem cockpitParticles;
+    
     public IEnumerator Start()
     {
         yield return new WaitForSeconds(2f);
@@ -30,6 +33,7 @@ public class ShipCollision : MonoBehaviour
                 Destroy(col.GetComponentInParent<AlienFighters>().gameObject);
                 instance.alienFighterSpawner.alienFighters.Remove(col.GetComponentInParent<AlienFighters>().gameObject);
             }
+            //Instantiate(cockpitParticles, windowPrefab.GetComponent<WindowCollision>().shieldCollisionTransforms[Random.Range(0,4)].position, Quaternion.identity);
             instance.shipHealth -= enemyBase.enemyDamage;
             instance.uiManager.uiShipRef.GetComponent<ShipDamageUI>().ShipDamaged();
             shipTakeDamage.Invoke();

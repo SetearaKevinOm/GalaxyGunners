@@ -44,6 +44,8 @@ namespace Kevin
         public int currentPlayerDamage;
         public float gameplayVolume;
         public float dialogueVolume;
+        public float currentProjectileSpeed;
+        public List<float> projectileSpeedPhases;
         
         [Header("Game State Logic")]
         public bool tutorialStart;
@@ -128,6 +130,7 @@ namespace Kevin
             //PlayNextScript();
             asteroidSpawner.BeginSpawn();
             asteroidUIPanel.SetActive(true);
+            currentProjectileSpeed = projectileSpeedPhases[0];
             leftTurret.halfFireRate = true;
             rightTurret.halfFireRate = true;
             audioManager.bgmMusic.volume = gameplayVolume;
@@ -159,6 +162,7 @@ namespace Kevin
             yield return new WaitForSeconds(9f);
             leftTurret.rapidFireRate = true;
             rightTurret.rapidFireRate = true;
+            currentProjectileSpeed = projectileSpeedPhases[1];
             audioManager.bgmMusic.volume = gameplayVolume;
         }
         public void AlienDestroyed(GameObject go)
@@ -188,6 +192,7 @@ namespace Kevin
             bossUIPanel.SetActive(true);
             rightTurret.rapidrapidFireRate = true;
             leftTurret.rapidrapidFireRate = true;
+            currentProjectileSpeed = projectileSpeedPhases[2];
         }
 
         public void TurretDestroyed(GameObject go)
@@ -225,7 +230,7 @@ namespace Kevin
         {
             hyperdriveParticleFX1.SetActive(true);
             hyperdriveParticleFX2.SetActive(true);
-            yield return new WaitForSeconds(6.5f);
+            yield return new WaitForSeconds(7f);
             var fader = ScreenFader.Instance;
             fader.FadeTo(Color.white,3f);
             yield return new WaitForSeconds(3f);
@@ -247,14 +252,6 @@ namespace Kevin
             asteroidsSpawned.Add(go2);
         }
 
-        /*public void EndGame()
-        {
-            //Debug.Log("Ending Game!");
-            /*var fader = ScreenFader.Instance;
-            fader.FadeTo(Color.black,1f);
-            ExperienceApp.End();#1#
-        }*/
-        
         /*public void TriggerVibration(AudioClip vibrationAudio, OVRInput.Controller controller)
         {
             OVRHapticsClip clip = new OVRHapticsClip(vibrationAudio);

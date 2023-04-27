@@ -713,6 +713,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 569617354}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &195222411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195222412}
+  m_Layer: 0
+  m_Name: AlienFighterSpawnPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &195222412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195222411}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.065069, y: 0.36193, z: 2.0996}
+  m_LocalScale: {x: 0.9831805, y: 0.9831805, z: 0.9831805}
+  m_Children: []
+  m_Father: {fileID: 1158621694}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &233469930
 GameObject:
   m_ObjectHideFlags: 0
@@ -7009,6 +7039,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df, type: 3}
+--- !u!1 &686017012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686017013}
+  m_Layer: 0
+  m_Name: AlienFighterSpawnPoints (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &686017013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686017012}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.30418, y: 0.36193, z: 2.0996}
+  m_LocalScale: {x: 0.9831805, y: 0.9831805, z: 0.9831805}
+  m_Children: []
+  m_Father: {fileID: 1158621694}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &717316876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16632,6 +16692,36 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &854010893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854010894}
+  m_Layer: 0
+  m_Name: AlienFighterSpawnPoints (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854010894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854010893}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.27724, y: 0.22446, z: 2.1004}
+  m_LocalScale: {x: 0.9831805, y: 0.9831805, z: 0.9831805}
+  m_Children: []
+  m_Father: {fileID: 1158621694}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &863893157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 563641318, guid: 9577b14f14166ae4395ae8f29d238375,
@@ -16875,7 +16965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001740364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.08, z: -6.35}
+  m_LocalPosition: {x: 0, y: 0.86, z: -10.7}
   m_LocalScale: {x: 6.382671, y: 2.869614, z: 4.327236}
   m_Children: []
   m_Father: {fileID: 5006512736619892504}
@@ -17065,6 +17155,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134746310}
   m_CullTransparentMesh: 0
+--- !u!1 &1158621693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1158621694}
+  m_Layer: 0
+  m_Name: AlienSpawnPointsParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1158621694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158621693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 195222412}
+  - {fileID: 686017013}
+  - {fileID: 1164887204}
+  - {fileID: 2112011827}
+  - {fileID: 2138269211}
+  - {fileID: 854010894}
+  m_Father: {fileID: 5006512736638519180}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1164887203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1164887204}
+  m_Layer: 0
+  m_Name: AlienFighterSpawnPoints (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1164887204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164887203}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.27724, y: 0.36221, z: 2.1}
+  m_LocalScale: {x: 0.9831805, y: 0.9831805, z: 0.9831805}
+  m_Children: []
+  m_Father: {fileID: 1158621694}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1191882920
 GameObject:
   m_ObjectHideFlags: 0
@@ -38457,6 +38613,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2112011826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2112011827}
+  m_Layer: 0
+  m_Name: AlienFighterSpawnPoints (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2112011827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112011826}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.065069, y: 0.22418, z: 2.1}
+  m_LocalScale: {x: 0.9831805, y: 0.9831805, z: 0.9831805}
+  m_Children: []
+  m_Father: {fileID: 1158621694}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2128260698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5861638590951502415, guid: 68d975430e221914d9d443f7e67849ef,
@@ -38643,6 +38829,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c22678d7aa562145804b6f0af7e603a, type: 3}
+--- !u!1 &2138269210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2138269211}
+  m_Layer: 0
+  m_Name: AlienFighterSpawnPoints (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2138269211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138269210}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.30418, y: 0.22418, z: 2.1}
+  m_LocalScale: {x: 0.9831805, y: 0.9831805, z: 0.9831805}
+  m_Children: []
+  m_Father: {fileID: 1158621694}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &89292511711150861
 GameObject:
   m_ObjectHideFlags: 0
@@ -41010,6 +41226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodHawkBossPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 964251417149241337, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4267983455139005930, guid: a2fe36b58ddbab944b55c5b80d224a92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41067,14 +41288,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
         type: 3}
+      propertyPath: fighterSpawnTransforms.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
       propertyPath: redFighterPrefab
       value: 
-      objectReference: {fileID: 1422749576}
+      objectReference: {fileID: 0}
     - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
         type: 3}
       propertyPath: blueFighterPrefab
       value: 
-      objectReference: {fileID: 1851109614}
+      objectReference: {fileID: 0}
     - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
         type: 3}
       propertyPath: redFighterHangar
@@ -41090,6 +41321,48 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 123375257}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterSpawnTransforms.Array.data[0]
+      value: 
+      objectReference: {fileID: 195222412}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterSpawnTransforms.Array.data[2]
+      value: 
+      objectReference: {fileID: 1164887204}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterSpawnTransforms.Array.data[1]
+      value: 
+      objectReference: {fileID: 686017013}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterSpawnTransforms.Array.data[3]
+      value: 
+      objectReference: {fileID: 2112011827}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterSpawnTransforms.Array.data[4]
+      value: 
+      objectReference: {fileID: 2138269211}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterSpawnTransforms.Array.data[5]
+      value: 
+      objectReference: {fileID: 854010894}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 712736293858575135, guid: 53bae4aa38d2c8f4c9899f1a7b2d90df,
+        type: 3}
+    - target: {fileID: 9097368658992114163, guid: a2fe36b58ddbab944b55c5b80d224a92,
+        type: 3}
+      propertyPath: fighterPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8846631398587591903, guid: e685aebf409ae02448bbe768a6effe9d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2fe36b58ddbab944b55c5b80d224a92, type: 3}
 --- !u!33 &9133437652368967737

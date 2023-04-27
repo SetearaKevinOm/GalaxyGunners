@@ -6,11 +6,9 @@ using UnityEngine.UI;
 
 public class Boss : EnemyBase
 {
-    public GameObject redFighterPrefab;
-    public GameObject blueFighterPrefab;
-
-    public Transform redFighterHangar;
-    public Transform blueFighterHangar;
+    public List<GameObject> fighterPrefabs;
+    public List<Transform> fighterSpawnTransforms;
+    public int spawnTimer;
 
     public Slider healthBar;
 
@@ -21,18 +19,23 @@ public class Boss : EnemyBase
     public IEnumerator Start()
     {
         yield return new WaitForSeconds(3f);
+        spawnTimer = 10;
         StartCoroutine(SpawnTimer());
     }
 
     private IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(spawnTimer);
         ReleaseFighters();
     }
-    public void ReleaseFighters()
+    private void ReleaseFighters()
     {
-        Instantiate(redFighterPrefab, redFighterHangar.position, Quaternion.identity);
-        Instantiate(blueFighterPrefab, blueFighterHangar.position, Quaternion.identity);
+        for (int i = 0; i < fighterSpawnTransforms.Count; i++)
+        {
+            Instantiate(fighterPrefabs[Random.Range(0, fighterPrefabs.Count)], fighterSpawnTransforms[i].position, Quaternion.identity);
+        }
+        spawnTimer--;
+        if (spawnTimer <= 4) spawnTimer = 4;
         StartCoroutine(SpawnTimer());
     }
 

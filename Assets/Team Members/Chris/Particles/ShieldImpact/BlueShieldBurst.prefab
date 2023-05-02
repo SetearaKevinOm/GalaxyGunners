@@ -2852,9 +2852,9 @@ ParticleSystem:
     separateAxes: 0
     frequency: 1
     damping: 1
-    octaves: 1
+    octaves: 2
     octaveMultiplier: 0.5
-    octaveScale: 2
+    octaveScale: 1
     quality: 2
     scrollSpeed:
       serializedVersion: 2

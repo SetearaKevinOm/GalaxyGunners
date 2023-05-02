@@ -1008,7 +1008,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2045452049813887284}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &282964737
+--- !u!95 &282964744
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -16805,7 +16805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &888624755
 Transform:
   m_ObjectHideFlags: 0
@@ -27351,7 +27351,7 @@ PrefabInstance:
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.35
+      value: 12.04
       objectReference: {fileID: 0}
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
@@ -27361,7 +27361,7 @@ PrefabInstance:
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.795002
+      value: 26.32
       objectReference: {fileID: 0}
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
@@ -37442,12 +37442,12 @@ PrefabInstance:
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.315001
+      value: 4.41
       objectReference: {fileID: 0}
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9030318
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
@@ -37942,12 +37942,12 @@ PrefabInstance:
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.095
+      value: -8.2
       objectReference: {fileID: 0}
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.0592022
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
@@ -38744,12 +38744,12 @@ PrefabInstance:
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.185
+      value: -2.34
       objectReference: {fileID: 0}
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.8980002
+      value: 4.03
       objectReference: {fileID: 0}
     - target: {fileID: 5857790854242675835, guid: 68d975430e221914d9d443f7e67849ef,
         type: 3}
@@ -39766,11 +39766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058671497, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: maxEnemies
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2058671497, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: spawnTimer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1642845240, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_Value
@@ -39931,13 +39931,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 828863142, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 828863142, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -11.41
+      objectReference: {fileID: 0}
     - target: {fileID: 241963620, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 828863143, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 16777215
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1002322617, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_fontColor32.rgba

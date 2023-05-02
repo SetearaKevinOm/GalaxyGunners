@@ -219,18 +219,19 @@ namespace Kevin
         
         private IEnumerator EndingDialogue()
         {
-            yield return new WaitForSeconds(7f);
-            uiManager.hyperDriveStatus.color = Color.green;
-            PlayNextScript();
+	        yield return new WaitForSeconds(7f);
+	        uiManager.hyperDriveStatus.color = Color.green;
+	        PlayNextScript();
             StartCoroutine(HyperDriveSequence());
             
         }
 
         private IEnumerator HyperDriveSequence()
         {
+	        yield return new WaitForSeconds(4f);
             hyperdriveParticleFX1.SetActive(true);
             hyperdriveParticleFX2.SetActive(true);
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(4f);
             var fader = ScreenFader.Instance;
             fader.FadeTo(Color.white,3f);
             yield return new WaitForSeconds(3f);

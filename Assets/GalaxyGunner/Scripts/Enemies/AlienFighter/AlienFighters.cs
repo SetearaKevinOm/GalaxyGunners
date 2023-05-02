@@ -53,12 +53,11 @@ public class AlienFighters : EnemyBase
         inCombat = false;
     }
 
-        private void ShootPlayer()
+    private void ShootPlayer()
     {
-        if (gameObject == null) return;
+        //if (gameObject == null) return;
         if (inCombat == false) return;
-        GameObject go = Instantiate(alienProjectile, alienLaser.position,
-            Quaternion.LookRotation(alienLaser.transform.forward));
+        GameObject go = Instantiate(alienProjectile, alienLaser.position, Quaternion.LookRotation(alienLaser.transform.forward));
         go.GetComponent<EnemyProjectile>().balisticsTransform = alienLaser;
         StartCoroutine(ShootDelay());
     }
@@ -66,7 +65,7 @@ public class AlienFighters : EnemyBase
     private IEnumerator ShootDelay()
     {
         yield return new WaitForSeconds(randomShootDelay);
-        if (gameObject != null) ShootPlayer();
+        ShootPlayer();
     }
     public void Update()
     {

@@ -16,8 +16,6 @@ public class VisualizerScript : MonoBehaviour
     public bool loop;
     [Space(15)]
     public int visualizerSimples;
-
-    public List<AudioSource> dialogueList;
     public int currentAudioIndex;
     AudioSource _audioSource;
 
@@ -34,7 +32,7 @@ public class VisualizerScript : MonoBehaviour
 
         if (!track) return;
         _audioSource = new GameObject("AudioSource").AddComponent<AudioSource>();
-        //_audioSource.loop = loop;
+        if (currentAudioIndex >= instance.dialogueManager.gameDialogue.Count) return;
         track = instance.dialogueManager.gameDialogue[currentAudioIndex];
         _audioSource.clip = track;
         _audioSource.volume = 1f;

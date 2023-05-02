@@ -59,7 +59,7 @@ public class AlienFighterSpawner : MonoBehaviour
                 StartCoroutine(SpawnBlueAlienFighters());
             }
 
-            if (_instance.currentAliensDestroyed > 10)
+            if (_instance.currentAliensDestroyed > 15)
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {
@@ -69,7 +69,7 @@ public class AlienFighterSpawner : MonoBehaviour
                         GameObject go2 = Instantiate(spawnManager.alienFightersPrefab[1], Randomizer(), Quaternion.identity);
                         alienFighters.Add(go);
                         alienFighters.Add(go2);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
                     }
                 }
                 StartCoroutine(SpawnBlueAlienFighters());
@@ -111,7 +111,7 @@ public class AlienFighterSpawner : MonoBehaviour
                         GameObject go2 = Instantiate(spawnManager.alienFightersPrefab[1], Randomizer(), Quaternion.identity);
                         alienFighters.Add(go);
                         alienFighters.Add(go2);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
                     }
                 }
                 Timer();

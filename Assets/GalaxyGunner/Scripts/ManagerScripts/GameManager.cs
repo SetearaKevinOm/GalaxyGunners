@@ -29,8 +29,9 @@ namespace Kevin
         public GameObject asteroidUIPanel;
         public GameObject alienUIPanel;
         public GameObject bossUIPanel;
-        public GameObject hyperdriveParticleFX1;
-        public GameObject hyperdriveParticleFX2;
+        public GameObject hyperDriveGameObject;
+        public GameObject hyperDriveParticleFX1;
+        public GameObject hyperDriveParticleFX2;
 
 
         [Header("Game State Variables")] 
@@ -84,7 +85,6 @@ namespace Kevin
         {
             yield return new WaitForSeconds(3f);
             visualizerScript.track = dialogueManager.gameDialogue[0];
-            //intro
             visualizerScript.PlayAudioClip();
             audioManager.bgmMusic.volume = dialogueVolume;
             StartCoroutine(SpawnTutorialMines());
@@ -135,6 +135,14 @@ namespace Kevin
             currentAsteroidsDestroyed++;
             OnAsteroidDestroyed.Invoke();
         }
+        
+        public List<GameObject> asteroidsSpawned;
+        public void AsteroidList(GameObject go)
+        {
+            asteroidsSpawned.Add(go);
+            
+        }
+        
         public void EndAsteroidPhase()
         {
             if (currentAsteroidsDestroyed >= maxRequiredAsteroids && asteroidPhaseEnd == false)
@@ -179,9 +187,9 @@ namespace Kevin
 
         #endregion
 
-        
+        #region BossPhase
 
-        private IEnumerator StartBossPhase()
+         private IEnumerator StartBossPhase()
         {
             yield return new WaitForSeconds(3f);
             PlayNextScript();
@@ -230,9 +238,9 @@ namespace Kevin
         private IEnumerator HyperDriveSequence()
         {
 	        yield return new WaitForSeconds(4f);
-            hyperdriveParticleFX1.SetActive(true);
-            hyperdriveParticleFX2.SetActive(true);
-            yield return new WaitForSeconds(4f);
+            hyperDriveParticleFX1.SetActive(true);
+            hyperDriveParticleFX2.SetActive(true);
+            yield return new WaitForSeconds(15f);
             var fader = ScreenFader.Instance;
             fader.FadeTo(Color.white,3f);
             yield return new WaitForSeconds(3f);
@@ -246,13 +254,9 @@ namespace Kevin
         }
 
         #endregion
+
+        #endregion
         
-        public List<GameObject> asteroidsSpawned;
-        public void AsteroidList(GameObject go)
-        {
-            asteroidsSpawned.Add(go);
-            
-        }
 
         /*public void TriggerVibration(AudioClip vibrationAudio, OVRInput.Controller controller)
         {

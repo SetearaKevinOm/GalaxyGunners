@@ -8,43 +8,29 @@ using Random = UnityEngine.Random;
 public class Asteroid : EnemyBase
 {
     public Transform targetLocation;
-    public Transform newRTargetLocation;
-    public Transform newLTargetLocation;
-    public bool singleUse = true;
+    private Transform _myTransform;
     public void Start()
     {
         projectileSpeed = Random.Range(5f, 10f);
-        targetLocation = instance.shipCollisionBox.transform;
-        //newRTargetLocation = instance.targetTransformR.transform;
-        //newRTargetLocation = instance.targetTransformL.transform;
+        _myTransform = this.transform;
+        if (instance.asteroidPhaseEnd)
+        {
+            targetLocation = instance.binCollision.transform;
+        }
+        else
+        {
+            targetLocation = instance.shipCollisionBox.transform;
+        }
         StartCoroutine(Life());
     }
 
     public void Update()
     {
-        //gameObject.transform.Rotate(new Vector3(randomX,randomY,randomZ),Space.Self);
-        //transform.eulerAngles = Vector3.forward * projectileSpeed * Time.deltaTime;
-        //if (instance.asteroidPhaseEnd && singleUse) targetLocation = NewTarget();
         transform.LookAt(targetLocation.position);
-        transform.position += transform.forward * projectileSpeed * Time.deltaTime;
+        _myTransform.position +=  _myTransform.forward * projectileSpeed * Time.deltaTime;
     }
-
-    private Transform NewTarget()
-    {
-        int coinFlip = Random.Range(0, 100);
-        if (coinFlip <= 49)
-        {
-            targetLocation = newLTargetLocation;
-        }
-        else if(coinFlip > 50)
-        {
-            targetLocation = newRTargetLocation;
-        }
-
-        singleUse = false;
-        return targetLocation;
-    }
-
+    
+    //This is just in case there are stray asteroids that dont collide or get destroyed. 
     private IEnumerator Life()
     {
         yield return new WaitForSeconds(30f);

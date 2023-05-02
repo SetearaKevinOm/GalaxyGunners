@@ -74,7 +74,7 @@ public class AsteroidSpawner : MonoBehaviour
                         asteroids.Add(go2);
                         _instance.AsteroidList(go);
                         _instance.AsteroidList(go2);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(0.5f);
                     }
                 }
                 StartCoroutine(SpawnBlueAsteroids());
@@ -117,7 +117,7 @@ public class AsteroidSpawner : MonoBehaviour
                     asteroids.Add(go2);
                     _instance.AsteroidList(go);
                     _instance.AsteroidList(go2);
-                    yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(0.5f);
                 }
             }
             Timer();

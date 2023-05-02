@@ -55,7 +55,7 @@ MonoBehaviour:
   spawnSound: {fileID: 8300000, guid: 496a80b98c464f0499f4b1a8384df565, type: 3}
   impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
     type: 3}
-  explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
+  explosionParticle: {fileID: 4924913509282483944, guid: 2bb0281932d8e194eaeb7e2d48f2fe7e,
     type: 3}
   myColor: 0
   wrongColorSFX: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}

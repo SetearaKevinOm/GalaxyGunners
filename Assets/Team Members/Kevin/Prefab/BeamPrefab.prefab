@@ -105,14 +105,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
-  health: 0
-  enemyDamage: 0
-  projectileSpeed: 0
-  impactSound: {fileID: 0}
+  health: 100
+  enemyDamage: 200
+  projectileSpeed: 1000
+  impactSound: {fileID: 8300000, guid: 28e39f8594db57a4b9af238011743165, type: 3}
   spawnSound: {fileID: 0}
-  impactParticle: {fileID: 0}
-  explosionParticle: {fileID: 0}
+  impactParticle: {fileID: 6763022058983325034, guid: 72f8d98439a83e949aa33bd3913f9e72,
+    type: 3}
+  explosionParticle: {fileID: 7782025392428450788, guid: ff1ae44f597acba48bdbf0460aa55b5a,
+    type: 3}
   myColor: 0
-  wrongColorSFX: {fileID: 0}
+  wrongColorSFX: {fileID: 8300000, guid: e6932c10c4adad144815c61d55195f92, type: 3}
   redMat: {fileID: 2100000, guid: 7b11e4e2650e8514ba1c76cb8c2f4d65, type: 2}
   blueMat: {fileID: 2100000, guid: 88469f6deddaded4daad610cd05ae9fe, type: 2}
+  startCharge: 0
+  maxCharge: 0

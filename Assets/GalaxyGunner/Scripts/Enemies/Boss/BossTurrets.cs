@@ -29,7 +29,6 @@ public class BossTurrets : EnemyBase
 
     private void ShootPlayer()
     {
-        if (gameObject == null) return;
         GameObject go = Instantiate(bossProjectile, laser.position,
             Quaternion.LookRotation(laser.transform.forward));
         go.GetComponent<EnemyProjectile>().balisticsTransform = laser;

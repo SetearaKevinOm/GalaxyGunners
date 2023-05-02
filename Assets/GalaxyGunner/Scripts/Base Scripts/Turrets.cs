@@ -24,7 +24,7 @@ namespace Kevin
         public GameObject rightGunUI;
         
         [Header("Audio Refs")]
-        public List<AudioSource> shootingSFX;
+        public AudioSource shootingSFX;
         
         [Header ("Shooting Refs")]
         public bool canShoot;

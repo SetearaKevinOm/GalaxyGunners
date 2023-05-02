@@ -79,7 +79,7 @@ public class LeftTurret : Turrets
             go.GetComponent<Projectile>().balisticsTransform = balistics.transform;
             StartCoroutine(LFireRateDelay());
             flashParticle.Play();
-            shootingSFX[Random.Range(0,1)].PlayOneShot(shootingSFX[Random.Range(0,1)].clip);
+            shootingSFX.PlayOneShot(shootingSFX.clip);
             canShoot = false;
         }
         

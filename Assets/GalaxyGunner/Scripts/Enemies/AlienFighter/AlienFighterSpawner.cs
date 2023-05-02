@@ -26,36 +26,106 @@ public class AlienFighterSpawner : MonoBehaviour
 
     public void BeginSpawn()
     {
-        StartCoroutine(SpawnAlienFighters());
+        StartCoroutine(SpawnRedAlienFighter());
     }
 
-    private IEnumerator SpawnAlienFighters()
+    private void Timer()
+    {
+        if (spawnTimer <= 5)
+        {
+            spawnTimer = 5;
+        }
+        else
+        {
+            spawnTimer--;
+        }
+    }
+    private IEnumerator SpawnRedAlienFighter()
     {
         yield return new WaitForSeconds(spawnTimer);
         if (!_instance.alienPhaseEnd)
         {
-            for (int i = 0; i < spawnManager.alienFightersPrefab.Count; i++)
+            if (_instance.currentAliensDestroyed <= 15)
             {
-                if (alienFighters.Count <= maxEnemies)
+                for (int i = 0; i < maxEnemies; i++)
                 {
-                    GameObject go = Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
-                    GameObject go2 = Instantiate(spawnManager.alienFightersPrefab[i], Randomizer(), Quaternion.identity);
-                    GameObject go3 = Instantiate(spawnManager.alienFightersPrefab[Random.Range(0,1)], Randomizer(), Quaternion.identity);
-                    alienFighters.Add(go);
-                    alienFighters.Add(go2);
-                    alienFighters.Add(go3);
+                    if (alienFighters.Count <= maxEnemies)
+                    {
+                        GameObject go = Instantiate(spawnManager.alienFightersPrefab[1], Randomizer(), Quaternion.identity);
+                        alienFighters.Add(go);
+                        yield return new WaitForSeconds(1f);
+                    }
                 }
+                StartCoroutine(SpawnBlueAlienFighters());
             }
-            StartCoroutine(SpawnAlienFighters());
-        }
-        else if(_instance.alienPhaseEnd)
-        {
-            StopCoroutine(SpawnAlienFighters());
-        }
-        
-        
-    }
 
+            if (_instance.currentAliensDestroyed > 10)
+            {
+                for (int i = 0; i < maxEnemies; i++)
+                {
+                    if (alienFighters.Count <= maxEnemies)
+                    {
+                        GameObject go = Instantiate(spawnManager.alienFightersPrefab[0], Randomizer(), Quaternion.identity);
+                        GameObject go2 = Instantiate(spawnManager.alienFightersPrefab[1], Randomizer(), Quaternion.identity);
+                        alienFighters.Add(go);
+                        alienFighters.Add(go2);
+                        yield return new WaitForSeconds(1f);
+                    }
+                }
+                StartCoroutine(SpawnBlueAlienFighters());
+            }
+            
+        }
+        else if (_instance.alienPhaseEnd)
+        {
+            StopCoroutine(SpawnRedAlienFighter());
+        }
+    }
+    
+    private IEnumerator SpawnBlueAlienFighters()
+    {
+        yield return new WaitForSeconds(spawnTimer);
+        if (!_instance.alienPhaseEnd)
+        {
+            if (_instance.currentAliensDestroyed <= 15)
+            {
+                for (int i = 0; i < maxEnemies; i++)
+                {
+                    if (alienFighters.Count <= maxEnemies)
+                    {
+                        GameObject go = Instantiate(spawnManager.alienFightersPrefab[0], Randomizer(), Quaternion.identity);
+                        alienFighters.Add(go);
+                        yield return new WaitForSeconds(1f);
+                    }
+                }
+                StartCoroutine(SpawnRedAlienFighter());
+            }
+
+            if (_instance.currentAsteroidsDestroyed > 15)
+            {
+                for (int i = 0; i < maxEnemies; i++)
+                {
+                    if (alienFighters.Count <= maxEnemies)
+                    {
+                        GameObject go = Instantiate(spawnManager.alienFightersPrefab[0], Randomizer(), Quaternion.identity);
+                        GameObject go2 = Instantiate(spawnManager.alienFightersPrefab[1], Randomizer(), Quaternion.identity);
+                        alienFighters.Add(go);
+                        alienFighters.Add(go2);
+                        yield return new WaitForSeconds(1f);
+                    }
+                }
+                Timer();
+                StartCoroutine(SpawnRedAlienFighter());
+            }
+            
+        }
+        else if (_instance.alienPhaseEnd)
+        {
+            StopCoroutine(SpawnBlueAlienFighters());
+        }
+    }
+    
+    //This Function Randomly calculates a position within the desired collision box/area.
     private Vector3 Randomizer()
     {
         float randomInCubeX = Random.Range(-cubeSize.x/4, cubeSize.x/4);

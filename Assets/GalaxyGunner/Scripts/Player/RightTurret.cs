@@ -20,26 +20,12 @@ public class RightTurret : Turrets
         
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
-            //play vrrrrr sound
-            if(Input.GetKey(KeyCode.Mouse1) && chargeTime < 2)
-            {
-                isCharging = true;
-                if (isCharging)
-                {
-                    chargeTime += Time.deltaTime * chargeSpeed;
-                }
-            }
-            else if (Input.GetKey(KeyCode.Mouse1) && chargeTime >= 2)
-            {
-                turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
-                ShootRight();
-            }
+            turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
+            ShootRight();
+            
         }
         else
         {
-            isCharging = false;
-            chargeTime = 0;
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
         }
         
@@ -49,27 +35,12 @@ public class RightTurret : Turrets
         
         
         /*if(rightHand.GetButton(VRButton.Trigger))
-        {
-            turretObject.transform.Rotate(new Vector3(0,0,2.5f),Space.Self);
-            //play vrrrrr sound
-            if(rightHand.GetButton(VRButton.Trigger) && chargeTime < 2)
-            {
-                isCharging = true;
-                if (isCharging)
-                {
-                    chargeTime += Time.deltaTime * chargeSpeed;
-                }
-            }
-            else if (rightHand.GetButton(VRButton.Trigger) && chargeTime >= 2)
-            {
-                turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
-                ShootRight();
-            }
+        { 
+            turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
+            ShootRight();
         }
         else
         {
-            isCharging = false;
-            chargeTime = 0;
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
         }*/
     }

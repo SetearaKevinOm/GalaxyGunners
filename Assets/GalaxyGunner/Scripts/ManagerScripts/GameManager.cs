@@ -16,19 +16,14 @@ namespace Kevin
         public DialogueManager dialogueManager;
         public VisualizerScript visualizerScript;
         public RubbishBin rubbishBinScript;
-        public ObjectPool objectPool;
         public LeftTurret leftTurret;
         public RightTurret rightTurret;
         public AudioManager audioManager;
         
         [Header("GameObject References")]
         public GameObject vrAvatar;
-        public CameraShake cameraShake;
         public GameObject shipCollisionBox;
-        public GameObject enemyThreshold;
         public GameObject tutorialTargets;
-        public GameObject targetTransformR;
-        public GameObject targetTransformL;
         public GameObject bossShip;
         public GameObject binCollision;
         public GameObject asteroidUIPanel;
@@ -82,7 +77,6 @@ namespace Kevin
             alienFighterSpawner = GetComponentInChildren<AlienFighterSpawner>();
             dialogueManager = GetComponentInChildren<DialogueManager>();
             rubbishBinScript = GetComponentInChildren<RubbishBin>();
-            objectPool = GetComponentInChildren<ObjectPool>();
             audioManager = GetComponentInChildren<AudioManager>();
         }
         
@@ -115,9 +109,10 @@ namespace Kevin
 
         #region Game Phases
 
+        #region Asteroid Phase
+
         public void SpawnAsteroidBegin()
         {
-            //complete tutorial
             PlayNextScript();
             audioManager.bgmMusic.volume = dialogueVolume;
             StartCoroutine(DelayAsteroidScript());
@@ -126,8 +121,6 @@ namespace Kevin
         private IEnumerator DelayAsteroidScript()
         {
             yield return new WaitForSeconds(0.5f);
-            //start asteroid
-            //PlayNextScript();
             asteroidSpawner.BeginSpawn();
             asteroidUIPanel.SetActive(true);
             currentProjectileSpeed = projectileSpeedPhases[0];
@@ -151,6 +144,10 @@ namespace Kevin
                 StartCoroutine(SpawnAlienBegin());
             }
         }
+
+        #endregion
+
+        #region AlienPhase
 
         private IEnumerator SpawnAlienBegin()
         {
@@ -179,6 +176,10 @@ namespace Kevin
                 StartCoroutine(StartBossPhase());
             }
         }
+
+        #endregion
+
+        
 
         private IEnumerator StartBossPhase()
         {
@@ -247,10 +248,10 @@ namespace Kevin
         #endregion
         
         public List<GameObject> asteroidsSpawned;
-        public void AsteroidList(GameObject go, GameObject go2)
+        public void AsteroidList(GameObject go)
         {
             asteroidsSpawned.Add(go);
-            asteroidsSpawned.Add(go2);
+            
         }
 
         /*public void TriggerVibration(AudioClip vibrationAudio, OVRInput.Controller controller)

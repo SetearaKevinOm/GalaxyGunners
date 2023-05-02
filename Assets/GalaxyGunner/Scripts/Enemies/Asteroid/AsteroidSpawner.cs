@@ -27,34 +27,110 @@ public class AsteroidSpawner : MonoBehaviour
     }
     public void BeginSpawn()
     {
-        StartCoroutine(SpawnAsteroids());
+        StartCoroutine(SpawnRedAsteroids());
     }
 
-    private IEnumerator SpawnAsteroids()
+    private void Timer()
     {
-        yield return new WaitForSeconds(7);
-        if(!_instance.asteroidPhaseEnd)
+        if (timer <= 5)
         {
-            for (int i = 0; i < spawnManager.asteroidPrefabs.Count; i++)
-            {
-                if (asteroids.Count <= maxEnemies)
-                {
-                    GameObject go = Instantiate(spawnManager.asteroidPrefabs[i], Randomizer(), Quaternion.identity);
-                    GameObject go2 = Instantiate(spawnManager.asteroidPrefabs[i], Randomizer(), Quaternion.identity);
-                    asteroids.Add(go);
-                    asteroids.Add(go2);
-                    _instance.AsteroidList(go, go2);
-                }
+            timer = 5;
+        }
+        else
+        {
+            timer--;
+        }
+    }
 
+    private IEnumerator SpawnRedAsteroids()
+    {
+        yield return new WaitForSeconds(timer);
+        if (!_instance.asteroidPhaseEnd)
+        {
+            if (_instance.currentAsteroidsDestroyed < 10)
+            {
+                for (int i = 0; i < maxEnemies; i++)
+                {
+                    if (asteroids.Count <= maxEnemies)
+                    {
+                        GameObject go = Instantiate(spawnManager.asteroidPrefabs[0], Randomizer(), Quaternion.identity);
+                        asteroids.Add(go);
+                        _instance.AsteroidList(go);
+                        yield return new WaitForSeconds(1f);
+                    }
+                }
+                StartCoroutine(SpawnBlueAsteroids());
             }
-            StartCoroutine(SpawnAsteroids());
+
+            if (_instance.currentAsteroidsDestroyed >= 10)
+            {
+                for (int i = 0; i < maxEnemies; i++)
+                {
+                    if (asteroids.Count <= maxEnemies)
+                    {
+                        GameObject go = Instantiate(spawnManager.asteroidPrefabs[0], Randomizer(), Quaternion.identity);
+                        GameObject go2 = Instantiate(spawnManager.asteroidPrefabs[1], Randomizer(), Quaternion.identity);
+                        asteroids.Add(go);
+                        asteroids.Add(go2);
+                        _instance.AsteroidList(go);
+                        _instance.AsteroidList(go2);
+                        yield return new WaitForSeconds(1f);
+                    }
+                }
+                StartCoroutine(SpawnBlueAsteroids());
+            }
+            
         }
         else if (_instance.asteroidPhaseEnd)
         {
-            StopCoroutine(SpawnAsteroids());
+            StopCoroutine(SpawnRedAsteroids());
         }
     }
+    
+    private IEnumerator SpawnBlueAsteroids()
+    {
+        yield return new WaitForSeconds(timer);
+        if (_instance.currentAsteroidsDestroyed < 10)
+        {
+            for (int i = 0; i < maxEnemies; i++)
+            {
+                if (asteroids.Count <= maxEnemies)
+                {
+                    GameObject go = Instantiate(spawnManager.asteroidPrefabs[1], Randomizer(), Quaternion.identity);
+                    asteroids.Add(go);
+                    _instance.AsteroidList(go);
+                    yield return new WaitForSeconds(1f);
+                }
+            }
+            StartCoroutine(SpawnRedAsteroids());
+        }
 
+        if (_instance.currentAsteroidsDestroyed >= 10)
+        {
+            for (int i = 0; i < maxEnemies; i++)
+            {
+                if (asteroids.Count <= maxEnemies)
+                {
+                    GameObject go = Instantiate(spawnManager.asteroidPrefabs[0], Randomizer(), Quaternion.identity);
+                    GameObject go2 = Instantiate(spawnManager.asteroidPrefabs[1], Randomizer(), Quaternion.identity);
+                    asteroids.Add(go);
+                    asteroids.Add(go2);
+                    _instance.AsteroidList(go);
+                    _instance.AsteroidList(go2);
+                    yield return new WaitForSeconds(1f);
+                }
+            }
+            Timer();
+            StartCoroutine(SpawnRedAsteroids());
+        }
+        else if (_instance.asteroidPhaseEnd)
+        {
+            StopCoroutine(SpawnBlueAsteroids());
+        }
+    }
+    
+    
+    //This Function Randomly calculates a position within the desired collision box/area.
     private Vector3 Randomizer()
     {
         float randomInCubeX = Random.Range(-cubeSize.x/4, cubeSize.x/4);

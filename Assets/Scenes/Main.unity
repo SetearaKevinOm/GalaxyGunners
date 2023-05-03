@@ -40095,14 +40095,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1463829225, guid: f5a28844a65d01442a79760166555544, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463829225, guid: f5a28844a65d01442a79760166555544, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.177
-      objectReference: {fileID: 0}
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}
       propertyPath: projectileSpeedPhases.Array.size
@@ -40332,6 +40324,10 @@ PrefabInstance:
     - target: {fileID: 1463829226, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463829226, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2058671497, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: maxEnemies
@@ -40619,6 +40615,14 @@ PrefabInstance:
     - target: {fileID: 2061956404, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: timer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463829225, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463829225, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.177
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a28844a65d01442a79760166555544, type: 3}

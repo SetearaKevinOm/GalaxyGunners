@@ -126,6 +126,7 @@ namespace Kevin
             currentProjectileSpeed = projectileSpeedPhases[0];
             leftTurret.halfFireRate = true;
             rightTurret.halfFireRate = true;
+            yield return new WaitForSeconds(asteroidSpawner.timer);
             audioManager.bgmMusic.volume = gameplayVolume;
         }
         public void AsteroidDestroyed(GameObject go)
@@ -164,7 +165,7 @@ namespace Kevin
             alienFighterSpawner.BeginSpawn();
             asteroidUIPanel.SetActive(false);
             alienUIPanel.SetActive(true);
-            yield return new WaitForSeconds(9f);
+            yield return new WaitForSeconds(alienFighterSpawner.spawnTimer);
             leftTurret.rapidFireRate = true;
             rightTurret.rapidFireRate = true;
             currentProjectileSpeed = projectileSpeedPhases[1];
@@ -192,11 +193,13 @@ namespace Kevin
          private IEnumerator StartBossPhase()
         {
             yield return new WaitForSeconds(3f);
+            audioManager.bgmMusic.volume = dialogueVolume;
             PlayNextScript();
             yield return new WaitForSeconds(5f);
             PlayNextScript();
             bossShip.SetActive(true);
             yield return new WaitForSeconds(10f);
+            audioManager.bgmMusic.volume = gameplayVolume;
             alienUIPanel.SetActive(false);
             bossUIPanel.SetActive(true);
             rightTurret.rapidrapidFireRate = true;
@@ -231,6 +234,7 @@ namespace Kevin
 	        yield return new WaitForSeconds(7f);
 	        uiManager.hyperDriveStatus.color = Color.green;
 	        PlayNextScript();
+            audioManager.bgmMusic.volume = dialogueVolume;
             StartCoroutine(HyperDriveSequence());
             
         }
@@ -241,12 +245,9 @@ namespace Kevin
             hyperDriveParticleFX1.SetActive(true);
             hyperDriveParticleFX2.SetActive(true);
             yield return new WaitForSeconds(7f);
-            audioManager.bgmMusic.Stop();
             endingWarp.PlayOneShot(endingWarp.clip);
-            //Debug.Log("play warp effect");
-            yield return new WaitForSeconds(8f);
-            var fader = ScreenFader.Instance;
-            fader.FadeTo(Color.white,3f);
+            yield return new WaitForSeconds(2f);
+            audioManager.bgmMusic.volume = dialogueVolume / 2f;
             yield return new WaitForSeconds(3f);
             EndGamePhase();
         }

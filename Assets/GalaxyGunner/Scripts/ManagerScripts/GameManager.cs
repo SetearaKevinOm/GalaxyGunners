@@ -29,25 +29,24 @@ namespace Kevin
         public GameObject asteroidUIPanel;
         public GameObject alienUIPanel;
         public GameObject bossUIPanel;
-        public GameObject hyperDriveGameObject;
         public GameObject hyperDriveParticleFX1;
         public GameObject hyperDriveParticleFX2;
         public AudioSource endingWarp;
 
         [Header("Game State Variables")] 
         public int shipHealth;
-        public int maxShipHealth;
-        public int currentPlayerDamage;
-        public float gameplayVolume;
-        public float dialogueVolume;
         public float currentProjectileSpeed;
         public List<float> projectileSpeedPhases;
         
+        [Header("Runtime Volume Control")]
+        public float gameplayVolume;
+        public float dialogueVolume;
+        
+     
+        
         [Header("Game State Logic")]
-        public bool tutorialStart;
         public bool asteroidPhaseEnd;
         public bool alienPhaseEnd;
-        
         public int tutorialTargetCount;
         public int currentAsteroidsDestroyed;
         public int maxRequiredAsteroids;

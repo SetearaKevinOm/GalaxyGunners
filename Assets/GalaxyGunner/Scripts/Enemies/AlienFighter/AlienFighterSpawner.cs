@@ -45,7 +45,7 @@ public class AlienFighterSpawner : MonoBehaviour
         yield return new WaitForSeconds(spawnTimer);
         if (!_instance.alienPhaseEnd)
         {
-            if (_instance.currentAliensDestroyed <= 15)
+            if (_instance.currentAliensDestroyed <= 19)
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {
@@ -59,7 +59,7 @@ public class AlienFighterSpawner : MonoBehaviour
                 StartCoroutine(SpawnBlueAlienFighters());
             }
 
-            if (_instance.currentAliensDestroyed > 15)
+            if (_instance.currentAliensDestroyed > 19)
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {
@@ -87,7 +87,7 @@ public class AlienFighterSpawner : MonoBehaviour
         yield return new WaitForSeconds(spawnTimer);
         if (!_instance.alienPhaseEnd)
         {
-            if (_instance.currentAliensDestroyed <= 15)
+            if (_instance.currentAliensDestroyed <= 19)
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {
@@ -98,10 +98,11 @@ public class AlienFighterSpawner : MonoBehaviour
                         yield return new WaitForSeconds(1f);
                     }
                 }
+                Timer();
                 StartCoroutine(SpawnRedAlienFighter());
             }
 
-            if (_instance.currentAsteroidsDestroyed > 15)
+            if (_instance.currentAsteroidsDestroyed > 19)
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {

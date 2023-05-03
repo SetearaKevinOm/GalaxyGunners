@@ -40095,6 +40095,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1463829225, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463829225, guid: f5a28844a65d01442a79760166555544, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.177
+      objectReference: {fileID: 0}
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}
       propertyPath: projectileSpeedPhases.Array.size
@@ -40178,7 +40186,7 @@ PrefabInstance:
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}
       propertyPath: isColorSchemed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
         type: 3}
@@ -40210,6 +40218,16 @@ PrefabInstance:
       propertyPath: endingWarp
       value: 
       objectReference: {fileID: 163145237}
+    - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: gameplayVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045452050285327787, guid: f5a28844a65d01442a79760166555544,
+        type: 3}
+      propertyPath: dialogueVolume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1868549772, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -40615,14 +40633,6 @@ PrefabInstance:
     - target: {fileID: 2061956404, guid: f5a28844a65d01442a79760166555544, type: 3}
       propertyPath: timer
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463829225, guid: f5a28844a65d01442a79760166555544, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463829225, guid: f5a28844a65d01442a79760166555544, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.177
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a28844a65d01442a79760166555544, type: 3}

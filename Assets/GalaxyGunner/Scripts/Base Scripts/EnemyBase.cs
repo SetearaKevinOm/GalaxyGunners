@@ -62,7 +62,6 @@ public class EnemyBase : ColorEnum
             }
             if (instance.tutorialTargetCount >= 4)
             {
-               instance.tutorialStart = true;
                instance.SpawnAsteroidBegin();
             }
             Destroy(gameObject);

@@ -26,8 +26,13 @@ public class Asteroid : EnemyBase
 
     public void Update()
     {
+        if (instance.asteroidPhaseEnd)
+        {
+            targetLocation = instance.binCollision.transform;
+        }
         transform.LookAt(targetLocation.position);
         _myTransform.position +=  _myTransform.forward * projectileSpeed * Time.deltaTime;
+        
     }
     
     //This is just in case there are stray asteroids that dont collide or get destroyed. 

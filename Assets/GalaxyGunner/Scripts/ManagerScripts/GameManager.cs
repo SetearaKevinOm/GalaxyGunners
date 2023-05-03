@@ -32,7 +32,7 @@ namespace Kevin
         public GameObject hyperDriveGameObject;
         public GameObject hyperDriveParticleFX1;
         public GameObject hyperDriveParticleFX2;
-
+        public AudioSource endingWarp;
 
         [Header("Game State Variables")] 
         public int shipHealth;
@@ -240,7 +240,11 @@ namespace Kevin
 	        yield return new WaitForSeconds(4f);
             hyperDriveParticleFX1.SetActive(true);
             hyperDriveParticleFX2.SetActive(true);
-            yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(7f);
+            audioManager.bgmMusic.Stop();
+            endingWarp.PlayOneShot(endingWarp.clip);
+            //Debug.Log("play warp effect");
+            yield return new WaitForSeconds(8f);
             var fader = ScreenFader.Instance;
             fader.FadeTo(Color.white,3f);
             yield return new WaitForSeconds(3f);

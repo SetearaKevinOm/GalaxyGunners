@@ -16,5 +16,12 @@ public class EnemyProjectile : EnemyBase
         projectileSpeed = Random.Range(7500f,8000f);
         if (_rb == null) return;
         _rb.AddForce(balisticsTransform.transform.forward * projectileSpeed,ForceMode.Force);
+        StartCoroutine(Life());
+    }
+
+    private IEnumerator Life()
+    {
+        yield return new WaitForSeconds(5f);
+        if (gameObject != null) Destroy(gameObject);
     }
 }

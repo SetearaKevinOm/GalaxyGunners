@@ -231,9 +231,10 @@ namespace Kevin
         private IEnumerator EndingDialogue()
         {
 	        yield return new WaitForSeconds(7f);
+            audioManager.bgmMusic.volume = dialogueVolume;
 	        uiManager.hyperDriveStatus.color = Color.green;
 	        PlayNextScript();
-            audioManager.bgmMusic.volume = dialogueVolume;
+            audioManager.bgmMusic.volume = dialogueVolume / 2f;
             StartCoroutine(HyperDriveSequence());
             
         }
@@ -243,11 +244,11 @@ namespace Kevin
 	        yield return new WaitForSeconds(4f);
             hyperDriveParticleFX1.SetActive(true);
             hyperDriveParticleFX2.SetActive(true);
+            audioManager.bgmMusic.volume = dialogueVolume / 2f;
             yield return new WaitForSeconds(7f);
             endingWarp.PlayOneShot(endingWarp.clip);
-            yield return new WaitForSeconds(2f);
-            audioManager.bgmMusic.volume = dialogueVolume / 2f;
-            yield return new WaitForSeconds(3f);
+            audioManager.bgmMusic.volume = 0f;
+            yield return new WaitForSeconds(5f);
             EndGamePhase();
         }
         public void EndGamePhase()

@@ -77,6 +77,7 @@ public class AlienFighters : EnemyBase
             currentLookAtPosition = GameManager.Instance.binCollision.transform;
             inCombat = false;
             singleRef = false;
+            animator.enabled = false; 
         }
         
         if (inCombat == false)

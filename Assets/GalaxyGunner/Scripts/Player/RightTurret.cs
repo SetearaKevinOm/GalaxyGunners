@@ -13,7 +13,7 @@ public class RightTurret : Turrets
         transform.rotation = handTransform.rotation;
         transform.LookAt(crosshair.transform);
 
-        /*if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             instance.PlayNextScript();
         }
@@ -27,14 +27,14 @@ public class RightTurret : Turrets
         else
         {
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
-        }*/
+        }
         
         var device = VRDevice.Device;
         var rightHand = device.PrimaryInputDevice;
         
         
         
-        if(rightHand.GetButton(VRButton.Trigger))
+        /*if(rightHand.GetButton(VRButton.Trigger))
         { 
             turretObject.transform.Rotate(new Vector3(0,0,7f),Space.Self);
             ShootRight();
@@ -42,7 +42,7 @@ public class RightTurret : Turrets
         else
         {
             rightGunUI.GetComponent<Animator>().CrossFade("Right_BuildDown",0,0);
-        }
+        }*/
     }
     #region ShootRight
 
